@@ -2,7 +2,11 @@
 
 > TBD — one-line description.
 
-![Photo or render of assembled box](docs/images/box-photo.jpg)
+
+<img width="781" height="856" alt="Complete_Package_ (Coen-Lab) - Autodesk Fusion (Education License)  22_07_2026 16_38_21" src="https://github.com/user-attachments/assets/c9507210-3a72-489f-8c5f-4562875a8d98" />
+
+<img width="626" height="609" alt="Complete_Package_ (Coen-Lab) - Autodesk Fusion (Education License)  22_07_2026 16_38_44" src="https://github.com/user-attachments/assets/d562d927-d58c-436b-9f0c-7dbbac189a49" />
+
 
 ## Overview
 
