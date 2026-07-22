@@ -34,7 +34,7 @@ Built to facilitate community development and future integration of additional b
 
 | # | Part | Qty | Supplier | Cost | Notes |
 |---|------|-----|----------|------|-------|
-| 1 | | | | | |
+| 1 |Box Bodies|2|Bambu Lab|18| |
 
 Approximate total: £TBD
 
