@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Bonsai.DAQmx</id>
+    <version>0.5.0</version>
+    <title>Bonsai - DAQmx Library</title>
+    <authors>Bonsai Foundation</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://bonsai-rx.org/daqmx</projectUrl>
+    <description>Bonsai DAQmx Library containing modules for acquisition and control of NI boards. NI-DAQmx version 25.3 (2025 Q2) is required.</description>
+    <copyright>Copyright © Bonsai Foundation CIC and Contributors</copyright>
+    <tags>Bonsai Rx DAQmx</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+      <packageType name="BonsaiLibrary" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/bonsai-rx/daqmx" commit="ac70eb81f711ddbbbfbb67a2fd8dc5c4f98e4163" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="Bonsai.Core" version="2.7.0" exclude="Build,Analyzers" />
+        <dependency id="OpenCV.Net" version="3.4.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Bonsai.Editor</id>
+    <version>2.9.1</version>
+    <authors>Bonsai Foundation</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://bonsai-rx.org/</projectUrl>
+    <description>This package provides an integrated development environment for the Bonsai programming language.</description>
+    <copyright>Copyright © Bonsai Foundation CIC and Contributors 2011-2025</copyright>
+    <tags>Bonsai Editor Rx Reactive Extensions</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+      <packageType name="BonsaiLibrary" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/bonsai-rx/bonsai" commit="d3ba29828ab3c8d0e016e5ababe295af81314b40" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="Bonsai.Design" version="2.9.1" exclude="Build,Analyzers" />
+        <dependency id="DockPanelSuite.ThemeVS2015" version="3.1.1" exclude="Build,Analyzers" />
+        <dependency id="Markdig" version="0.41.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Web.WebView2" version="1.0.2792.45" exclude="Build,Analyzers" />
+        <dependency id="SvgNet" version="3.5.0" exclude="Build,Analyzers" />
+        <dependency id="YamlDotNet" version="16.3.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0-windows7.0">
+        <dependency id="Bonsai.Design" version="2.9.1" exclude="Build,Analyzers" />
+        <dependency id="DockPanelSuite.ThemeVS2015" version="3.1.1" exclude="Build,Analyzers" />
+        <dependency id="Markdig" version="0.41.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Web.WebView2" version="1.0.2792.45" exclude="Build,Analyzers" />
+        <dependency id="SvgNet" version="3.5.0" exclude="Build,Analyzers" />
+        <dependency id="YamlDotNet" version="16.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net8.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+      <group targetFramework=".NETFramework4.7.2" />
+    </frameworkReferences>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.7.2" />
+      <frameworkAssembly assemblyName="System.Net.Http" targetFramework=".NETFramework4.7.2" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

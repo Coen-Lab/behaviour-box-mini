@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>PortAudioNet</id>
+    <version>0.1.0</version>
+    <authors>Bonsai Foundation</authors>
+    <license type="file">LICENSE.md</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <readme>README.md</readme>
+    <projectUrl>https://bonsai-rx.org/portaudio.net</projectUrl>
+    <description>Automatically generated C# bindings for PortAudio.</description>
+    <copyright>Copyright © Bonsai Foundation CIC and Contributors</copyright>
+    <repository type="git" url="https://github.com/bonsai-rx/portaudio.net" commit="9220865c383a363851366257258ddde9d3b64058" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2" />
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+</package>

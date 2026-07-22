@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bonsai.Mixer</name>
+    </assembly>
+    <members>
+        <member name="T:Bonsai.Mixer.CreateMixerContext">
+            <summary>
+            Represents an operator that creates a new mixer stream context used to control
+            simultaneous playback of multiple audio buffers.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Mixer.CreateMixerContext.HostApi">
+            <summary>
+            Gets or sets the name of the host API that should be used to implement low-level audio processing.
+            </summary>
+            <remarks>
+            If neither <see cref="P:Bonsai.Mixer.CreateMixerContext.HostApi"/> nor <see cref="P:Bonsai.Mixer.CreateMixerContext.DeviceName"/> are specified, the
+            default output device will be selected.
+            </remarks>
+        </member>
+        <member name="P:Bonsai.Mixer.CreateMixerContext.DeviceName">
+            <summary>
+            Gets or sets the name of the device that should be used to implement low-level audio processing.
+            </summary>
+            <remarks>
+            If neither <see cref="P:Bonsai.Mixer.CreateMixerContext.HostApi"/> nor <see cref="P:Bonsai.Mixer.CreateMixerContext.DeviceName"/> are specified, the
+            default output device will be selected.
+            </remarks>
+        </member>
+        <member name="P:Bonsai.Mixer.CreateMixerContext.SampleRate">
+            <summary>
+            Gets or sets the desired sample rate of the output stream, in samples per second.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Mixer.CreateMixerContext.SuggestedLatency">
+            <summary>
+            Gets or sets the desired output latency, in seconds.
+            </summary>
+            <remarks>
+            If not specified, the default low output latency value for the selected device will be
+            used. Setting this value low may not guarantee workable playback. Testing and benchmarking
+            are always recommended to assess the minimum required latency.
+            </remarks>
+        </member>
+        <member name="M:Bonsai.Mixer.CreateMixerContext.Generate">
+            <summary>
+            Generates an observable sequence that initializes and returns a new mixer stream context
+            object which can be used to control simultaneous playback of multiple audio buffers.
+            </summary>
+            <returns>
+            A sequence containing the <see cref="T:Bonsai.Mixer.MixerStreamContext"/> object.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            The output sequence will emit an error if the specified target device or host API
+            cannot be found.
+            </exception>
+        </member>
+        <member name="T:Bonsai.Mixer.MixerStreamContext">
+            <summary>
+            Represents an audio mixer which allows asynchronous queueing of multiple buffers
+            for simultaneous playback over a single PortAudio output stream.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Mixer.MixerStreamContext.SampleRate">
+            <summary>
+            Gets the sample rate of the stream, in samples per second.
+            </summary>
+            <remarks>
+            In cases where the hardware sample rate is inaccurate and PortAudio is aware of it,
+            the value of this field may be different from the sample rate parameter used to
+            initialize the mixer context.
+            </remarks>
+        </member>
+        <member name="P:Bonsai.Mixer.MixerStreamContext.OutputLatency">
+            <summary>
+            Gets the output latency of the stream, in seconds.
+            </summary>
+            <remarks>
+            This value provides the most accurate estimate of output latency available to the implementation.
+            It may differ significantly from the suggested latency value.
+            </remarks>
+        </member>
+        <member name="M:Bonsai.Mixer.MixerStreamContext.QueueBuffer(OpenCV.Net.Mat)">
+            <summary>
+            Adds a new buffer to the mixer stream context work queue.
+            </summary>
+            <remarks>
+            At any one moment when the mixer stream context is playing, the data streamed to PortAudio
+            will be the sum of all queued buffers being played.
+            </remarks>
+            <param name="buffer">
+            A multi-dimensional array containing the sample data, where each row vector represents data from
+            an individual channel to be mixed into the mixer output stream.
+            </param>
+            <exception cref="T:System.ArgumentNullException">Buffer is empty.</exception>
+            <exception cref="T:System.ArgumentException">
+            The number of rows in the buffer does not match the number of channels in the stream.
+            </exception>
+        </member>
+        <member name="M:Bonsai.Mixer.MixerStreamContext.Start">
+            <summary>
+            Initiates mixer audio processing.
+            </summary>
+            <remarks>
+            Any pre-queued buffers will begin playing simultaneously when the stream callback
+            starts requesting data.
+            </remarks>
+        </member>
+        <member name="M:Bonsai.Mixer.MixerStreamContext.Stop">
+            <summary>
+            Stops mixer audio processing.
+            </summary>
+            <remarks>
+            The stream callback will stop requesting data.
+            </remarks>
+        </member>
+        <member name="M:Bonsai.Mixer.MixerStreamContext.Dispose">
+            <summary>
+            Disposes the mixer context and closes the audio stream.
+            </summary>
+            <remarks>
+            If the audio stream is active, it discards any pending buffers.
+            </remarks>
+        </member>
+        <member name="M:Bonsai.Mixer.MixerStreamContext.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Mixer.QueueBuffer">
+            <summary>
+            Represents an operator that adds audio buffers in the sequence to the work queue
+            of a mixer stream context.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Mixer.QueueBuffer.Mixer">
+            <summary>
+            Gets or sets the mixer stream context on which to queue the audio buffer.
+            </summary>
+            <remarks>
+            This property must be mapped dynamically.
+            </remarks>
+        </member>
+        <member name="M:Bonsai.Mixer.QueueBuffer.Process(System.IObservable{OpenCV.Net.Mat})">
+            <summary>
+            Adds audio buffers in an observable sequence to the work queue of the specified
+            mixer stream context.
+            </summary>
+            <param name="source">
+            A sequence of <see cref="T:OpenCV.Net.Mat"/> objects representing audio buffers to
+            be queued in the mixer stream context.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of queueing the
+            audio buffers in the sequence into the specified mixer stream context.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Mixer.StartMixer">
+            <summary>
+            Represents an operator that initiates audio processing on every mixer stream
+            context in the sequence.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Mixer.StartMixer.Process(System.IObservable{Bonsai.Mixer.MixerStreamContext})">
+            <summary>
+            Initiates audio processing on every mixer stream context in an observable sequence.
+            </summary>
+            <param name="source">
+            A sequence of <see cref="T:Bonsai.Mixer.MixerStreamContext"/> objects.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of initiating
+            audio processing on every mixer stream context in the sequence.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Mixer.StopMixer">
+            <summary>
+            Represents an operator that stops audio processing on every mixer stream
+            context in the sequence.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Mixer.StopMixer.Process(System.IObservable{Bonsai.Mixer.MixerStreamContext})">
+            <summary>
+            Stops audio processing on every mixer stream context in an observable sequence.
+            </summary>
+            <param name="source">
+            A sequence of <see cref="T:Bonsai.Mixer.MixerStreamContext"/> objects.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of stopping
+            audio processing on every mixer stream context in the sequence.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Mixer.WorkQueue`1">
+            <summary>
+            Multiple producer / single consumer queue of work items.
+            </summary>
+            <typeparam name="T">The type of the elements stored in the work queue.</typeparam>
+            <remarks>
+            Provides support for multiple producers to asynchronously enqueue items to be
+            processed by a single consumer. A double buffering strategy is used to ensure the
+            consumer remains lock-free. Importantly, the buffer swap happens when the work on
+            the consumer queue is entirely done.
+            
+            It is possible producers are still in the process of adding an item during the
+            swap, but there is no critical work done immediately after, so this is acceptable.
+            Processing of all active work items is done on a different buffer altogether and
+            the newly swapped out queue will only be accessed at the start of the next cycle.
+            
+            The assumption is that by the time we are done with everything and need the next
+            items we will be done with processing a single <c>Add</c> call.
+            </remarks>
+        </member>
+    </members>
+</doc>

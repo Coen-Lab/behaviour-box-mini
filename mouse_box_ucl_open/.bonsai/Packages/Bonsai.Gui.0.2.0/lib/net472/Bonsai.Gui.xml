@@ -1,0 +1,748 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bonsai.Gui</name>
+    </assembly>
+    <members>
+        <member name="T:Bonsai.Gui.ButtonBuilder">
+            <summary>
+            Represents an operator that interfaces with a button control and generates
+            a sequence of notifications whenever the button is clicked.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ButtonBuilder.Generate">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ButtonBuilderBase`1">
+            <summary>
+            Provides an abstract base class with common button control functionality.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ButtonVisualizer">
+            <summary>
+            Provides a type visualizer representing a button control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ButtonVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.ButtonBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.CheckBoxBuilder">
+            <summary>
+            Represents an operator that interfaces with a check box control and generates
+            a sequence of notifications whenever the checked status changes.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.CheckBoxVisualizer">
+            <summary>
+            Provides a type visualizer representing a check box control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.CheckBoxVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.CheckBoxBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.CheckButtonBuilderBase">
+            <summary>
+            Provides an abstract base class with common check button control functionality.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.CheckButtonBuilderBase.Checked">
+            <summary>
+            Gets or sets a value indicating whether the button is checked.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.CheckButtonBuilderBase.Generate">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ComboBoxBuilder">
+            <summary>
+            Represents an operator that interfaces with a combo box control and generates
+            a sequence of notifications whenever the selection changes.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ComboBoxDataSourceBuilder">
+            <summary>
+            Represents an operator that interfaces with a combo box control bound to each data
+            source in the sequence and generates notifications whenever the selection changes.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ComboBoxDataSourceVisualizer">
+            <summary>
+            Provides a type visualizer representing a combo box control bound
+            to an arbitrary data source.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ComboBoxDataSourceVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.ComboBoxDataSourceBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ComboBoxVisualizer">
+            <summary>
+            Provides a type visualizer representing a combo box control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ComboBoxVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.ComboBoxBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ContainerControlVisualizerBase`2">
+            <summary>
+            Provides an abstract base class for visualizers representing UI elements which can
+            contain other nested UI elements.
+            </summary>
+            <typeparam name="TControl">
+            The type of the container control exposed by this type visualizer.
+            </typeparam>
+            <typeparam name="TControlBuilder">
+            The type of the workflow element used to create the container control.
+            </typeparam>
+        </member>
+        <member name="M:Bonsai.Gui.ContainerControlVisualizerBase`2.AddControl(System.Int32,System.Windows.Forms.Control)">
+            <summary>
+            Adds a control to the container at the specified index.
+            </summary>
+            <param name="index">The index of the control, following the order of visualizer sources.</param>
+            <param name="control">The control to add to the container.</param>
+        </member>
+        <member name="M:Bonsai.Gui.ContainerControlVisualizerBase`2.LoadMashupSource(System.Int32,Bonsai.Design.MashupSource,System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ContainerControlVisualizerBase`2.UnloadMashups">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ContainerControlVisualizerBase`2.GetMashupSource(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ControlBuilderBase">
+            <summary>
+            Provides an abstract base class for common UI control functionality.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ControlBuilderBase.Name">
+            <summary>
+            Gets or sets the name of the control.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ControlBuilderBase.Enabled">
+            <summary>
+            Gets or sets a value specifying whether the control can respond to user interaction.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ControlBuilderBase.Visible">
+            <summary>
+            Gets or sets a value specifying whether the control and all its child controls
+            are displayed.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ControlBuilderBase.Font">
+            <summary>
+            Gets or sets the font of the text displayed by the control.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ControlBuilderBase.FontXml">
+            <summary>
+            Gets or sets an XML representation of the font for serialization.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ControlBuilderBase.Build(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})">
+            <summary>
+            Builds the expression tree for configuring and calling the UI control.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ControlBuilderBase`1">
+            <summary>
+            Provides an abstract base class with common UI event source control functionality.
+            </summary>
+            <typeparam name="TEvent">The type of event notifications emitted by the UI control.</typeparam>
+        </member>
+        <member name="M:Bonsai.Gui.ControlBuilderBase`1.Build(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})">
+            <summary>
+            Builds the expression tree for configuring and calling the UI control.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ControlBuilderBase`1.Generate">
+            <summary>
+            Generates an observable sequence of event notifications from the UI control.
+            </summary>
+            <returns>
+            An observable sequence of events of type <typeparamref name="TEvent"/>.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Gui.ControlBuilderBase`2">
+            <summary>
+            Provides an abstract base class with common functionality for UI controls that
+            accept an optional sequence of command notifications.
+            </summary>
+            <typeparam name="TCommand">The type of command notifications accepted by the UI control.</typeparam>
+            <typeparam name="TEvent">The type of event notifications emitted by the UI control.</typeparam>
+        </member>
+        <member name="P:Bonsai.Gui.ControlBuilderBase`2.ArgumentRange">
+            <summary>
+            Gets the range of input arguments that this expression builder accepts.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ControlBuilderBase`2.Build(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})">
+            <summary>
+            Builds the expression tree for configuring and calling the UI control.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ControlBuilderBase`2.Generate(System.IObservable{`0})">
+            <summary>
+            Generates an observable sequence of event notifications from the UI control.
+            </summary>
+            <param name="source">
+            An observable sequence of commands of type <typeparamref name="TCommand"/>.
+            </param>
+            <returns>
+            An observable sequence of events of type <typeparamref name="TEvent"/>.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Gui.ControlExtensions">
+            <summary>
+            Provides a set of static methods for subscribing delegates to
+            observable sequences of event notifications.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ControlExtensions.SubscribeTo``1(System.Windows.Forms.Control,System.Collections.ObjectModel.ObservableCollection{``0},System.Action{``0[]})">
+            <summary>
+            Subscribes the control to change notifications in the specified
+            observable collection.
+            </summary>
+            <typeparam name="TSource">
+            The type of the elements in the <paramref name="source"/> collection.
+            </typeparam>
+            <param name="control">The control on which to observe notifications.</param>
+            <param name="source">
+            A data collection that provides notifications when items are added,
+            removed, or when the whole list is refreshed.
+            </param>
+            <param name="action">
+            The action to invoke on each new version of the observable collection.
+            </param>
+            <returns>
+            A disposable object used to unsubscribe from the observable sequence.
+            </returns>
+        </member>
+        <member name="M:Bonsai.Gui.ControlExtensions.SubscribeTo``1(System.Windows.Forms.Control,System.IObservable{``0},System.Action{``0})">
+            <summary>
+            Subscribes the control to event notifications from the specified
+            observable sequence.
+            </summary>
+            <typeparam name="TSource">
+            The type of the elements in the <paramref name="source"/> sequence.
+            </typeparam>
+            <param name="control">The control on which to observe notifications.</param>
+            <param name="source">The observable sequence of event notifications.</param>
+            <param name="action">The action to invoke on each event notification.</param>
+            <returns>
+            A disposable object used to unsubscribe from the observable sequence.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Gui.ControlVisualizerBase`2">
+            <summary>
+            Provides an abstract base class for visualizers representing individual UI elements.
+            </summary>
+            <typeparam name="TControl">The type of the control exposed by this type visualizer.</typeparam>
+            <typeparam name="TControlBuilder">The type of the workflow element used to create the control.</typeparam>
+        </member>
+        <member name="P:Bonsai.Gui.ControlVisualizerBase`2.Control">
+            <summary>
+            Gets the active control exposed by this type visualizer.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ControlVisualizerBase`2.CreateControl(System.IServiceProvider,`1)">
+            <summary>
+            Creates and configures the visual control associated with
+            the specified workflow operator.
+            </summary>
+            <param name="provider">
+            A service provider object which can be used to obtain visualization,
+            runtime inspection, or other editing services.
+            </param>
+            <param name="builder">
+            The <see cref="T:Bonsai.Expressions.ExpressionBuilder"/> object used to provide configuration
+            properties to the control.
+            </param>
+            <returns>
+            A new instance of the control class associated with the specified
+            workflow operator.
+            </returns>
+        </member>
+        <member name="M:Bonsai.Gui.ControlVisualizerBase`2.Load(System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ControlVisualizerBase`2.Show(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ControlVisualizerBase`2.Unload">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.DataSourceControlBuilderBase">
+            <summary>
+            Provides an abstract base class for UI controls which can be bound to each
+            data source from an observable sequence.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.DataSourceControlBuilderBase.ArgumentRange">
+            <summary>
+            Gets the range of input arguments that this expression builder accepts.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.DataSourceControlBuilderBase.Build(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})">
+            <summary>
+            Builds the expression tree for configuring and calling the UI control.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.DataSourceControlBuilderBase.Generate``1(System.IObservable{System.Collections.Generic.IList{``0}})">
+            <summary>
+            Generates an observable sequence of values containing the currently
+            selected item from the data source whenever the selection changes.
+            </summary>
+            <typeparam name="TValue">
+            The type of the values in the data source.
+            </typeparam>
+            <param name="source">
+            A sequence of collections representing the data sources to bind to
+            the UI control. Only one collection is bound at any one time.
+            </param>
+            <returns>
+            A sequence of values representing the currently selected item in
+            the UI control.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Gui.GroupBoxBuilder">
+            <summary>
+            Represents an operator that specifies a mashup visualizer that displays a frame
+            around a group of other visualizers with an optional caption.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.GroupBoxVisualizer">
+            <summary>
+            Provides a type visualizer that displays a frame around a group of other
+            visualizers with an optional caption.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.GroupBoxVisualizer.AddControl(System.Int32,System.Windows.Forms.Control)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.GroupBoxVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.GroupBoxBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.LabelBuilder">
+            <summary>
+            Represents an operator that interfaces with a label control.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.LabelVisualizer">
+            <summary>
+            Provides a type visualizer representing a label control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.LabelVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.LabelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ListBoxBuilder">
+            <summary>
+            Represents an operator that interfaces with a list box control and generates
+            a sequence of notifications whenever the selection changes.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ListBoxDataSourceBuilder">
+            <summary>
+            Represents an operator that interfaces with a list box control bound to each data
+            source in the sequence and generates notifications whenever the selection changes.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ListBoxDataSourceVisualizer">
+            <summary>
+            Provides a type visualizer representing a list box control bound
+            to an arbitrary data source.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ListBoxDataSourceVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.ListBoxDataSourceBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ListBoxVisualizer">
+            <summary>
+            Provides a type visualizer representing a list box control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ListBoxVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.ListBoxBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ListControlBuilderBase">
+            <summary>
+            Provides an abstract base class for interfacing with combo box and list box controls.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ListControlBuilderBase.Items">
+            <summary>
+            Gets the collection of items contained in the list control.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ListControlBuilderBase.SelectedItem">
+            <summary>
+            Gets or sets the currently selected item in the list control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ListControlBuilderBase.Generate">
+            <summary>
+            Generates an observable sequence of values containing the currently
+            selected item in the list control whenever the selection changes.
+            </summary>
+            <returns>
+            A sequence of <see cref="T:System.String"/> values representing the currently
+            selected item in the list control.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Gui.ListControlDataSourceBuilderBase">
+            <summary>
+            Provides an abstract base class for interfacing with combo box and list box controls
+            bound to each data source in an observable sequence.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ListControlDataSourceBuilderBase.DisplayMember">
+            <summary>
+            Gets or sets the property to display for this list control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ListControlDataSourceBuilderBase.Generate``1(System.IObservable{System.Collections.Generic.IList{``0}})">
+            <summary>
+            Generates an observable sequence of values containing the currently
+            selected item in the list control whenever the selection changes.
+            </summary>
+            <typeparam name="TValue">
+            The type of the values in the data source.
+            </typeparam>
+            <param name="source">
+            A sequence of collections representing the data sources to bind to
+            the list control. Only one collection is bound at any one time.
+            </param>
+            <returns>
+            A sequence of values representing the currently selected item in
+            the list control.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Gui.MashupControlVisualizerBase`2">
+            <summary>
+            Provides an abstract base class for visualizers representing UI elements which can
+            be combined with other visualizers.
+            </summary>
+            <typeparam name="TControl">
+            The type of the control exposed by this mashup visualizer.
+            </typeparam>
+            <typeparam name="TControlBuilder">
+            The type of the workflow element used to create the mashup control.
+            </typeparam>
+        </member>
+        <member name="P:Bonsai.Gui.MashupControlVisualizerBase`2.Control">
+            <summary>
+            Gets the active mashup control exposed by this type visualizer.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.MashupControlVisualizerBase`2.CreateControl(System.IServiceProvider,`1)">
+            <summary>
+            Creates and configures the mashup control associated with
+            the specified workflow operator.
+            </summary>
+            <param name="provider">
+            A service provider object which can be used to obtain visualization,
+            runtime inspection, or other editing services.
+            </param>
+            <param name="builder">
+            The <see cref="T:Bonsai.Expressions.ExpressionBuilder"/> object used to provide configuration
+            properties to the mashup control.
+            </param>
+            <returns>
+            A new instance of the mashup control class associated with the specified
+            workflow operator.
+            </returns>
+        </member>
+        <member name="M:Bonsai.Gui.MashupControlVisualizerBase`2.Load(System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.MashupControlVisualizerBase`2.LoadMashups(System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.MashupControlVisualizerBase`2.LoadMashupSource(System.Int32,Bonsai.Design.MashupSource,System.IServiceProvider)">
+            <summary>
+            Loads type visualizer resources for an individual mashup source in the
+            mashup visualizer.
+            </summary>
+            <param name="index">The zero-based index of the mashup source.</param>
+            <param name="mashupSource">The mashup source for which to load visualizer resources.</param>
+            <param name="provider">
+            A service provider object which can be used to obtain visualization,
+            runtime inspection, or other editing services.
+            </param>
+        </member>
+        <member name="M:Bonsai.Gui.MashupControlVisualizerBase`2.Show(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.MashupControlVisualizerBase`2.Visualize(System.IObservable{System.IObservable{System.Object}},System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.MashupControlVisualizerBase`2.Unload">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.PropertyGridBuilder">
+            <summary>
+            Represents an operator that interfaces with a property grid control for
+            browsing the properties of the workflow in which it is inserted.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.PropertyGridBuilder.HelpVisible">
+            <summary>
+            Gets or sets a value specifying whether the help text box is visible.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.PropertyGridBuilder.ToolbarVisible">
+            <summary>
+            Gets or sets a value specifying whether the toolbar is visible.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.PropertyGridBuilder.AutoRefresh">
+            <summary>
+            Gets or sets a value specifying whether the property grid should refresh
+            whenever the value of any property changes.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.PropertyGridVisualizer">
+            <summary>
+            Provides a type visualizer representing a property grid control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.PropertyGridVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.PropertyGridBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.RadioButtonBuilder">
+            <summary>
+            Represents an operator that interfaces with a radio button control and generates
+            a sequence of notifications whenever the checked status changes.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.RadioButtonVisualizer">
+            <summary>
+            Provides a type visualizer representing a radio button control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.RadioButtonVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.RadioButtonBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.SliderBuilder">
+            <summary>
+            Represents an operator that interfaces with a slider control and generates
+            a sequence of notifications whenever the slider value changes.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.SliderBuilder.Minimum">
+            <summary>
+            Gets or sets the lower limit of values in the slider.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.SliderBuilder.Maximum">
+            <summary>
+            Gets or sets the upper limit of values in the slider.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.SliderBuilder.DecimalPlaces">
+            <summary>
+            Gets or sets the optional maximum number of decimal places
+            used when formatting the numeric display of the slider.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.SliderBuilder.Value">
+            <summary>
+            Gets or sets a numeric value which represents the position of the slider.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.SliderBuilder.Generate">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.SliderVisualizer">
+            <summary>
+            Provides a type visualizer representing a slider control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.SliderVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.SliderBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.TabControlBuilder">
+            <summary>
+            Represents an operator that specifies a mashup visualizer that can be used
+            to arrange other visualizers using a related set of tab pages.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.TabControlVisualizer">
+            <summary>
+            Provides a type visualizer that can be used to arrange other visualizers
+            using a related set of tab pages.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.TabControlVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.TabControlBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.TabControlVisualizer.AddControl(System.Int32,System.Windows.Forms.Control)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.TableLayoutPanelBuilder">
+            <summary>
+            Represents an operator that specifies a mashup visualizer panel that can be used
+            to arrange other visualizers in a grid.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.TableLayoutPanelBuilder.ColumnCount">
+            <summary>
+            Gets or sets the number of columns in the visualizer grid layout.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.TableLayoutPanelBuilder.RowCount">
+            <summary>
+            Gets or sets the number of rows in the visualizer grid layout.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.TableLayoutPanelBuilder.ColumnStyles">
+            <summary>
+            Gets a collection of <see cref="T:System.Windows.Forms.ColumnStyle"/> objects specifying the size
+            ratio of the columns in the visualizer grid layout.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.TableLayoutPanelBuilder.RowStyles">
+            <summary>
+            Gets a collection of <see cref="T:System.Windows.Forms.RowStyle"/> objects specifying the size ratio
+            of the rows in the visualizer grid layout.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.TableLayoutPanelBuilder.CellSpans">
+            <summary>
+            Gets a collection of <see cref="T:Bonsai.Gui.TableLayoutPanelCellSpan"/> objects specifying the
+            column and row span of each cell in the visualizer grid layout.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.TableLayoutPanelCellSpan">
+            <summary>
+            Represents the vertical and horizontal span of a table layout cell.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.TableLayoutPanelCellSpan.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bonsai.Gui.TableLayoutPanelCellSpan"/> class.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.TableLayoutPanelCellSpan.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bonsai.Gui.TableLayoutPanelCellSpan"/> class
+            using the specified column and row span.
+            </summary>
+            <param name="columnSpan">The number of columns spanned by the table layout cell.</param>
+            <param name="rowSpan">The number of rows spanned by the table layout cell.</param>
+        </member>
+        <member name="P:Bonsai.Gui.TableLayoutPanelCellSpan.ColumnSpan">
+            <summary>
+            Gets the number of columns spanned by this table layout cell.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.TableLayoutPanelCellSpan.RowSpan">
+            <summary>
+            Gets the number of rows spanned by this table layout cell.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.TableLayoutPanelCellSpan.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.TableLayoutPanelVisualizer">
+            <summary>
+            Provides a type visualizer that can be used to arrange other visualizers in a grid.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.TableLayoutPanelVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.TableLayoutPanelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.TableLayoutPanelVisualizer.AddControl(System.Int32,System.Windows.Forms.Control)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.TableLayoutPanelVisualizer.LoadMashups(System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.TableLayoutPanelVisualizer.UnloadMashups">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.TableLayoutPanelVisualizer.Unload">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.TextBoxBuilder">
+            <summary>
+            Represents an operator that interfaces with a text box control and generates
+            a sequence of notifications whenever the text changes.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.TextBoxBuilder.Multiline">
+            <summary>
+            Gets or sets a value specifying whether the text box is multiline.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.TextBoxBuilder.Generate">
+            <summary>
+            Generates an observable sequence of values containing the contents
+            of the text box whenever the text changes.
+            </summary>
+            <returns>
+            A sequence of <see cref="T:System.String"/> values representing the contents
+            of the text box.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Gui.TextBoxVisualizer">
+            <summary>
+            Provides a type visualizer representing a text box control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.TextBoxVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.TextBoxBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.TextControlBuilderBase">
+            <summary>
+            Provides an abstract base class for common UI text control functionality.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.TextControlBuilderBase.Text">
+            <summary>
+            Gets or sets the text associated with this control.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.TextControlBuilderBase`1">
+            <summary>
+            Provides an abstract base class with common UI text and event source control functionality.
+            </summary>
+            <typeparam name="TEvent">The type of event notifications emitted by the UI control.</typeparam>
+        </member>
+        <member name="M:Bonsai.Gui.TextControlBuilderBase`1.Build(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})">
+            <summary>
+            Builds the expression tree for configuring and calling the UI control.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.TextControlBuilderBase`1.Generate">
+            <summary>
+            Generates an observable sequence of event notifications from the UI control.
+            </summary>
+            <returns>
+            An observable sequence of events of type <typeparamref name="TEvent"/>.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Gui.ToggleButtonBuilder">
+            <summary>
+            Represents an operator that interfaces with a toggle button control and generates
+            a sequence of notifications whenever the toggle status changes.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ToggleButtonVisualizer">
+            <summary>
+            Provides a type visualizer representing a toggle button control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ToggleButtonVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.ToggleButtonBuilder)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

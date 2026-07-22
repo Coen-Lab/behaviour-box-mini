@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Bonsai.Harp</id>
+    <version>3.6.1</version>
+    <title>Bonsai - Harp Library</title>
+    <authors>Bonsai Foundation</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://bonsai-rx.org/harp</projectUrl>
+    <description>Bonsai Library containing interfaces for data acquisition and control of devices implementing the Harp protocol.</description>
+    <copyright>Copyright © Bonsai Foundation CIC and Contributors</copyright>
+    <tags>Bonsai Rx Harp Hardware Protocol</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+      <packageType name="BonsaiLibrary" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/bonsai-rx/harp" commit="35b69c64c1fcf359aefbf884008303d0d5a9bbd6" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="Bonsai.Core" version="2.8.0" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.System" version="2.8.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Bonsai.Core" version="2.8.0" exclude="Build,Analyzers" />
+        <dependency id="Bonsai.System" version="2.8.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

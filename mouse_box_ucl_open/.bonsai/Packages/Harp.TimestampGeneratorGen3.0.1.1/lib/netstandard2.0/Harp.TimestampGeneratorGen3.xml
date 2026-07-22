@@ -1,0 +1,1823 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Harp.TimestampGeneratorGen3</name>
+    </assembly>
+    <members>
+        <member name="T:Harp.TimestampGeneratorGen3.Device">
+            <inheritdoc/>
+            <summary>
+            Generates events and processes commands for the TimestampGeneratorGen3 device connected
+            at the specified serial port.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Device.CreateAsync(System.String)">
+            <summary>
+            Initializes a new instance of the asynchronous API to configure and interface
+            with TimestampGeneratorGen3 devices on the specified serial port.
+            </summary>
+            <param name="portName">
+            The name of the serial port used to communicate with the Harp device.
+            </param>
+            <returns>
+            A task that represents the asynchronous initialization operation. The value of
+            the <see cref="P:System.Threading.Tasks.Task`1.Result"/> parameter contains a new instance of
+            the <see cref="T:Harp.TimestampGeneratorGen3.AsyncDevice"/> class.
+            </returns>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.Device.WhoAmI">
+            <summary>
+            Represents the unique identity class of the <see cref="N:Harp.TimestampGeneratorGen3"/> device.
+            This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Device.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Harp.TimestampGeneratorGen3.Device"/> class.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.Device.RegisterMap">
+            <summary>
+            Gets a read-only mapping from address to register type.
+            </summary>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.AsyncDevice">
+            <summary>
+            Represents an asynchronous API to configure and interface with TimestampGeneratorGen3 devices.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadConfigAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the Config register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedConfigAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the Config register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.WriteConfigAsync(Harp.TimestampGeneratorGen3.ConfigurationFlags,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the Config register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadDevicesConnectedAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the DevicesConnected register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedDevicesConnectedAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the DevicesConnected register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadRepeaterStatusAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the RepeaterStatus register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedRepeaterStatusAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the RepeaterStatus register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.WriteRepeaterStatusAsync(Harp.TimestampGeneratorGen3.RepeaterFlags,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the RepeaterStatus register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryRateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the BatteryRate register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryRateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the BatteryRate register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryRateAsync(Harp.TimestampGeneratorGen3.BatteryRateConfiguration,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the BatteryRate register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the Battery register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the Battery register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryThresholdLowAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the BatteryThresholdLow register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryThresholdLowAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the BatteryThresholdLow register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryThresholdLowAsync(System.Single,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the BatteryThresholdLow register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryThresholdHighAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the BatteryThresholdHigh register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryThresholdHighAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the BatteryThresholdHigh register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryThresholdHighAsync(System.Single,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the BatteryThresholdHigh register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryCalibration0Async(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the BatteryCalibration0 register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryCalibration0Async(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the BatteryCalibration0 register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryCalibration0Async(System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the BatteryCalibration0 register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryCalibration1Async(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the BatteryCalibration1 register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryCalibration1Async(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the BatteryCalibration1 register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryCalibration1Async(System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the BatteryCalibration1 register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimerAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the Timer register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedTimerAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the Timer register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.WriteTimerAsync(System.UInt32,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the Timer register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimerFrequencyAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the TimerFrequency register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedTimerFrequencyAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the TimerFrequency register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.AsyncDevice.WriteTimerFrequencyAsync(Harp.TimestampGeneratorGen3.TimerRate,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the TimerFrequency register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.GroupByRegister">
+            <summary>
+            Represents an operator that groups the sequence of <see cref="N:Harp.TimestampGeneratorGen3"/>" messages by register type.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.GroupByRegister.Process(System.IObservable{Bonsai.Harp.HarpMessage})">
+            <summary>
+            Groups an observable sequence of <see cref="N:Harp.TimestampGeneratorGen3"/> messages
+            by register type.
+            </summary>
+            <param name="source">The sequence of Harp device messages.</param>
+            <returns>
+            A sequence of observable groups, each of which corresponds to a unique
+            <see cref="N:Harp.TimestampGeneratorGen3"/> register.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.FilterRegister">
+            <summary>
+            Represents an operator that filters register-specific messages
+            reported by the <see cref="N:Harp.TimestampGeneratorGen3"/> device.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Config"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Battery"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Timer"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.FilterRegister.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Harp.TimestampGeneratorGen3.FilterRegister"/> class.
+            </summary>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.Parse">
+            <summary>
+            Represents an operator which filters and selects specific messages
+            reported by the TimestampGeneratorGen3 device.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Config"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Battery"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Timer"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Parse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Harp.TimestampGeneratorGen3.Parse"/> class.
+            </summary>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.Format">
+            <summary>
+            Represents an operator which formats a sequence of values as specific
+            TimestampGeneratorGen3 register messages.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Config"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Battery"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Timer"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Format.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Harp.TimestampGeneratorGen3.Format"/> class.
+            </summary>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.Config">
+            <summary>
+            Represents a register that specifies the device configuration.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.Config.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.Config"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.Config.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:Harp.TimestampGeneratorGen3.Config"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.Config.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:Harp.TimestampGeneratorGen3.Config"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Config.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:Harp.TimestampGeneratorGen3.Config"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Config.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.Config"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Config.FromPayload(Bonsai.Harp.MessageType,Harp.TimestampGeneratorGen3.ConfigurationFlags)">
+            <summary>
+            Returns a Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.Config"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.Config"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Config.FromPayload(System.Double,Bonsai.Harp.MessageType,Harp.TimestampGeneratorGen3.ConfigurationFlags)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.Config"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.Config"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimestampedConfig">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            Config register.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Config"/>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimestampedConfig.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.Config"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimestampedConfig.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.Config"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.DevicesConnected">
+            <summary>
+            Represents a register that specifies which CLK_OUT ports have devices connected.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.DevicesConnected.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.DevicesConnected.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.DevicesConnected.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.DevicesConnected.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.DevicesConnected.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.DevicesConnected.FromPayload(Bonsai.Harp.MessageType,Harp.TimestampGeneratorGen3.ConnectedDevices)">
+            <summary>
+            Returns a Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.DevicesConnected.FromPayload(System.Double,Bonsai.Harp.MessageType,Harp.TimestampGeneratorGen3.ConnectedDevices)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimestampedDevicesConnected">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            DevicesConnected register.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimestampedDevicesConnected.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimestampedDevicesConnected.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.DevicesConnected"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.RepeaterStatus">
+            <summary>
+            Represents a register that check whether device is a repeater or spreading internal timestamp.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.RepeaterStatus.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.RepeaterStatus.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.RepeaterStatus.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.RepeaterStatus.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.RepeaterStatus.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.RepeaterStatus.FromPayload(Bonsai.Harp.MessageType,Harp.TimestampGeneratorGen3.RepeaterFlags)">
+            <summary>
+            Returns a Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.RepeaterStatus.FromPayload(System.Double,Bonsai.Harp.MessageType,Harp.TimestampGeneratorGen3.RepeaterFlags)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimestampedRepeaterStatus">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            RepeaterStatus register.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimestampedRepeaterStatus.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimestampedRepeaterStatus.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.RepeaterStatus"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.BatteryRate">
+            <summary>
+            Represents a register that configure how often the battery value is sent to computer.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryRate.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryRate.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryRate.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryRate.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryRate.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryRate.FromPayload(Bonsai.Harp.MessageType,Harp.TimestampGeneratorGen3.BatteryRateConfiguration)">
+            <summary>
+            Returns a Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryRate.FromPayload(System.Double,Bonsai.Harp.MessageType,Harp.TimestampGeneratorGen3.BatteryRateConfiguration)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimestampedBatteryRate">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            BatteryRate register.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimestampedBatteryRate.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimestampedBatteryRate.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryRate"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.Battery">
+            <summary>
+            Represents a register that reads the current battery charge.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.Battery.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.Battery"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.Battery.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:Harp.TimestampGeneratorGen3.Battery"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.Battery.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:Harp.TimestampGeneratorGen3.Battery"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Battery.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:Harp.TimestampGeneratorGen3.Battery"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Battery.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.Battery"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Battery.FromPayload(Bonsai.Harp.MessageType,System.Single)">
+            <summary>
+            Returns a Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.Battery"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.Battery"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Battery.FromPayload(System.Double,Bonsai.Harp.MessageType,System.Single)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.Battery"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.Battery"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimestampedBattery">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            Battery register.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Battery"/>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimestampedBattery.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.Battery"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimestampedBattery.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.Battery"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow">
+            <summary>
+            Represents a register that specifies the low threshold from where the battery should start to be charged.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryThresholdLow.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryThresholdLow.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryThresholdLow.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryThresholdLow.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryThresholdLow.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryThresholdLow.FromPayload(Bonsai.Harp.MessageType,System.Single)">
+            <summary>
+            Returns a Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryThresholdLow.FromPayload(System.Double,Bonsai.Harp.MessageType,System.Single)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimestampedBatteryThresholdLow">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            BatteryThresholdLow register.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimestampedBatteryThresholdLow.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimestampedBatteryThresholdLow.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdLow"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh">
+            <summary>
+            Represents a register that specifies the high threshold from where the battery stops being charged.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryThresholdHigh.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryThresholdHigh.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryThresholdHigh.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryThresholdHigh.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryThresholdHigh.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryThresholdHigh.FromPayload(Bonsai.Harp.MessageType,System.Single)">
+            <summary>
+            Returns a Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryThresholdHigh.FromPayload(System.Double,Bonsai.Harp.MessageType,System.Single)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimestampedBatteryThresholdHigh">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            BatteryThresholdHigh register.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimestampedBatteryThresholdHigh.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimestampedBatteryThresholdHigh.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryThresholdHigh"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.BatteryCalibration0">
+            <summary>
+            Represents a register that manipulates messages from register BatteryCalibration0.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryCalibration0.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryCalibration0.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryCalibration0.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryCalibration0.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryCalibration0.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryCalibration0.FromPayload(Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryCalibration0.FromPayload(System.Double,Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimestampedBatteryCalibration0">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            BatteryCalibration0 register.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimestampedBatteryCalibration0.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimestampedBatteryCalibration0.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration0"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.BatteryCalibration1">
+            <summary>
+            Represents a register that manipulates messages from register BatteryCalibration1.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryCalibration1.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryCalibration1.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.BatteryCalibration1.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryCalibration1.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryCalibration1.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryCalibration1.FromPayload(Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.BatteryCalibration1.FromPayload(System.Double,Bonsai.Harp.MessageType,System.UInt16)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimestampedBatteryCalibration1">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            BatteryCalibration1 register.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimestampedBatteryCalibration1.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimestampedBatteryCalibration1.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.BatteryCalibration1"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.Timer">
+            <summary>
+            Represents a register that unitary counter that periodically produces a value at the frequency defined by register TimerFrequency.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.Timer.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.Timer"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.Timer.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:Harp.TimestampGeneratorGen3.Timer"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.Timer.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:Harp.TimestampGeneratorGen3.Timer"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Timer.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:Harp.TimestampGeneratorGen3.Timer"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Timer.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.Timer"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Timer.FromPayload(Bonsai.Harp.MessageType,System.UInt32)">
+            <summary>
+            Returns a Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.Timer"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.Timer"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.Timer.FromPayload(System.Double,Bonsai.Harp.MessageType,System.UInt32)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.Timer"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.Timer"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimestampedTimer">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            Timer register.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.Timer"/>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimestampedTimer.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.Timer"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimestampedTimer.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.Timer"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimerFrequency">
+            <summary>
+            Represents a register that frequency at which the Timer will generate new values.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimerFrequency.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimerFrequency.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimerFrequency.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimerFrequency.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimerFrequency.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimerFrequency.FromPayload(Bonsai.Harp.MessageType,Harp.TimestampGeneratorGen3.TimerRate)">
+            <summary>
+            Returns a Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimerFrequency.FromPayload(System.Double,Bonsai.Harp.MessageType,Harp.TimestampGeneratorGen3.TimerRate)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimestampedTimerFrequency">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            TimerFrequency register.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.TimestampedTimerFrequency.Address">
+            <summary>
+            Represents the address of the <see cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.TimestampedTimerFrequency.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:Harp.TimestampGeneratorGen3.TimerFrequency"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateMessage">
+            <summary>
+            Represents an operator which creates standard message payloads for the
+            TimestampGeneratorGen3 device.
+            </summary>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.CreateConfigPayload"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.CreateDevicesConnectedPayload"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.CreateRepeaterStatusPayload"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.CreateBatteryRatePayload"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.CreateBatteryPayload"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.CreateBatteryThresholdLowPayload"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.CreateBatteryThresholdHighPayload"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.CreateBatteryCalibration0Payload"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.CreateBatteryCalibration1Payload"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.CreateTimerPayload"/>
+            <seealso cref="T:Harp.TimestampGeneratorGen3.CreateTimerFrequencyPayload"/>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Harp.TimestampGeneratorGen3.CreateMessage"/> class.
+            </summary>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateConfigPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that specifies the device configuration.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.CreateConfigPayload.Config">
+            <summary>
+            Gets or sets the value that specifies the device configuration.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateConfigPayload.GetPayload">
+            <summary>
+            Creates a message payload for the Config register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateConfigPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that specifies the device configuration.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the Config register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimestampedConfigPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that specifies the device configuration.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimestampedConfigPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that specifies the device configuration.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the Config register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateDevicesConnectedPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that specifies which CLK_OUT ports have devices connected.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.CreateDevicesConnectedPayload.DevicesConnected">
+            <summary>
+            Gets or sets the value that specifies which CLK_OUT ports have devices connected.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateDevicesConnectedPayload.GetPayload">
+            <summary>
+            Creates a message payload for the DevicesConnected register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateDevicesConnectedPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that specifies which CLK_OUT ports have devices connected.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the DevicesConnected register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimestampedDevicesConnectedPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that specifies which CLK_OUT ports have devices connected.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimestampedDevicesConnectedPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that specifies which CLK_OUT ports have devices connected.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the DevicesConnected register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateRepeaterStatusPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that check whether device is a repeater or spreading internal timestamp.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.CreateRepeaterStatusPayload.RepeaterStatus">
+            <summary>
+            Gets or sets the value that check whether device is a repeater or spreading internal timestamp.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateRepeaterStatusPayload.GetPayload">
+            <summary>
+            Creates a message payload for the RepeaterStatus register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateRepeaterStatusPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that check whether device is a repeater or spreading internal timestamp.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the RepeaterStatus register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimestampedRepeaterStatusPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that check whether device is a repeater or spreading internal timestamp.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimestampedRepeaterStatusPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that check whether device is a repeater or spreading internal timestamp.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the RepeaterStatus register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateBatteryRatePayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that configure how often the battery value is sent to computer.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.CreateBatteryRatePayload.BatteryRate">
+            <summary>
+            Gets or sets the value that configure how often the battery value is sent to computer.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryRatePayload.GetPayload">
+            <summary>
+            Creates a message payload for the BatteryRate register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryRatePayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that configure how often the battery value is sent to computer.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the BatteryRate register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryRatePayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that configure how often the battery value is sent to computer.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryRatePayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that configure how often the battery value is sent to computer.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the BatteryRate register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateBatteryPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that reads the current battery charge.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.CreateBatteryPayload.Battery">
+            <summary>
+            Gets or sets the value that reads the current battery charge.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryPayload.GetPayload">
+            <summary>
+            Creates a message payload for the Battery register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that reads the current battery charge.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the Battery register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that reads the current battery charge.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that reads the current battery charge.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the Battery register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateBatteryThresholdLowPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that specifies the low threshold from where the battery should start to be charged.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.CreateBatteryThresholdLowPayload.BatteryThresholdLow">
+            <summary>
+            Gets or sets the value that specifies the low threshold from where the battery should start to be charged.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryThresholdLowPayload.GetPayload">
+            <summary>
+            Creates a message payload for the BatteryThresholdLow register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryThresholdLowPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that specifies the low threshold from where the battery should start to be charged.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the BatteryThresholdLow register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryThresholdLowPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that specifies the low threshold from where the battery should start to be charged.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryThresholdLowPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that specifies the low threshold from where the battery should start to be charged.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the BatteryThresholdLow register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateBatteryThresholdHighPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that specifies the high threshold from where the battery stops being charged.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.CreateBatteryThresholdHighPayload.BatteryThresholdHigh">
+            <summary>
+            Gets or sets the value that specifies the high threshold from where the battery stops being charged.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryThresholdHighPayload.GetPayload">
+            <summary>
+            Creates a message payload for the BatteryThresholdHigh register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryThresholdHighPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that specifies the high threshold from where the battery stops being charged.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the BatteryThresholdHigh register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryThresholdHighPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that specifies the high threshold from where the battery stops being charged.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryThresholdHighPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that specifies the high threshold from where the battery stops being charged.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the BatteryThresholdHigh register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateBatteryCalibration0Payload">
+            <summary>
+            Represents an operator that creates a message payload
+            for register BatteryCalibration0.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.CreateBatteryCalibration0Payload.BatteryCalibration0">
+            <summary>
+            Gets or sets the value for register BatteryCalibration0.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryCalibration0Payload.GetPayload">
+            <summary>
+            Creates a message payload for the BatteryCalibration0 register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryCalibration0Payload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message for register BatteryCalibration0.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the BatteryCalibration0 register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryCalibration0Payload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            for register BatteryCalibration0.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryCalibration0Payload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message for register BatteryCalibration0.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the BatteryCalibration0 register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateBatteryCalibration1Payload">
+            <summary>
+            Represents an operator that creates a message payload
+            for register BatteryCalibration1.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.CreateBatteryCalibration1Payload.BatteryCalibration1">
+            <summary>
+            Gets or sets the value for register BatteryCalibration1.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryCalibration1Payload.GetPayload">
+            <summary>
+            Creates a message payload for the BatteryCalibration1 register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateBatteryCalibration1Payload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message for register BatteryCalibration1.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the BatteryCalibration1 register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryCalibration1Payload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            for register BatteryCalibration1.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimestampedBatteryCalibration1Payload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message for register BatteryCalibration1.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the BatteryCalibration1 register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimerPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that unitary counter that periodically produces a value at the frequency defined by register TimerFrequency.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.CreateTimerPayload.Timer">
+            <summary>
+            Gets or sets the value that unitary counter that periodically produces a value at the frequency defined by register TimerFrequency.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimerPayload.GetPayload">
+            <summary>
+            Creates a message payload for the Timer register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimerPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that unitary counter that periodically produces a value at the frequency defined by register TimerFrequency.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the Timer register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimestampedTimerPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that unitary counter that periodically produces a value at the frequency defined by register TimerFrequency.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimestampedTimerPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that unitary counter that periodically produces a value at the frequency defined by register TimerFrequency.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the Timer register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimerFrequencyPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that frequency at which the Timer will generate new values.
+            </summary>
+        </member>
+        <member name="P:Harp.TimestampGeneratorGen3.CreateTimerFrequencyPayload.TimerFrequency">
+            <summary>
+            Gets or sets the value that frequency at which the Timer will generate new values.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimerFrequencyPayload.GetPayload">
+            <summary>
+            Creates a message payload for the TimerFrequency register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimerFrequencyPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that frequency at which the Timer will generate new values.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the TimerFrequency register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.CreateTimestampedTimerFrequencyPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that frequency at which the Timer will generate new values.
+            </summary>
+        </member>
+        <member name="M:Harp.TimestampGeneratorGen3.CreateTimestampedTimerFrequencyPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that frequency at which the Timer will generate new values.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the TimerFrequency register.</returns>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.ConfigurationFlags">
+            <summary>
+            Specifies configuration flags for the device.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.ConfigurationFlags.None">
+            <summary>
+            Specifies that no flags are defined.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.ConfigurationFlags.StartBatteryCycle">
+            <summary>
+            Starts battery cycle to extend batteries life.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.ConfigurationFlags.StartDischarge">
+            <summary>
+            Starts to discharge right away.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.ConfigurationFlags.StartCharge">
+            <summary>
+            Starts to charge right away.
+            </summary>
+        </member>
+        <member name="F:Harp.TimestampGeneratorGen3.ConfigurationFlags.Stop">
+            <summary>
+            Stop any control of the battery and resume normal function.
+            </summary>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.ConnectedDevices">
+            <summary>
+            Specifies if an output port has a device connected.
+            </summary>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.RepeaterFlags">
+            <summary>
+            Specifies whether the device is a clock repeater.
+            </summary>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.BatteryRateConfiguration">
+            <summary>
+            Specifies the rate at which the battery charge event is sent.
+            </summary>
+        </member>
+        <member name="T:Harp.TimestampGeneratorGen3.TimerRate">
+            <summary>
+            Specifies the rate at which the timer counter is sent.
+            </summary>
+        </member>
+    </members>
+</doc>

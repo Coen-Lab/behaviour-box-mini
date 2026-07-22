@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Harp.TimestampGeneratorGen3</id>
+    <version>0.1.1</version>
+    <title>Harp - TimestampGenerator Gen3</title>
+    <authors>harp-tech</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://harp-tech.org/</projectUrl>
+    <description>Bonsai Library containing interfaces for data acquisition and control of Harp TimestampGenerator Gen3 devices.</description>
+    <copyright>Copyright © harp-tech and Contributors 2023</copyright>
+    <tags>Harp TimestampGenerator Gen3 Bonsai Rx</tags>
+    <repository type="git" url="https://github.com/harp-tech/device.timestampgeneratorgen3.git" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="Bonsai.Harp" version="3.5.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Bonsai.Harp" version="3.5.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

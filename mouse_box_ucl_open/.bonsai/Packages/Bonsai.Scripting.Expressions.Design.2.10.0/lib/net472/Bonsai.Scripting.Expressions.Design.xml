@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bonsai.Scripting.Expressions.Design</name>
+    </assembly>
+    <members>
+        <member name="T:Bonsai.Scripting.Expressions.Design.CaretExpressionAnalyzer">
+            <summary>
+            Analyzes the expression at selected caret position to determine the nearest declaring type.
+            Some parts of the code is based on https://github.com/zzzprojects/System.Linq.Dynamic.Core
+            and licensed under the Apache 2.0 license.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Scripting.Expressions.Design.StringParser">
+            <summary>
+            Parse a Double and Single Quoted string.
+            Some parts of the code is based on https://github.com/zzzprojects/Eval-Expression.NET
+            </summary>
+        </member>
+        <member name="T:Bonsai.Scripting.Expressions.Design.ExpressionScriptEditor">
+            <summary>
+            Provides a user interface editor that displays a dialog box for editing
+            the expression script.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Scripting.Expressions.Design.ExpressionScriptEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Scripting.Expressions.Design.ScintillaExpressionScriptEditor.#ctor(System.Drawing.Design.UITypeEditor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bonsai.Scripting.Expressions.Design.ScintillaExpressionScriptEditor"/> class.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Scripting.Expressions.Design.ScintillaExpressionScriptEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="F:Bonsai.Scripting.Expressions.Design.ExpressionScriptEditorDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Scripting.Expressions.Design.ExpressionScriptEditorDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Bonsai.Scripting.Expressions.Design.ExpressionScriptEditorDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Scripting.Expressions.Design.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Scripting.Expressions.Design.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Scripting.Expressions.Design.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Scripting.Expressions.Design.Properties.Resources.FieldIcon">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Scripting.Expressions.Design.Properties.Resources.MethodIcon">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Scripting.Expressions.Design.Properties.Resources.PropertyIcon">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Scripting.Expressions.Design.Properties.Resources.TypeIcon">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>

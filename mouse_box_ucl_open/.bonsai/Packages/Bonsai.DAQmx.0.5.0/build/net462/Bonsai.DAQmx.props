@@ -1,0 +1,12 @@
+﻿<Project>
+  <ItemGroup Condition="'$(Platform)' == 'x86'">
+    <Reference Include="NationalInstruments.DAQmx">
+      <HintPath>$(MSBuildThisFileDirectory)../../build/net462/bin/x86/NationalInstruments.DAQmx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)' == 'x64'">
+    <Reference Include="NationalInstruments.DAQmx">
+      <HintPath>$(MSBuildThisFileDirectory)../../build/net462/bin/x64/NationalInstruments.DAQmx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

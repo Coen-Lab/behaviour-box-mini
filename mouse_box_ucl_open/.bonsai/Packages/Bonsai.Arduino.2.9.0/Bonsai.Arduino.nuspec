@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Bonsai.Arduino</id>
+    <version>2.9.0</version>
+    <title>Bonsai - Arduino Library</title>
+    <authors>Bonsai Foundation</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://bonsai-rx.org/arduino</projectUrl>
+    <description>Bonsai Library containing reactive infrastructure to probe and control the state of Arduino microcontrollers.</description>
+    <copyright>Copyright © Bonsai Foundation CIC and Contributors</copyright>
+    <tags>Bonsai Rx Arduino</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+      <packageType name="BonsaiLibrary" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/bonsai-rx/arduino" commit="e5f11b9e99355fd7306a66d8a415364a5045bb7f" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="Bonsai.System" version="2.8.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Bonsai.System" version="2.8.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

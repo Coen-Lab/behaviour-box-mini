@@ -1,0 +1,5 @@
+<Project>
+  <Target Name="PortAudioNetMissingRuntimeIdWarning" BeforeTargets="Build" Condition="'$(RuntimeIdentifier)' == '' and '$(SuppressPortAudioNetMissingRuntimeIdWarning)' != 'true' and '$(SuppressMissingRuntimeIdWarnings)' != 'true'">
+    <Warning Text="Runtime identifier is not set! PortAudio.NET's native runtime package will not have been restored, which will lead to runtime exceptions. Set `UseCurrentRuntimeIdentifier` to true in your csproj to fix." />
+  </Target>
+</Project>

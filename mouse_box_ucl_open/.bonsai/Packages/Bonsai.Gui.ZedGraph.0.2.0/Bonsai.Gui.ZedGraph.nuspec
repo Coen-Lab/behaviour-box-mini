@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Bonsai.Gui.ZedGraph</id>
+    <version>0.2.0</version>
+    <title>Bonsai - GUI ZedGraph</title>
+    <authors>Bonsai Foundation</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://bonsai-rx.org/gui</projectUrl>
+    <description>Bonsai Library for composing real-time data visualizers using ZedGraph.</description>
+    <copyright>Copyright © Bonsai Foundation CIC and Contributors</copyright>
+    <tags>Bonsai Rx GUI Graphical User Interface ZedGraph Visualizers</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+      <packageType name="BonsaiLibrary" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/bonsai-rx/gui" commit="18d2520e94d7966dbe20c72f3af979a69fec35b2" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="Bonsai.Gui" version="0.2.0" exclude="Build,Analyzers" />
+        <dependency id="ZedGraph" version="5.1.7" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

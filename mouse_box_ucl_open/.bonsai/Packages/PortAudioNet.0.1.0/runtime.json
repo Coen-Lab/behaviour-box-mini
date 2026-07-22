@@ -1,0 +1,9 @@
+{
+  "runtimes": {
+    "win-x64": {
+      "PortAudioNet": {
+        "PortAudioNet.Native.win-x64": "[0.1.0]"
+      }
+    }
+  }
+}

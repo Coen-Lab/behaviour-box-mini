@@ -1,0 +1,586 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AllenNeuralDynamics.LicketySplit</name>
+    </assembly>
+    <members>
+        <member name="T:AllenNeuralDynamics.LicketySplit.Device">
+            <inheritdoc/>
+            <summary>
+            Generates events and processes commands for the LicketySplit device connected
+            at the specified serial port.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Device.CreateAsync(System.String)">
+            <summary>
+            Initializes a new instance of the asynchronous API to configure and interface
+            with LicketySplit devices on the specified serial port.
+            </summary>
+            <param name="portName">
+            The name of the serial port used to communicate with the Harp device.
+            </param>
+            <returns>
+            A task that represents the asynchronous initialization operation. The value of
+            the <see cref="P:System.Threading.Tasks.Task`1.Result"/> parameter contains a new instance of
+            the <see cref="T:AllenNeuralDynamics.LicketySplit.AsyncDevice"/> class.
+            </returns>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.Device.WhoAmI">
+            <summary>
+            Represents the unique identity class of the <see cref="N:AllenNeuralDynamics.LicketySplit"/> device.
+            This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Device.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.LicketySplit.Device"/> class.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.LicketySplit.Device.RegisterMap">
+            <summary>
+            Gets a read-only mapping from address to register type.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.Device.Metadata">
+            <summary>
+            Gets the contents of the metadata file describing the <see cref="N:AllenNeuralDynamics.LicketySplit"/>
+            device registers.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.AsyncDevice">
+            <summary>
+            Represents an asynchronous API to configure and interface with LicketySplit devices.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.AsyncDevice.ReadLickStateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the LickState register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.AsyncDevice.ReadTimestampedLickStateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the LickState register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.AsyncDevice.ReadChannel0TriggerThresholdAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the Channel0TriggerThreshold register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.AsyncDevice.ReadTimestampedChannel0TriggerThresholdAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the Channel0TriggerThreshold register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.AsyncDevice.WriteChannel0TriggerThresholdAsync(System.Byte,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the Channel0TriggerThreshold register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.AsyncDevice.ReadChannel0UntriggerThresholdAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the contents of the Channel0UntriggerThreshold register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.AsyncDevice.ReadTimestampedChannel0UntriggerThresholdAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads the timestamped contents of the Channel0UntriggerThreshold register.
+            </summary>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>
+            A task that represents the asynchronous read operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/>
+            property contains the timestamped register payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.AsyncDevice.WriteChannel0UntriggerThresholdAsync(System.Byte,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes a value to the Channel0UntriggerThreshold register.
+            </summary>
+            <param name="value">The value to be stored in the register.</param>
+            <param name="cancellationToken">
+            A <see cref="T:System.Threading.CancellationToken"/> which can be used to cancel the operation.
+            </param>
+            <returns>The task object representing the asynchronous write operation.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.GetMetadata">
+            <summary>
+            Represents an operator that returns the contents of the metadata file
+            describing the <see cref="N:AllenNeuralDynamics.LicketySplit"/> device registers.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.GetMetadata.Generate">
+            <summary>
+            Returns an observable sequence with the contents of the metadata file
+            describing the <see cref="N:AllenNeuralDynamics.LicketySplit"/> device registers.
+            </summary>
+            <returns>
+            A sequence with a single <see cref="T:System.String"/> object representing the
+            contents of the metadata file.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.GroupByRegister">
+            <summary>
+            Represents an operator that groups the sequence of <see cref="N:AllenNeuralDynamics.LicketySplit"/>" messages by register type.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.GroupByRegister.Process(System.IObservable{Bonsai.Harp.HarpMessage})">
+            <summary>
+            Groups an observable sequence of <see cref="N:AllenNeuralDynamics.LicketySplit"/> messages
+            by register type.
+            </summary>
+            <param name="source">The sequence of Harp device messages.</param>
+            <returns>
+            A sequence of observable groups, each of which corresponds to a unique
+            <see cref="N:AllenNeuralDynamics.LicketySplit"/> register.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.FilterRegister">
+            <summary>
+            Represents an operator that filters register-specific messages
+            reported by the <see cref="N:AllenNeuralDynamics.LicketySplit"/> device.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.LickState"/>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.FilterRegister.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.LicketySplit.FilterRegister"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.Parse">
+            <summary>
+            Represents an operator which filters and selects specific messages
+            reported by the LicketySplit device.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.LickState"/>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Parse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.LicketySplit.Parse"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.Format">
+            <summary>
+            Represents an operator which formats a sequence of values as specific
+            LicketySplit register messages.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.LickState"/>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Format.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.LicketySplit.Format"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.LickState">
+            <summary>
+            Represents a register that emits an event when the state of any lick detector changes. Value will be High when lick detected and Low otherwise.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.LickState.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.LicketySplit.LickState"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.LickState.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.LicketySplit.LickState"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.LickState.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.LicketySplit.LickState"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.LickState.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.LicketySplit.LickState"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.LickState.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.LicketySplit.LickState"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.LickState.FromPayload(Bonsai.Harp.MessageType,AllenNeuralDynamics.LicketySplit.LickChannels)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.LicketySplit.LickState"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.LicketySplit.LickState"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.LickState.FromPayload(System.Double,Bonsai.Harp.MessageType,AllenNeuralDynamics.LicketySplit.LickChannels)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.LicketySplit.LickState"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.LicketySplit.LickState"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.TimestampedLickState">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            LickState register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.LickState"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.TimestampedLickState.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.LicketySplit.LickState"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.TimestampedLickState.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.LicketySplit.LickState"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold">
+            <summary>
+            Represents a register that threshold value to detect the lick. Values below this threshold will be considered a detected lick.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold.FromPayload(Bonsai.Harp.MessageType,System.Byte)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold.FromPayload(System.Double,Bonsai.Harp.MessageType,System.Byte)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.TimestampedChannel0TriggerThreshold">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            Channel0TriggerThreshold register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.TimestampedChannel0TriggerThreshold.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.TimestampedChannel0TriggerThreshold.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0TriggerThreshold"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold">
+            <summary>
+            Represents a register that threshold value to release the lick detection state. Values above this threshold will untrigger a detected lick.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold.RegisterType">
+            <summary>
+            Represents the payload type of the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold.RegisterLength">
+            <summary>
+            Represents the length of the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the payload data for <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold.GetTimestampedPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns the timestamped payload data for <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold.FromPayload(Bonsai.Harp.MessageType,System.Byte)">
+            <summary>
+            Returns a Harp message for the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/> register.
+            </summary>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/> register
+            with the specified message type and payload.
+            </returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold.FromPayload(System.Double,Bonsai.Harp.MessageType,System.Byte)">
+            <summary>
+            Returns a timestamped Harp message for the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/>
+            register.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">The type of the Harp message.</param>
+            <param name="value">The value to be stored in the message payload.</param>
+            <returns>
+            A <see cref="T:Bonsai.Harp.HarpMessage"/> object for the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/> register
+            with the specified message type, timestamp, and payload.
+            </returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.TimestampedChannel0UntriggerThreshold">
+            <summary>
+            Provides methods for manipulating timestamped messages from the
+            Channel0UntriggerThreshold register.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/>
+        </member>
+        <member name="F:AllenNeuralDynamics.LicketySplit.TimestampedChannel0UntriggerThreshold.Address">
+            <summary>
+            Represents the address of the <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/> register. This field is constant.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.TimestampedChannel0UntriggerThreshold.GetPayload(Bonsai.Harp.HarpMessage)">
+            <summary>
+            Returns timestamped payload data for <see cref="T:AllenNeuralDynamics.LicketySplit.Channel0UntriggerThreshold"/> register messages.
+            </summary>
+            <param name="message">A <see cref="T:Bonsai.Harp.HarpMessage"/> object representing the register message.</param>
+            <returns>A value representing the timestamped message payload.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.CreateMessage">
+            <summary>
+            Represents an operator which creates standard message payloads for the
+            LicketySplit device.
+            </summary>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.CreateLickStatePayload"/>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.CreateChannel0TriggerThresholdPayload"/>
+            <seealso cref="T:AllenNeuralDynamics.LicketySplit.CreateChannel0UntriggerThresholdPayload"/>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.CreateMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AllenNeuralDynamics.LicketySplit.CreateMessage"/> class.
+            </summary>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.CreateLickStatePayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that emits an event when the state of any lick detector changes. Value will be High when lick detected and Low otherwise.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.LicketySplit.CreateLickStatePayload.LickState">
+            <summary>
+            Gets or sets the value that emits an event when the state of any lick detector changes. Value will be High when lick detected and Low otherwise.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.CreateLickStatePayload.GetPayload">
+            <summary>
+            Creates a message payload for the LickState register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.CreateLickStatePayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that emits an event when the state of any lick detector changes. Value will be High when lick detected and Low otherwise.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the LickState register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.CreateTimestampedLickStatePayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that emits an event when the state of any lick detector changes. Value will be High when lick detected and Low otherwise.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.CreateTimestampedLickStatePayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that emits an event when the state of any lick detector changes. Value will be High when lick detected and Low otherwise.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the LickState register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.CreateChannel0TriggerThresholdPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that threshold value to detect the lick. Values below this threshold will be considered a detected lick.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.LicketySplit.CreateChannel0TriggerThresholdPayload.Channel0TriggerThreshold">
+            <summary>
+            Gets or sets the value that threshold value to detect the lick. Values below this threshold will be considered a detected lick.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.CreateChannel0TriggerThresholdPayload.GetPayload">
+            <summary>
+            Creates a message payload for the Channel0TriggerThreshold register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.CreateChannel0TriggerThresholdPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that threshold value to detect the lick. Values below this threshold will be considered a detected lick.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the Channel0TriggerThreshold register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.CreateTimestampedChannel0TriggerThresholdPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that threshold value to detect the lick. Values below this threshold will be considered a detected lick.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.CreateTimestampedChannel0TriggerThresholdPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that threshold value to detect the lick. Values below this threshold will be considered a detected lick.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the Channel0TriggerThreshold register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.CreateChannel0UntriggerThresholdPayload">
+            <summary>
+            Represents an operator that creates a message payload
+            that threshold value to release the lick detection state. Values above this threshold will untrigger a detected lick.
+            </summary>
+        </member>
+        <member name="P:AllenNeuralDynamics.LicketySplit.CreateChannel0UntriggerThresholdPayload.Channel0UntriggerThreshold">
+            <summary>
+            Gets or sets the value that threshold value to release the lick detection state. Values above this threshold will untrigger a detected lick.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.CreateChannel0UntriggerThresholdPayload.GetPayload">
+            <summary>
+            Creates a message payload for the Channel0UntriggerThreshold register.
+            </summary>
+            <returns>The created message payload value.</returns>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.CreateChannel0UntriggerThresholdPayload.GetMessage(Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a message that threshold value to release the lick detection state. Values above this threshold will untrigger a detected lick.
+            </summary>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new message for the Channel0UntriggerThreshold register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.CreateTimestampedChannel0UntriggerThresholdPayload">
+            <summary>
+            Represents an operator that creates a timestamped message payload
+            that threshold value to release the lick detection state. Values above this threshold will untrigger a detected lick.
+            </summary>
+        </member>
+        <member name="M:AllenNeuralDynamics.LicketySplit.CreateTimestampedChannel0UntriggerThresholdPayload.GetMessage(System.Double,Bonsai.Harp.MessageType)">
+            <summary>
+            Creates a timestamped message that threshold value to release the lick detection state. Values above this threshold will untrigger a detected lick.
+            </summary>
+            <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+            <param name="messageType">Specifies the type of the created message.</param>
+            <returns>A new timestamped message for the Channel0UntriggerThreshold register.</returns>
+        </member>
+        <member name="T:AllenNeuralDynamics.LicketySplit.LickChannels">
+            <summary>
+            The channel of the lick detector.
+            </summary>
+        </member>
+    </members>
+</doc>

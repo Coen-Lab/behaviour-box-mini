@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Bonsai.Mixer</id>
+    <version>0.1.0</version>
+    <title>Bonsai - Mixer</title>
+    <authors>Bonsai Foundation</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://bonsai-rx.org/mixer</projectUrl>
+    <description>Bonsai Library containing modules for multi-channel audio capture and playback.</description>
+    <copyright>Copyright © Bonsai Foundation CIC and Contributors</copyright>
+    <tags>Bonsai Rx Mixer PortAudio</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+      <packageType name="BonsaiLibrary" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/bonsai-rx/mixer" commit="59c65f135a56e8919b46f7e57769597f746c9b27" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="Bonsai.Core" version="2.9.0" exclude="Build,Analyzers" />
+        <dependency id="OpenCV.Net" version="3.4.2" exclude="Build,Analyzers" />
+        <dependency id="PortAudioNet" version="0.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

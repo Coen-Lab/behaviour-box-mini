@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Bonsai.Core</id>
+    <version>2.9.1</version>
+    <authors>Bonsai Foundation</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://bonsai-rx.org/</projectUrl>
+    <description>This package provides common compiler and runtime infrastructure for the Bonsai programming language.</description>
+    <copyright>Copyright © Bonsai Foundation CIC and Contributors 2011-2025</copyright>
+    <tags>Bonsai Rx Reactive Extensions</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+      <packageType name="BonsaiLibrary" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/bonsai-rx/bonsai" commit="d3ba29828ab3c8d0e016e5ababe295af81314b40" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="Rx-Linq" version="2.2.5" exclude="Build,Analyzers" />
+        <dependency id="Rx-PlatformServices" version="2.2.5" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0">
+        <dependency id="System.CodeDom" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reactive" version="6.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="System.CodeDom" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reactive" version="6.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.Emit" version="4.7.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

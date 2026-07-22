@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bonsai.Spinnaker</name>
+    </assembly>
+    <members>
+        <member name="T:Bonsai.Spinnaker.ColorProcessingAlgorithm">
+            <summary>
+            Specifies the method used to convert bayer pattern encoded color images.
+            </summary>
+        </member>
+        <member name="F:Bonsai.Spinnaker.ColorProcessingAlgorithm.Default">
+            <summary>
+            Specifies that the default debayering algorithm should be used.
+            </summary>
+        </member>
+        <member name="F:Bonsai.Spinnaker.ColorProcessingAlgorithm.NoColorProcessing">
+            <summary>
+            Specifies that no debayering algorithm should be used and only the
+            raw frame data is returned.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Spinnaker.SpinnakerCapture">
+            <summary>
+            Represents an operator that generates a sequence of images acquired from
+            the specified FLIR Spinnaker camera.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Spinnaker.SpinnakerCapture.Index">
+            <summary>
+            Gets or sets the optional index of the camera from which to acquire images.
+            If no serial number and no index is specified, the first detected camera
+            will be used.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Spinnaker.SpinnakerCapture.SerialNumber">
+            <summary>
+            Gets or sets the optional serial number of the camera from which to acquire images.
+            If no serial number is specified, the index will be used for camera selection.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Spinnaker.SpinnakerCapture.ColorProcessing">
+            <summary>
+            Gets or sets a value specifying the method used to process bayer pattern encoded
+            color images.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Spinnaker.SpinnakerCapture.Configure(SpinnakerNET.IManagedCamera)">
+            <summary>
+            Configures the acquisition mode on the selected camera.
+            </summary>
+            <param name="camera">The camera to configure.</param>
+            <exception cref="T:System.InvalidOperationException">
+            Unable to configure the camera acquisition mode.
+            </exception>
+        </member>
+        <member name="M:Bonsai.Spinnaker.SpinnakerCapture.Generate">
+            <summary>
+            Generates an observable sequence of images acquired from the specified FLIR
+            Spinnaker camera.
+            </summary>
+            <returns>
+            A sequence of <see cref="T:Bonsai.Spinnaker.SpinnakerDataFrame"/> objects representing each data
+            frame acquired from the camera and the managed chunk data containing additional
+            information about the image.
+            </returns>
+        </member>
+        <member name="M:Bonsai.Spinnaker.SpinnakerCapture.Generate``1(System.IObservable{``0})">
+            <summary>
+            Generates an observable sequence of images acquired from the specified FLIR
+            Spinnaker camera, where the start of acquisition is controlled by the input
+            sequence.
+            </summary>
+            <typeparam name="TSource">
+            The type of the elements in the <paramref name="start"/> sequence.
+            </typeparam>
+            <param name="start">
+            The sequence containing the notification used to start reading images
+            from the Spinnaker camera.
+            </param>
+            <returns>
+            A sequence of <see cref="T:Bonsai.Spinnaker.SpinnakerDataFrame"/> objects representing each data
+            frame acquired from the camera and the managed chunk data containing additional
+            information about the image.
+            </returns>
+        </member>
+        <member name="T:Bonsai.Spinnaker.SpinnakerDataFrame">
+            <summary>
+            Represents a data object containing a decoded image frame and the managed chunk
+            data which contains additional information about the image.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Spinnaker.SpinnakerDataFrame.#ctor(OpenCV.Net.IplImage,SpinnakerNET.ManagedChunkData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bonsai.Spinnaker.SpinnakerDataFrame"/> class
+            with the specified image frame and managed chunk data.
+            </summary>
+            <param name="image">The decoded image frame.</param>
+            <param name="chunkData">
+            The managed chunk data which contains additional information about the image.
+            </param>
+        </member>
+        <member name="P:Bonsai.Spinnaker.SpinnakerDataFrame.Image">
+            <summary>
+            Gets the decoded image frame.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Spinnaker.SpinnakerDataFrame.ChunkData">
+            <summary>
+            Gets the managed chunk data which contains additional information about the image.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>LibGit2Sharp.NativeBinaries</id>
+    <version>2.0.323</version>
+    <authors>LibGit2Sharp contributors</authors>
+    <license type="file">libgit2/libgit2.license.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>libgit2/libgit2.png</icon>
+    <projectUrl>https://github.com/libgit2/libgit2sharp.nativebinaries</projectUrl>
+    <description>Native binaries for LibGit2Sharp</description>
+    <repository type="git" url="https://github.com/libgit2/libgit2sharp.nativebinaries" commit="ad7caf7db9cd6ce5af7b426bec236dfc3a4486ed" />
+  </metadata>
+</package>

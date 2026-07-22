@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Bonsai.Dsp</id>
+    <version>2.9.1</version>
+    <authors>Bonsai Foundation</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://bonsai-rx.org/</projectUrl>
+    <description>This package provides operators for real-time digital signal processing.</description>
+    <copyright>Copyright © Bonsai Foundation CIC and Contributors 2011-2025</copyright>
+    <tags>Bonsai Rx Dsp Signal Processing</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+      <packageType name="BonsaiLibrary" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/bonsai-rx/bonsai" commit="d3ba29828ab3c8d0e016e5ababe295af81314b40" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="Bonsai.System" version="2.9.1" exclude="Build,Analyzers" />
+        <dependency id="OpenCV.Net" version="3.4.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

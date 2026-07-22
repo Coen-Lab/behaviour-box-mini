@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Bonsai.System</id>
+    <version>2.9.0</version>
+    <authors>Bonsai Foundation</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://bonsai-rx.org/</projectUrl>
+    <description>This package provides operators to interface with the underlying operating system.</description>
+    <copyright>Copyright © Bonsai Foundation CIC and Contributors 2011-2025</copyright>
+    <tags>Bonsai Rx Reactive Extensions IO Serial Port Resources</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+      <packageType name="BonsaiLibrary" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/bonsai-rx/bonsai" commit="bd3ec7e29dff8c4c0d1ddef5dd2a322a1293f342" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="Bonsai.Core" version="2.9.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Bonsai.Core" version="2.9.0" exclude="Build,Analyzers" />
+        <dependency id="System.IO.Ports" version="8.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

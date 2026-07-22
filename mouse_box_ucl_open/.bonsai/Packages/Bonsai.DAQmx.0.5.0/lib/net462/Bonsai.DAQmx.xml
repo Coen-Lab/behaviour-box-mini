@@ -1,0 +1,637 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bonsai.DAQmx</name>
+    </assembly>
+    <members>
+        <member name="T:Bonsai.DAQmx.AnalogChannelConfiguration">
+            <summary>
+            Provides an abstract base class for configuration of virtual analog channels
+            in DAQmx operators.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogChannelConfiguration.ChannelName">
+            <summary>
+            Gets or sets the name to assign to the local created virtual channel.
+            If not specified, the physical channel name will be used.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogChannelConfiguration.MinimumValue">
+            <summary>
+            Gets or sets a value specifying the minimum value to measure or generate,
+            in the specified voltage units.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogChannelConfiguration.MaximumValue">
+            <summary>
+            Gets or sets a value specifying the maximum value to measure or generate,
+            in the specified voltage units.
+            </summary>
+        </member>
+        <member name="T:Bonsai.DAQmx.AnalogInput">
+            <summary>
+            Represents an operator that generates a sequence of voltage measurements
+            from one or more DAQmx analog input channels.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogInput.SignalSource">
+            <summary>
+            Gets or sets the optional source terminal of the clock. If not specified,
+            the internal clock of the device will be used.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogInput.SampleRate">
+            <summary>
+            Gets or sets the sampling rate for acquiring voltage measurements, in
+            samples per second.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogInput.ActiveEdge">
+            <summary>
+            Gets or sets a value specifying on which edge of a clock pulse sampling takes place.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogInput.SampleMode">
+            <summary>
+            Gets or sets a value specifying whether the acquisition task will acquire
+            a finite number of samples or if it continuously acquires samples.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogInput.BufferSize">
+            <summary>
+            Gets or sets the number of samples to acquire, for finite samples, or the
+            size of the buffer for continuous sampling.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogInput.SamplesPerChannel">
+            <summary>
+            Gets or sets the number of samples per channel in each output buffer.
+            If not specified, the number of samples will be set to the size of the buffer.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogInput.Channels">
+            <summary>
+            Gets the collection of analog input channels from which to acquire voltage samples.
+            </summary>
+        </member>
+        <member name="M:Bonsai.DAQmx.AnalogInput.Generate">
+            <summary>
+            Generates an observable sequence of voltage measurements from one or
+            more DAQmx analog input channels.
+            </summary>
+            <returns>
+            A sequence of 2D <see cref="T:OpenCV.Net.Mat"/> objects storing the voltage samples.
+            Each row corresponds to a channel in the acquisition task, and each column
+            to a sample from each of the channels. The order of the channels follows
+            the order in which you specify the channels in the <see cref="P:Bonsai.DAQmx.AnalogInput.Channels"/>
+            property.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.AnalogInput.Generate``1(System.IObservable{``0})">
+            <summary>
+            Generates an observable sequence of voltage measurements from one or
+            more DAQmx analog input channels, where each new buffer is emitted only
+            when an observable sequence emits a notification.
+            </summary>
+            <typeparam name="TSource">
+            The type of the elements in the <paramref name="source"/> sequence.
+            </typeparam>
+            <param name="source">
+            The sequence containing the notifications used for emitting sample buffers.
+            </param>
+            <returns>
+            A sequence of 2D <see cref="T:OpenCV.Net.Mat"/> objects storing the voltage samples.
+            Each row corresponds to a channel in the acquisition task, and each column
+            to a sample from each of the channels. The order of the channels follows
+            the order in which you specify the channels in the <see cref="P:Bonsai.DAQmx.AnalogInput.Channels"/>
+            property.
+            </returns>
+        </member>
+        <member name="T:Bonsai.DAQmx.AnalogInputChannelConfiguration">
+            <summary>
+            Represents the configuration of a virtual analog input channel in DAQmx operators.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogInputChannelConfiguration.PhysicalChannel">
+            <summary>
+            Gets or sets the name of the physical channel used to create the local
+            virtual channel.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogInputChannelConfiguration.TerminalConfiguration">
+            <summary>
+            Gets or sets a value specifying the terminal configuration for the channel.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogInputChannelConfiguration.VoltageUnits">
+            <summary>
+            Gets or sets a value specifying the units used to return voltage
+            measurements from the channel.
+            </summary>
+        </member>
+        <member name="M:Bonsai.DAQmx.AnalogInputChannelConfiguration.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.DAQmx.AnalogOutput">
+            <summary>
+            Represents an operator that generates voltage signals in one or more DAQmx analog
+            output channels from a sequence of sample buffers.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogOutput.SignalSource">
+            <summary>
+            Gets or sets the optional source terminal of the clock. If not specified,
+            the internal clock of the device will be used.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogOutput.SampleRate">
+            <summary>
+            Gets or sets the sampling rate for generating voltage signals, in samples
+            per second.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogOutput.ActiveEdge">
+            <summary>
+            Gets or sets a value specifying on which edge of a clock pulse sampling takes place.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogOutput.SampleMode">
+            <summary>
+            Gets or sets a value specifying whether the signal generation task will generate
+            a finite number of samples or if it continuously generates samples.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogOutput.BufferSize">
+            <summary>
+            Gets or sets the number of samples to generate, for finite samples, or the
+            size of the buffer for continuous signal generation.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogOutput.Channels">
+            <summary>
+            Gets the collection of analog output channels used to generate voltage signals.
+            </summary>
+        </member>
+        <member name="M:Bonsai.DAQmx.AnalogOutput.Process(System.IObservable{System.Double})">
+            <summary>
+            Generates a voltage signal in one or more DAQmx analog output channels
+            from an observable sequence of samples.
+            </summary>
+            <param name="source">
+            A sequence of floating-point numbers representing the samples used to
+            generate voltage signals.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of generating
+            voltage signals in one or more DAQmx analog output channels.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.AnalogOutput.Process(System.IObservable{OpenCV.Net.Mat})">
+            <summary>
+            Generates voltage signals in one or more DAQmx analog output channels
+            from an observable sequence of sample buffers.
+            </summary>
+            <param name="source">
+            A sequence of 2D <see cref="T:OpenCV.Net.Mat"/> objects storing the voltage samples.
+            Each row corresponds to one of the channels in the signal generation task,
+            and each column to a sample from each of the channels. The order of the
+            channels follows the order in which you specify the channels in the
+            <see cref="P:Bonsai.DAQmx.AnalogOutput.Channels"/> property.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of generating
+            voltage signals in one or more DAQmx analog output channels.
+            </returns>
+        </member>
+        <member name="T:Bonsai.DAQmx.AnalogOutputChannelConfiguration">
+            <summary>
+            Represents the configuration of a virtual analog output channel in DAQmx operators.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogOutputChannelConfiguration.PhysicalChannel">
+            <summary>
+            Gets or sets the name of the physical channel used to create the local
+            virtual channel.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.AnalogOutputChannelConfiguration.VoltageUnits">
+            <summary>
+            Gets or sets a value specifying in what units to generate voltage on the channel.
+            </summary>
+        </member>
+        <member name="M:Bonsai.DAQmx.AnalogOutputChannelConfiguration.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.DAQmx.DigitalChannelConfiguration">
+            <summary>
+            Provides an abstract base class for configuration of virtual digital channels
+            in DAQmx operators.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalChannelConfiguration.ChannelName">
+            <summary>
+            Gets or sets the name to assign to the local created virtual channel.
+            If not specified, the physical channel name will be used.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalChannelConfiguration.Grouping">
+            <summary>
+            Gets or sets a value specifying how to group digital lines into one or more virtual channels.
+            </summary>
+        </member>
+        <member name="T:Bonsai.DAQmx.DigitalInput">
+            <summary>
+            Represents an operator that reads a sequence of logical values from
+            one or more DAQmx digital input lines.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalInput.SignalSource">
+            <summary>
+            Gets or sets the optional source terminal of the clock. If not specified,
+            the internal clock of the device will be used.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalInput.SampleRate">
+            <summary>
+            Gets or sets the sampling rate for reading logical values, in samples
+            per second.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalInput.ActiveEdge">
+            <summary>
+            Gets or sets a value specifying on which edge of a clock pulse sampling takes place.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalInput.SampleMode">
+            <summary>
+            Gets or sets a value specifying whether the acquisition task will acquire
+            a finite number of samples or if it continuously acquires samples.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalInput.BufferSize">
+            <summary>
+            Gets or sets the number of samples to acquire, for finite samples, or the
+            size of the buffer for continuous sampling.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalInput.SamplesPerChannel">
+            <summary>
+            Gets or sets the number of samples per channel in each output buffer.
+            If not specified, the number of samples will be set to the size of the buffer.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalInput.Channels">
+            <summary>
+            Gets the collection of virtual input channels from which to read logical values.
+            </summary>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalInput.Generate">
+            <summary>
+            Reads an observable sequence of logical values from one or more
+            DAQmx digital input lines.
+            </summary>
+            <returns>
+            A sequence of 2D <see cref="T:OpenCV.Net.Mat"/> objects storing the logical values.
+            Each row corresponds to a channel in the acquisition task, and each column
+            to a sample from each of the channels. The order of the channels follows
+            the order in which you specify the channels in the <see cref="P:Bonsai.DAQmx.DigitalInput.Channels"/>
+            property. Each sample can represent either a single line or a bitmask
+            representing the state of all digital lines in a single port, depending
+            on the configuration of the virtual channel.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalInput.Generate``1(System.IObservable{``0})">
+            <summary>
+            Reads an observable sequence of logical values from one or more
+            DAQmx digital input lines, where each new buffer is emitted only
+            when an observable sequence emits a notification.
+            </summary>
+            <typeparam name="TSource">
+            The type of the elements in the <paramref name="source"/> sequence.
+            </typeparam>
+            <param name="source">
+            The sequence containing the notifications used for emitting sample buffers.
+            </param>
+            <returns>
+            A sequence of 2D <see cref="T:OpenCV.Net.Mat"/> objects storing the logical values.
+            Each row corresponds to a channel in the acquisition task, and each column
+            to a sample from each of the channels. The order of the channels follows
+            the order in which you specify the channels in the <see cref="P:Bonsai.DAQmx.DigitalInput.Channels"/>
+            property. Each sample can represent either a single line or a bitmask
+            representing the state of all digital lines in a single port, depending
+            on the configuration of the virtual channel.
+            </returns>
+        </member>
+        <member name="T:Bonsai.DAQmx.DigitalInputChannelConfiguration">
+            <summary>
+            Represents the configuration of a virtual digital input channel in DAQmx operators.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalInputChannelConfiguration.Lines">
+            <summary>
+            Gets or sets the names of the digital lines or ports used to create
+            the local virtual channel.
+            </summary>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalInputChannelConfiguration.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.DAQmx.DigitalOutput">
+            <summary>
+            Represents an operator that writes logical values to one or more DAQmx digital
+            output lines from a sequence of sample buffers.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalOutput.SignalSource">
+            <summary>
+            Gets or sets the optional source terminal of the clock. If not specified,
+            the internal clock of the device will be used.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalOutput.SampleRate">
+            <summary>
+            Gets or sets the sampling rate for writing logical values, in samples
+            per second.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalOutput.ActiveEdge">
+            <summary>
+            Gets or sets a value specifying on which edge of a clock pulse sampling takes place.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalOutput.SampleMode">
+            <summary>
+            Gets or sets a value specifying whether the writer task will generate
+            a finite number of samples or if it continuously generates samples.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalOutput.BufferSize">
+            <summary>
+            Gets or sets the number of samples to generate, for finite samples, or the
+            size of the buffer for continuous samples.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalOutput.Channels">
+            <summary>
+            Gets the collection of virtual output channels on which to write the
+            logical values.
+            </summary>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.Boolean})">
+            <summary>
+            Writes an observable sequence of logical values to one or more DAQmx
+            digital output lines.
+            </summary>
+            <param name="source">
+            A sequence of boolean values representing the logical levels to write
+            to one or more DAQmx digital output lines.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.Byte})">
+            <summary>
+            Writes an observable sequence of unsigned 8-bit samples to one or more DAQmx
+            digital output lines.
+            </summary>
+            <param name="source">
+            A sequence of 8-bit unsigned integers representing the state of digital
+            output lines in a local virtual port channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.Boolean[]})">
+            <summary>
+            Writes an observable sequence of boolean samples to one or more DAQmx
+            digital output lines.
+            </summary>
+            <param name="source">
+            A sequence of 1D arrays of boolean samples representing the state of a
+            digital output channel in a local virtual port.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.Byte[]})">
+            <summary>
+            Writes an observable sequence of unsigned 8-bit samples to one or more DAQmx
+            digital output lines.
+            </summary>
+            <param name="source">
+            A sequence of 8-bit unsigned integer arrays representing the state of digital
+            output lines in a local virtual port channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.UInt16[]})">
+            <summary>
+            Writes an observable sequence of unsigned 16-bit samples to one or more DAQmx
+            digital output lines.
+            </summary>
+            <param name="source">
+            A sequence of 16-bit unsigned integer arrays representing the state of digital
+            output lines in a local virtual port channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.Int16[]})">
+            <summary>
+            Writes an observable sequence of signed 16-bit samples to one or more DAQmx
+            digital output lines.
+            </summary>
+            <param name="source">
+            A sequence of 16-bit signed integer arrays representing the state of digital
+            output lines in a local virtual port channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.UInt32[]})">
+            <summary>
+            Writes an observable sequence of unsigned 32-bit samples to one or more DAQmx
+            digital output lines.
+            </summary>
+            <param name="source">
+            A sequence of 32-bit unsigned integer arrays representing the state of digital
+            output lines in a local virtual port channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.Int32[]})">
+            <summary>
+            Writes an observable sequence of signed 32-bit samples to one or more DAQmx
+            digital output lines.
+            </summary>
+            <param name="source">
+            A sequence of 32-bit signed integer arrays representing the state of digital
+            output lines in a local virtual port channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.Byte[0:,0:]})">
+            <summary>
+            Writes logical values to one or more DAQmx digital output lines from
+            an observable sequence of unsigned 8-bit multi-channel sample buffers.
+            </summary>
+            <param name="source">
+            A sequence of multi-dimensional <see cref="T:System.Byte"/> arrays storing the
+            logical values. Each row corresponds to a channel in the signal generation
+            task, and each column to a sample from each of the channels. The order of
+            the channels follows the order in which you specify the channels in the
+            <see cref="P:Bonsai.DAQmx.DigitalOutput.Channels"/> property. Each sample can represent either a single
+            line or a bitmask representing the state of all digital lines in a single
+            port, depending on the configuration of the virtual channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.UInt16[0:,0:]})">
+            <summary>
+            Writes logical values to one or more DAQmx digital output lines from
+            an observable sequence of unsigned 16-bit multi-channel sample buffers.
+            </summary>
+            <param name="source">
+            A sequence of multi-dimensional <see cref="T:System.UInt16"/> arrays storing the
+            logical values. Each row corresponds to a channel in the signal generation
+            task, and each column to a sample from each of the channels. The order of
+            the channels follows the order in which you specify the channels in the
+            <see cref="P:Bonsai.DAQmx.DigitalOutput.Channels"/> property. Each sample can represent either a single
+            line or a bitmask representing the state of all digital lines in a single
+            port, depending on the configuration of the virtual channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.Int16[0:,0:]})">
+            <summary>
+            Writes logical values to one or more DAQmx digital output lines from
+            an observable sequence of signed 16-bit multi-channel sample buffers.
+            </summary>
+            <param name="source">
+            A sequence of multi-dimensional <see cref="T:System.Int16"/> arrays storing the
+            logical values. Each row corresponds to a channel in the signal generation
+            task, and each column to a sample from each of the channels. The order of
+            the channels follows the order in which you specify the channels in the
+            <see cref="P:Bonsai.DAQmx.DigitalOutput.Channels"/> property. Each sample can represent either a single
+            line or a bitmask representing the state of all digital lines in a single
+            port, depending on the configuration of the virtual channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.UInt32[0:,0:]})">
+            <summary>
+            Writes logical values to one or more DAQmx digital output lines from
+            an observable sequence of unsigned 32-bit multi-channel sample buffers.
+            </summary>
+            <param name="source">
+            A sequence of multi-dimensional <see cref="T:System.UInt32"/> arrays storing the
+            logical values. Each row corresponds to a channel in the signal generation
+            task, and each column to a sample from each of the channels. The order of
+            the channels follows the order in which you specify the channels in the
+            <see cref="P:Bonsai.DAQmx.DigitalOutput.Channels"/> property. Each sample can represent either a single
+            line or a bitmask representing the state of all digital lines in a single
+            port, depending on the configuration of the virtual channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{System.Int32[0:,0:]})">
+            <summary>
+            Writes logical values to one or more DAQmx digital output lines from
+            an observable sequence of signed 32-bit multi-channel sample buffers.
+            </summary>
+            <param name="source">
+            A sequence of multi-dimensional <see cref="T:System.Int32"/> arrays storing the
+            logical values. Each row corresponds to a channel in the signal generation
+            task, and each column to a sample from each of the channels. The order of
+            the channels follows the order in which you specify the channels in the
+            <see cref="P:Bonsai.DAQmx.DigitalOutput.Channels"/> property. Each sample can represent either a single
+            line or a bitmask representing the state of all digital lines in a single
+            port, depending on the configuration of the virtual channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutput.Process(System.IObservable{OpenCV.Net.Mat})">
+            <summary>
+            Writes logical values to one or more DAQmx digital output lines
+            from an observable sequence of sample buffers.
+            </summary>
+            <param name="source">
+            A sequence of 2D <see cref="T:OpenCV.Net.Mat"/> objects storing the logical values.
+            Each row corresponds to a channel in the signal generation task, and each
+            column to a sample from each of the channels. The order of the channels follows
+            the order in which you specify the channels in the <see cref="P:Bonsai.DAQmx.DigitalOutput.Channels"/>
+            property. Each sample can represent either a single line or a bitmask
+            representing the state of all digital lines in a single port, depending
+            on the configuration of the virtual channel.
+            </param>
+            <returns>
+            An observable sequence that is identical to the <paramref name="source"/>
+            sequence but where there is an additional side effect of writing logical
+            values to one or more DAQmx digital output lines.
+            </returns>
+        </member>
+        <member name="T:Bonsai.DAQmx.DigitalOutputChannelConfiguration">
+            <summary>
+            Represents the configuration of a virtual digital output channel in DAQmx operators.
+            </summary>
+        </member>
+        <member name="P:Bonsai.DAQmx.DigitalOutputChannelConfiguration.Lines">
+            <summary>
+            Gets or sets the names of the digital lines or ports used to create
+            the local virtual channel.
+            </summary>
+        </member>
+        <member name="M:Bonsai.DAQmx.DigitalOutputChannelConfiguration.ToString">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

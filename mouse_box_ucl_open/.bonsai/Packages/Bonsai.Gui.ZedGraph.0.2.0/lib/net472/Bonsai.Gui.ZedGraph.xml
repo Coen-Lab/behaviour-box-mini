@@ -1,0 +1,804 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bonsai.Gui.ZedGraph</name>
+    </assembly>
+    <members>
+        <member name="T:Bonsai.Gui.ZedGraph.BarGraphBuilder">
+            <summary>
+            Represents an operator that configures a visualizer to plot each element
+            of the sequence as a bar graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphBuilder.IndexSelector">
+            <summary>
+            Gets or sets the name of the property that will be used as index for the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphBuilder.ValueSelector">
+            <summary>
+            Gets or sets the names of the properties that will be displayed in the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphBuilder.BaseAxis">
+            <summary>
+            Gets or sets a value specifying the axis on which the bars in the graph will be displayed.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphBuilder.BarType">
+            <summary>
+            Gets or sets a value specifying how the different bars in the graph will be visually arranged.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphBuilder.CurveSettings">
+            <summary>
+            Gets the optional settings for each bar added to the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphBuilder.Capacity">
+            <summary>
+            Gets or sets the optional capacity used for rolling bar graphs. If no capacity is specified,
+            all data points will be displayed.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphBuilder.Min">
+            <summary>
+            Gets or sets a value specifying a fixed lower limit for the bar range axis.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphBuilder.Max">
+            <summary>
+            Gets or sets a value specifying a fixed upper limit for the bar range axis.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphBuilder.Build(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})">
+            <summary>
+            Builds the expression tree for configuring and calling the
+            bar graph visualizer on the specified input argument.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.BarGraphOverlay">
+            <summary>
+            Provides a type visualizer used to overlay a sequence of values as a bar graph.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphOverlay.Load(System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphOverlay.ShowBuffer(System.Collections.Generic.IList{System.Reactive.Timestamped{System.Object}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphOverlay.Show(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphOverlay.Show(System.DateTime,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphOverlay.Unload">
+            <inheritdoc/>
+        </member>
+        <member name="F:Bonsai.Gui.ZedGraph.BarGraphView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.BarGraphVisualizer">
+            <summary>
+            Provides a type visualizer to display an object as a bar graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphVisualizer.Capacity">
+            <summary>
+            Gets or sets the maximum number of data points displayed at any one moment
+            in the bar graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphVisualizer.Min">
+            <summary>
+            Gets or sets the lower limit for the bar range axis when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphVisualizer.Max">
+            <summary>
+            Gets or sets the upper limit for the bar range axis when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.BarGraphVisualizer.AutoScale">
+            <summary>
+            Gets or sets a value indicating whether the bar range scale should be recalculated
+            automatically as the graph updates.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphVisualizer.Load(System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphVisualizer.ShowBuffer(System.Collections.Generic.IList{System.Reactive.Timestamped{System.Object}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphVisualizer.Show(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphVisualizer.Show(System.DateTime,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphVisualizer.SequenceCompleted">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.BarGraphVisualizer.Unload">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.CurveConfiguration">
+            <summary>
+            Represents common configuration properties for individual curves in a graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.CurveConfiguration.Label">
+            <summary>
+            Gets or sets the label that will appear in the legend.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.CurveConfiguration.Color">
+            <summary>
+            Gets or sets the color of the curve.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.CurveConfiguration.ColorHtml">
+            <summary>
+            Gets or sets an HTML representation of the curve color value for serialization.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.GraphControl">
+            <summary>
+            Provides a dynamic graph control with a built-in color cycle palette.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bonsai.Gui.ZedGraph.GraphControl"/> class.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphControl.AutoScaleAxis">
+            <summary>
+            Gets or sets a value indicating whether to recalculate the axis range automatically
+            when redrawing the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphControl.MouseDown">
+            <summary>
+            Occurs when the mouse pointer is over the control and a mouse button is pressed.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphControl.MouseUp">
+            <summary>
+            Occurs when the mouse pointer is over the control and a mouse button is released.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphControl.MouseMove">
+            <summary>
+            Occurs when the mouse pointer is moved over the control.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphControl.GetNextColor">
+            <summary>
+            Returns the next color in the color cycle, and increments the color index.
+            </summary>
+            <returns>
+            A <see cref="T:System.Drawing.Color"/> value representing the next color in the color cycle.
+            </returns>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphControl.GetColor(System.Int32)">
+            <summary>
+            Returns the color in the color cycle at the specified index.
+            </summary>
+            <param name="colorIndex">The index of the color to retrieve.</param>
+            <returns>
+            A <see cref="T:System.Drawing.Color"/> value representing the color at the specified
+            index of the color cycle.
+            </returns>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphControl.ResetColorCycle">
+            <summary>
+            Resets the color cycle to the first color in the palette.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphControl.SetLayout(ZedGraph.PaneLayout)">
+            <summary>
+            Sets the auto layout strategy for graphs with multiple panes.
+            </summary>
+            <param name="layout">
+            Specifies the auto layout options for graphs with multiple panes.
+            </param>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphControl.SetLayout(System.Int32,System.Int32)">
+            <summary>
+            Sets the number of rows and columns in the layout explicitly for
+            graphs with multiple panes.
+            </summary>
+            <param name="rows">The number of rows in the pane layout.</param>
+            <param name="columns">The number of columns in the pane layout.</param>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphControl.GetNormalizedRectangle(System.Drawing.RectangleF,System.Drawing.Point,System.Drawing.Point)">
+            <summary>
+            Computes a rectangle defined by the specified points which is also contained inside
+            the pane boundaries.
+            </summary>
+            <param name="bounds">The bounds of the pane on which to contain the rectangle.</param>
+            <param name="p1">The first point defining the selected rectangle.</param>
+            <param name="p2">The second point defining the selected rectangle.</param>
+            <returns>
+            A <see cref="T:System.Drawing.Rectangle"/> which is contained inside the pane boundaries and is
+            defined by the specified points.
+            </returns>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphControl.UpdateRubberBand(System.Drawing.Rectangle,System.Drawing.Rectangle)">
+            <summary>
+            Updates the state of the rubber band selection overlay.
+            </summary>
+            <param name="bandRect">
+            The location and size of the rubber band selection.
+            </param>
+            <param name="invalidateRect">
+            The region of the control that should be invalidated following the rubber band
+            update operation. See the <see cref="M:System.Windows.Forms.Control.Invalidate(System.Drawing.Rectangle)"/> method.
+            </param>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphControl.OnHandleDestroyed(System.EventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.GraphPanelBuilder">
+            <summary>
+            Represents an operator that specifies a mashup graph panel that can be used
+            to combine multiple plots sharing the same axes.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelBuilder.XMin">
+            <summary>
+            Gets or sets a value specifying a fixed lower limit for the X-axis range.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelBuilder.XMax">
+            <summary>
+            Gets or sets a value specifying a fixed upper limit for the X-axis range.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelBuilder.YMin">
+            <summary>
+            Gets or sets a value specifying a fixed lower limit for the Y-axis range.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelBuilder.YMax">
+            <summary>
+            Gets or sets a value specifying a fixed upper limit for the Y-axis range.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphPanelBuilder.Build(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})">
+            <summary>
+            Builds the expression tree for configuring and calling the
+            graph panel visualizer.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.GraphPanelBuilderBase">
+            <summary>
+            Provides an abstract base class with common mashup graph panel functionality.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelBuilderBase.Name">
+            <summary>
+            Gets or sets the name of the visualizer window.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelBuilderBase.ReverseX">
+            <summary>
+            Gets or sets a value specifying whether the scale values are reversed on the X-axis.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelBuilderBase.ReverseY">
+            <summary>
+            Gets or sets a value specifying whether the scale values are reversed on the Y-axis.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelBuilderBase.Span">
+            <summary>
+            Gets or sets the optional maximum span of data displayed at any one moment in the graph.
+            If no span is specified, all data points will be displayed.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelBuilderBase.Capacity">
+            <summary>
+            Gets or sets the optional capacity used for rolling line graphs. If no capacity is specified, all data points will be displayed.
+            </summary>
+        </member>
+        <member name="F:Bonsai.Gui.ZedGraph.GraphPanelView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphPanelView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphPanelView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.GraphPanelVisualizer">
+            <summary>
+            Provides a type visualizer that can be used to overlay multiple plots sharing
+            the same axes in a single graph panel.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelVisualizer.Span">
+            <summary>
+            Gets or sets the maximum span of data displayed at any one moment in the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelVisualizer.Capacity">
+            <summary>
+            Gets or sets the maximum number of points displayed at any one moment in the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelVisualizer.XMin">
+            <summary>
+            Gets or sets the lower limit of the X-axis range when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelVisualizer.XMax">
+            <summary>
+            Gets or sets the upper limit of the X-axis range when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelVisualizer.YMin">
+            <summary>
+            Gets or sets the lower limit of the Y-axis range when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelVisualizer.YMax">
+            <summary>
+            Gets or sets the upper limit of the Y-axis range when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelVisualizer.AutoScaleX">
+            <summary>
+            Gets or sets a value indicating whether the axis range should be recalculated
+            automatically as the graph updates.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.GraphPanelVisualizer.AutoScaleY">
+            <summary>
+            Gets or sets a value indicating whether the axis range should be recalculated
+            automatically as the graph updates.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphPanelVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.ZedGraph.GraphPanelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphPanelVisualizer.LoadMashupSource(System.Int32,Bonsai.Design.MashupSource,System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.GraphPanelVisualizer.Unload">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.LineGraphBuilder">
+            <summary>
+            Represents an operator that configures a visualizer to plot each element
+            of the sequence as a line graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphBuilder.IndexSelector">
+            <summary>
+            Gets or sets the name of the property that will be used as index for the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphBuilder.ValueSelector">
+            <summary>
+            Gets or sets the names of the properties to be displayed in the graph.
+            Each selected property must have a point pair compatible type.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphBuilder.SymbolType">
+            <summary>
+            Gets or sets the optional symbol type to use for the line graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphBuilder.LineWidth">
+            <summary>
+            Gets or sets the width, in points, to be used for the line graph. Use a value of zero to hide the line.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphBuilder.CurveSettings">
+            <summary>
+            Gets the optional settings for each line added to the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphBuilder.Capacity">
+            <summary>
+            Gets or sets the optional capacity used for rolling line graphs. If no capacity is specified, all data points will be displayed.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphBuilder.XMin">
+            <summary>
+            Gets or sets a value specifying a fixed lower limit for the X-axis range.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphBuilder.XMax">
+            <summary>
+            Gets or sets a value specifying a fixed upper limit for the X-axis range.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphBuilder.YMin">
+            <summary>
+            Gets or sets a value specifying a fixed lower limit for the Y-axis range.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphBuilder.YMax">
+            <summary>
+            Gets or sets a value specifying a fixed upper limit for the Y-axis range.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphBuilder.Build(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})">
+            <summary>
+            Builds the expression tree for configuring and calling the
+            line graph visualizer on the specified input argument.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.LineGraphOverlay">
+            <summary>
+            Provides a type visualizer used to overlay a sequence of points as a line graph.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphOverlay.Load(System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphOverlay.ShowBuffer(System.Collections.Generic.IList{System.Reactive.Timestamped{System.Object}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphOverlay.Show(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphOverlay.Show(System.DateTime,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphOverlay.Unload">
+            <inheritdoc/>
+        </member>
+        <member name="F:Bonsai.Gui.ZedGraph.LineGraphView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.LineGraphVisualizer">
+            <summary>
+            Provides a type visualizer to display an object as a line graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphVisualizer.Capacity">
+            <summary>
+            Gets or sets the maximum number of points displayed at any one moment in the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphVisualizer.XMin">
+            <summary>
+            Gets or sets the lower limit of the X-axis range when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphVisualizer.XMax">
+            <summary>
+            Gets or sets the upper limit of the X-axis range when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphVisualizer.YMin">
+            <summary>
+            Gets or sets the lower limit of the Y-axis range when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphVisualizer.YMax">
+            <summary>
+            Gets or sets the upper limit of the Y-axis range when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphVisualizer.AutoScaleX">
+            <summary>
+            Gets or sets a value indicating whether the X-axis range should be recalculated
+            automatically as the graph updates.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.LineGraphVisualizer.AutoScaleY">
+            <summary>
+            Gets or sets a value indicating whether the Y-axis range should be recalculated
+            automatically as the graph updates.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphVisualizer.Load(System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphVisualizer.ShowBuffer(System.Collections.Generic.IList{System.Reactive.Timestamped{System.Object}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphVisualizer.Show(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphVisualizer.Show(System.DateTime,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphVisualizer.SequenceCompleted">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.LineGraphVisualizer.Unload">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.RollingGraphBuilder">
+            <summary>
+            Represents an operator that configures a visualizer to plot each element
+            of the sequence as a rolling graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphBuilder.IndexSelector">
+            <summary>
+            Gets or sets the name of the property that will be used as index for the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphBuilder.ValueSelector">
+            <summary>
+            Gets or sets the names of the properties that will be displayed in the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphBuilder.SymbolType">
+            <summary>
+            Gets or sets the optional symbol type to use for the line graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphBuilder.LineWidth">
+            <summary>
+            Gets or sets the width, in points, to be used for the line graph. Use a value of zero to hide the line.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphBuilder.CurveSettings">
+            <summary>
+            Gets the optional settings for each line added to the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphBuilder.Capacity">
+            <summary>
+            Gets or sets the optional capacity used for rolling line graphs. If no capacity is specified,
+            all data points will be displayed.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphBuilder.Min">
+            <summary>
+            Gets or sets a value specifying a fixed lower limit for the value axis.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphBuilder.Max">
+            <summary>
+            Gets or sets a value specifying a fixed upper limit for the value axis.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphBuilder.Build(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})">
+            <summary>
+            Builds the expression tree for configuring and calling the
+            line graph visualizer on the specified input argument.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.RollingGraphOverlay">
+            <summary>
+            Provides a type visualizer used to overlay a sequence of values as a rolling graph.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphOverlay.Load(System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphOverlay.ShowBuffer(System.Collections.Generic.IList{System.Reactive.Timestamped{System.Object}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphOverlay.Show(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphOverlay.Show(System.DateTime,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphOverlay.Unload">
+            <inheritdoc/>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.RollingGraphPanelBuilder">
+            <summary>
+            Represents an operator that specifies a mashup graph panel that can be used
+            to combine multiple graphs displaying data over a shared axis.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphPanelBuilder.BaseAxis">
+            <summary>
+            Gets or sets a value specifying the axis on which the bars in the graph will be displayed.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphPanelBuilder.BarType">
+            <summary>
+            Gets or sets a value specifying how the different bars in the graph will be visually arranged.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphPanelBuilder.Min">
+            <summary>
+            Gets or sets a value specifying a fixed lower limit for the axis range.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphPanelBuilder.Max">
+            <summary>
+            Gets or sets a value specifying a fixed upper limit for the axis range.
+            If no fixed range is specified, the graph limits can be edited online.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphPanelBuilder.Build(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})">
+            <summary>
+            Builds the expression tree for configuring and calling the
+            graph panel visualizer.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="F:Bonsai.Gui.ZedGraph.RollingGraphPanelView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphPanelView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphPanelView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.RollingGraphPanelVisualizer">
+            <summary>
+            Provides a type visualizer that can be used to overlay multiple plots sharing
+            the same index axis in a single graph panel.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphPanelVisualizer.Span">
+            <summary>
+            Gets or sets the maximum span of data displayed at any one moment in the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphPanelVisualizer.Capacity">
+            <summary>
+            Gets or sets the maximum number of points displayed at any one moment in the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphPanelVisualizer.Min">
+            <summary>
+            Gets or sets the lower limit of the axis range when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphPanelVisualizer.Max">
+            <summary>
+            Gets or sets the upper limit of the axis range when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphPanelVisualizer.AutoScale">
+            <summary>
+            Gets or sets a value indicating whether the axis range should be recalculated
+            automatically as the graph updates.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphPanelVisualizer.CreateControl(System.IServiceProvider,Bonsai.Gui.ZedGraph.RollingGraphPanelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphPanelVisualizer.LoadMashupSource(System.Int32,Bonsai.Design.MashupSource,System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphPanelVisualizer.Unload">
+            <inheritdoc/>
+        </member>
+        <member name="F:Bonsai.Gui.ZedGraph.RollingGraphView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Gui.ZedGraph.RollingGraphVisualizer">
+            <summary>
+            Provides a type visualizer to display an object as a rolling graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphVisualizer.Capacity">
+            <summary>
+            Gets or sets the maximum number of time points displayed at any one moment in the graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphVisualizer.Min">
+            <summary>
+            Gets or sets the lower limit for the value axis when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphVisualizer.Max">
+            <summary>
+            Gets or sets the upper limit for the value axis when using a fixed scale.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Gui.ZedGraph.RollingGraphVisualizer.AutoScale">
+            <summary>
+            Gets or sets a value indicating whether the value axis scale should be recalculated
+            automatically as the graph updates.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphVisualizer.Load(System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphVisualizer.Show(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphVisualizer.Show(System.DateTime,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphVisualizer.ShowBuffer(System.Collections.Generic.IList{System.Reactive.Timestamped{System.Object}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphVisualizer.SequenceCompleted">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Gui.ZedGraph.RollingGraphVisualizer.Unload">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bonsai.Harp.Visualizers</name>
+    </assembly>
+    <members>
+        <member name="T:Bonsai.Harp.Visualizers.TimelineGraphBuilder">
+            <summary>
+            Represents an operator that configures a visualizer to plot each Harp message
+            in the sequence in a synchronized rolling graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Harp.Visualizers.TimelineGraphBuilder.TimeSpan">
+            <summary>
+            Gets or sets the optional maximum time range captured in the timeline graph.
+            If no time span is specified, all data points will be displayed.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Harp.Visualizers.TimelineGraphBuilder.Build(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})">
+            <inheritdoc/>
+        </member>
+        <member name="F:Bonsai.Harp.Visualizers.TimelineGraphView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Harp.Visualizers.TimelineGraphView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Bonsai.Harp.Visualizers.TimelineGraphView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Bonsai.Harp.Visualizers.TimelineGraphVisualizer">
+            <summary>
+            Provides a type visualizer to display a sequence of Harp messages as a synchronized rolling graph.
+            </summary>
+        </member>
+        <member name="P:Bonsai.Harp.Visualizers.TimelineGraphVisualizer.TimeSpan">
+            <summary>
+            Gets or sets the maximum time range, in seconds, displayed at any one moment in the graph.
+            </summary>
+        </member>
+        <member name="M:Bonsai.Harp.Visualizers.TimelineGraphVisualizer.Load(System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Harp.Visualizers.TimelineGraphVisualizer.Show(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Harp.Visualizers.TimelineGraphVisualizer.Visualize(System.IObservable{System.IObservable{System.Object}},System.IServiceProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Bonsai.Harp.Visualizers.TimelineGraphVisualizer.Unload">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

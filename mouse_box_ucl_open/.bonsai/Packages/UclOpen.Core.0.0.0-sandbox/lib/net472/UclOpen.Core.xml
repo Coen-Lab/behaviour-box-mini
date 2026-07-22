@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UclOpen.Core</name>
+    </assembly>
+    <members>
+        <member name="T:UclOpen.Core.DataTypes.SoftwareEvent">
+            <summary>
+            A software event is a generic event that can be used to track any event that occurs in the software.
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.SoftwareEvent.Name">
+            <summary>
+            The name of the event.
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.SoftwareEvent.Timestamp">
+            <summary>
+            The timestamp of the event.
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.SoftwareEvent.TimestampSource">
+            <summary>
+            The source of the timestamp. Typically either a harp device or on the visual render loop
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.SoftwareEvent.FrameIndex">
+            <summary>
+            The frame index of the event.
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.SoftwareEvent.FrameTimestamp">
+            <summary>
+            The timestamp of the frame.
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.SoftwareEvent.Data">
+            <summary>
+            The data payload of the event.
+            </summary>
+        </member>
+        <member name="T:UclOpen.Core.DataTypes.SpoutRigPosition">
+            <summary>
+            Dictionary of named absolute positions, e.g.:
+             home, both_in, both_out
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.SpoutRigPosition.Positions">
+            <summary>
+            Named absolute positions of the lick spout stage stepper rig, keyed by a string identifier.
+            </summary>
+        </member>
+        <member name="T:UclOpen.Core.DataTypes.StepperPositions">
+            <summary>
+            Absolute target position for the 5-axis spout rig, expressed in task-relative axes.
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.StepperPositions.LeftElevation">
+            <summary>
+            Left spout elevation axis absolute position (steps). Maps to motor 1
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.StepperPositions.RightElevation">
+            <summary>
+            Right spout elevation axis absolute position (steps). Maps to motor 2
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.StepperPositions.RightRadial">
+            <summary>
+            Right spout radial axis (in/out) absolute position (steps). Maps to motor 3
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.StepperPositions.LeftRadial">
+            <summary>
+            Left spout radial axis (in/out) absolute position (steps). Maps to motor 4
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.StepperPositions.BaseTransverse">
+            <summary>
+            Base transverse axis absolute position (steps). Maps to motor 5
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.Vector2.X">
+            <summary>
+            X coordinate of the point.
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.Vector2.Y">
+            <summary>
+            Y coordinate of the point.
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.Vector3.X">
+            <summary>
+            X coordinate of the point.
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.Vector3.Y">
+            <summary>
+            Y coordinate of the point.
+            </summary>
+        </member>
+        <member name="P:UclOpen.Core.DataTypes.Vector3.Z">
+            <summary>
+            Z coordinate of the point.
+            </summary>
+        </member>
+        <member name="T:UclOpen.Core.DataTypes.SerializeToJson">
+            <summary>
+            Serializes a sequence of data model objects into JSON strings.
+            </summary>
+        </member>
+        <member name="T:UclOpen.Core.DataTypes.DeserializeFromJson">
+            <summary>
+            Deserializes a sequence of JSON strings into data model objects.
+            </summary>
+        </member>
+    </members>
+</doc>
