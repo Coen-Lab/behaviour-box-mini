@@ -45,14 +45,12 @@ Approximate total: £800
 
 ## Build Guide
 
-1. **Print** — STL files in [hardware/stl/](hardware/stl/). Print settings: TBD.
+1. **Print** — STL files in [hardware/stl/](hardware/stl/). Print settings: 15% infill, enable support when needed
 2. **Assemble** — Follow the [assembly guide](assembly/assembly-guide.md).
 3. **Wire** — See [wiring diagram](electronics/wiring-diagram.svg) and [pinout](electronics/pinout.md).
-4. **Software** — Install [Bonsai](https://bonsai-rx.org/) and the packages listed in [bonsai/extensions.md](bonsai/extensions.md).
+4. **Software** — See [Bonsai] 
 
-## Quick Start
-
-TBD — brief instructions to go from assembled box to running a first session.
+Brief instructions to go from assembled box to running a first session:
 
 ## License
 
