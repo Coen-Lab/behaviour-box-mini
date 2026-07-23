@@ -34,9 +34,14 @@ Built to facilitate community development and future integration of additional b
 
 | # | Part | Qty | Supplier | Cost | Notes |
 |---|------|-----|----------|------|-------|
-| 1 |Box Bodies|2|Bambu Lab|18| |
+| 1 |3D Print Filament|2|Bambu Lab|18*2|PLA|
+| 2 |FLIR cameras|1|FLIR|277|BFS-U3-16S2M-CS|
+| 3 |Rotary Encoder|1|Ali-Express|18||
+| 4 |HARP Behaviour Board|1|HARP|415||
+| 5 |locking USB 3.0 Micro-B cable|1|Amazon|18||
+| 6 |GPIO cable|1|Digikey|33|For Camera Trigger|
 
-Approximate total: £TBD
+Approximate total: £800
 
 ## Build Guide
 
