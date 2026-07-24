@@ -46,10 +46,9 @@ Approximate total: £800
 
 ## Build Guide
 
-1. **Print** — STL files in [hardware/stl/](hardware/stl/). Print settings: 15% infill, enable support when needed
-2. **Assemble** — Follow the [assembly guide](assembly/assembly-guide.md).
-3. **Wire** — See [wiring diagram](electronics/wiring-diagram.svg) and [pinout](electronics/pinout.md).
-4. **Software** — See [Bonsai] 
+1. **Print and Assemble** — STL files in (assembly/). Print settings: 15% infill, enable support when needed. Follow the [assembly guide](assembly/assembly-guide.md).
+2. **Wire** — See [wiring diagram](electronics/wiring-diagram.svg) and [pinout](electronics/pinout.md).
+3. **Software** — See [Bonsai] 
 
 Brief instructions to go from assembled box to running a first session:
 
