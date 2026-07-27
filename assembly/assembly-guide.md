@@ -5,11 +5,13 @@ Behaviour box body
 Lid
 Camera holder
 Running wheel
+
 All printed parts are designed for PLA. The remaining hardware and electronics should be purchased separately as listed in the Bill of Materials.
 （Estimated assembly time: ~20–30 minutes）
 
 ## Tools Required
 2 mm Allen key (for M3 screws)
+
 Flat-head screwdriver
 
 ## Step 1 - Print the Components
@@ -18,7 +20,6 @@ Behaviour box body
 Lid
 Camera holder
 Running wheel
-Support material is only required where indicated in the STL files.
 
 ## Step 2 — Install the Rotary Encoder
 Secure the rotary encoder to the side wall of the behaviour box using three M3 × 8 mm screws.
