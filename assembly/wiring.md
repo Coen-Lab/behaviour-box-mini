@@ -71,4 +71,5 @@ The following connections are required:
 
 Once all hardware connections are complete, proceed to the **Software** section for device configuration and data acquisition.
 <p align="center">
+  <img src="Pictures/Behaviour.jpg" width="48%">
   <img src="Pictures/Computer.jpg" width="48%">
