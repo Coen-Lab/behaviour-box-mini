@@ -27,10 +27,10 @@ For the **FLIR Blackfly S (BFS-U3-16S2M-CS)** listed in the Bill of Materials:
 |-------------|------------|
 | Blue (Opto GND) | GND |
 | Black (OPTO IN) | Trigger |
-<img width="1982" height="2039" alt="image" src="https://github.com/user-attachments/assets/5b280dfe-5116-49b2-98d6-6d6df11f9af4" />
-<img width="1616" height="1778" alt="image" src="https://github.com/user-attachments/assets/995f1182-18ad-4236-8ab0-afc094124cea" />
-
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5b280dfe-5116-49b2-98d6-6d6df11f9af4" width="45%">
+  <img src="https://github.com/user-attachments/assets/995f1182-18ad-4236-8ab0-afc094124cea" width="45%">
+</p>
 Camera software configuration is described in the **Software** section.
 
 ---
