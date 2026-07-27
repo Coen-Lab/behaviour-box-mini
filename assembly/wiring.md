@@ -8,6 +8,8 @@ The Mini Behaviour Box consists of three hardware connections:
 
 <p align="center">
   <img src="Pictures/Computer.jpg" width="48%">
+
+
 Refer to the wiring diagrams below for the complete connection layout.
 
 ---
