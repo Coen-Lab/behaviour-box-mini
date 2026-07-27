@@ -6,6 +6,8 @@ The Mini Behaviour Box consists of three hardware connections:
 2. Rotary Encoder
 3. Harp Behaviour Board
 
+<p align="center">
+  <img src="Pictures/Computer.jpg" width="48%">
 Refer to the wiring diagrams below for the complete connection layout.
 
 ---
@@ -72,4 +74,4 @@ The following connections are required:
 Once all hardware connections are complete, proceed to the **Software** section for device configuration and data acquisition.
 <p align="center">
   <img src="Pictures/Behaviour.jpg" width="48%">
-  <img src="Pictures/Computer.jpg" width="48%">
+
