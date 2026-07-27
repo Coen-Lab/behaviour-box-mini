@@ -5,6 +5,8 @@ The Mini Behaviour Box uses two software components:
 
 1. **Spinnaker SDK (SpinView)** – Camera driver and configuration software
 2. **Bonsai** – Behaviour acquisition and recording workflow
+---
+
 
 Computer
 │
@@ -18,7 +20,6 @@ Computer
        ├── Encoder Recording
        ├── Trigger Control
        └── Data Saving
----
 
 ## Spinnaker SDK (SpinView)
 
