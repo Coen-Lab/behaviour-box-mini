@@ -16,10 +16,10 @@ The camera requires two connections:
 
 - **Locking USB 3.0 Micro-B cable**
 - **GPIO trigger cable**
-
+(Fig.1)
 The Locking USB 3.0 Micro-B cable is connected directly to the computer for image acquisition.
 
-The GPIO trigger cable is connected to the **Output** port of the Harp Behaviour Board to enable hardware triggering.
+The GPIO trigger cable is connected to the **Output** port of the Harp Behaviour Board to enable hardware triggering(Fig.2).
 
 For the **FLIR Blackfly S (BFS-U3-16S2M-CS)** listed in the Bill of Materials:
 
@@ -27,9 +27,10 @@ For the **FLIR Blackfly S (BFS-U3-16S2M-CS)** listed in the Bill of Materials:
 |-------------|------------|
 | Blue (Opto GND) | GND |
 | Black (OPTO IN) | Trigger |
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/5b280dfe-5116-49b2-98d6-6d6df11f9af4" width="45%">
-  <img src="https://github.com/user-attachments/assets/995f1182-18ad-4236-8ab0-afc094124cea" width="45%">
+  <img src="Pictures/Camera.jpg" width="48%">
+  <img src="Pictures/GPIO.jpg" width="48%">
 </p>
 Camera software configuration is described in the **Software** section.
 
@@ -51,7 +52,9 @@ The encoder provides five wires, of which four are used:
 | +5 V | Pin 4 |
 | GND | Pin 5 |
 
-> **Insert rotary encoder wiring diagram here**
+>
+<p align="center">
+  <img src="Pictures/Rotary encoder.jpg" width="48%">
 
 ---
 
@@ -67,3 +70,5 @@ The following connections are required:
 - RJ45 connection to the rotary encoder (default **Port P0**)
 
 Once all hardware connections are complete, proceed to the **Software** section for device configuration and data acquisition.
+<p align="center">
+  <img src="Pictures/Computer.jpg" width="48%">
