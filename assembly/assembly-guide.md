@@ -8,7 +8,8 @@ Running wheel
 
 All printed parts are designed for PLA. The remaining hardware and electronics should be purchased separately as listed in the Bill of Materials.
 <p align="center">
-  <img src="Pictures/Setup.jpg" width="48%">
+  <img src="Pictures/Setup.jpg" width="68%">
+
 （Estimated assembly time: ~20–30 minutes）
 
 ## Tools Required
