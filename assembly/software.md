@@ -8,8 +8,6 @@ The Mini Behaviour Box uses two software components:
 ---
 
 
-Computer
-
        Spinnaker SDK -> Camera Driver
 
        Bonsai -> Camera Acquisition
