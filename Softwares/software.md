@@ -120,7 +120,7 @@ Keep the following settings unchanged:
 If editing the existing polygon is difficult, it is often easier to create a new one:
 
 1. Delete the existing **CropPolygon** node.
-2. Add a new **CropPolygon** node.
+2. Add a new **CropPolygon** node（Keep the above settings unchanged).
 3. Start the workflow.
 4. Select the **CropPolygon** node.
 5. Click the **(...)** button next to the **Regions** property.
