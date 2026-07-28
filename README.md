@@ -1,4 +1,4 @@
-# Behaviour Box Mini (In Construction)
+# Behaviour Box Mini
 A simplified, open-source behavioural recording platform focusing on robust mouse locomotion tracking as the first step towards scalable behavioural phenotyping.
 <img width="1001" height="1001" alt="behaviour box model" src="https://github.com/user-attachments/assets/24f0d75a-5f1c-4b53-864f-57188c86a247" />
 
