@@ -85,7 +85,7 @@ To modify the frame rate:
 
 
 
-> ## Mouse Centroid Tracking
+### Mouse Centroid Tracking
 
 The Mini Behaviour Box uses a **centroid-based tracking** approach to estimate the animal's position throughout each recording. Compared with full-body pose estimation or segmentation methods, centroid tracking is computationally lightweight, robust, and sufficiently accurate for locomotion tracking and behavioural area classification, making it well suited for a standardised behavioural screening platform.
 
