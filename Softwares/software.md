@@ -127,3 +127,10 @@ If editing the existing polygon is difficult, it is often easier to create a new
 6. Draw a new polygon around the running wheel directly on the live camera image.
 
 Once updated, the workflow will automatically classify each frame as either **Wheel** or **Arena** based on the mouse centroid location.
+
+> **Note**
+>
+> The current hardware setup and default workflow parameters have been optimised for **black mice**. When recording **white or light-coloured mice**, consider either:
+>
+> - Printing the behaviour box in a darker colour to increase image contrast, or
+> - Carefully adjusting the tracking threshold to ensure reliable centroid detection.
