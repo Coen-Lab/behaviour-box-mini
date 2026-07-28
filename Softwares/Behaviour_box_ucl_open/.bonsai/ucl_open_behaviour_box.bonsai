@@ -258,8 +258,8 @@
               <Property Name="Path" />
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="UclOpen.Logging:LogController.bonsai">
-              <SubjectId />
-              <SessionId />
+              <SubjectId>t</SubjectId>
+              <SessionId>1</SessionId>
               <Path />
             </Expression>
             <Expression xsi:type="SubscribeSubject">
@@ -473,7 +473,7 @@ Item2 as WheelDistance)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="cv:Threshold">
-                      <cv:ThresholdValue>50</cv:ThresholdValue>
+                      <cv:ThresholdValue>35</cv:ThresholdValue>
                       <cv:MaxValue>255</cv:MaxValue>
                       <cv:ThresholdType>BinaryInv</cv:ThresholdType>
                     </Combinator>
@@ -510,19 +510,19 @@ Item2 as WheelDistance)</scr:Expression>
                       <cv:Regions>
                         <cv:ArrayOfPoint>
                           <cv:Point>
-                            <cv:X>76</cv:X>
-                            <cv:Y>429</cv:Y>
+                            <cv:X>99</cv:X>
+                            <cv:Y>418</cv:Y>
                           </cv:Point>
                           <cv:Point>
-                            <cv:X>661</cv:X>
-                            <cv:Y>429</cv:Y>
+                            <cv:X>621</cv:X>
+                            <cv:Y>418</cv:Y>
                           </cv:Point>
                           <cv:Point>
-                            <cv:X>661</cv:X>
+                            <cv:X>621</cv:X>
                             <cv:Y>539</cv:Y>
                           </cv:Point>
                           <cv:Point>
-                            <cv:X>76</cv:X>
+                            <cv:X>99</cv:X>
                             <cv:Y>539</cv:Y>
                           </cv:Point>
                         </cv:ArrayOfPoint>
@@ -617,10 +617,6 @@ Item2 as WheelDistance)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="rx:BehaviorSubject">
                     <Name>Area</Name>
-                  </Expression>
-                  <Expression xsi:type="PropertySource" TypeArguments="cv:VideoWriter,io:PathSuffix">
-                    <MemberName>Suffix</MemberName>
-                    <Value>None</Value>
                   </Expression>
                 </Nodes>
                 <Edges>
