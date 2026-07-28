@@ -82,7 +82,9 @@ To modify the frame rate:
 > **Note**
 >
 > Changing the **Binning** value also changes the output image resolution. If a specific image size is required, we recommend opening **SpinView** and manually reconfiguring the camera image dimensions after changing the binning setting.
->
+
+
+
 > ## Mouse Centroid Tracking
 
 The Mini Behaviour Box uses a **centroid-based tracking** approach to estimate the animal's position throughout each recording. Compared with full-body pose estimation or segmentation methods, centroid tracking is computationally lightweight, robust, and sufficiently accurate for locomotion tracking and behavioural area classification, making it well suited for a standardised behavioural screening platform.
