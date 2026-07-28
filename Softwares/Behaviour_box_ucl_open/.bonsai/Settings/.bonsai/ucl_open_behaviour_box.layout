@@ -45,19 +45,10 @@
         </VisualizerSettings>
         <NestedLayout>
           <WindowSettings Index="9">
-            <Visible>false</Visible>
-            <Location>
-              <X>939</X>
-              <Y>496</Y>
-            </Location>
-            <Size>
-              <Width>603</Width>
-              <Height>500</Height>
-            </Size>
             <VisualizerTypeName>Bonsai.Vision.Design.IplImageVisualizer</VisualizerTypeName>
-            <VisualizerSettings>
-              <IplImageVisualizer />
-            </VisualizerSettings>
+          </WindowSettings>
+          <WindowSettings Index="23">
+            <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
           </WindowSettings>
         </NestedLayout>
       </WindowSettings>

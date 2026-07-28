@@ -354,7 +354,7 @@
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="cv:VideoWriter">
-                      <cv:FileName>C:\Users\Jenkin\OneDrive - University College London\Desktop\work\sub-test\ses-06_date-2026-07-27T14-05-42\VideoData_Camera.avi</cv:FileName>
+                      <cv:FileName />
                       <cv:Suffix>None</cv:Suffix>
                       <cv:Buffered>true</cv:Buffered>
                       <cv:Overwrite>true</cv:Overwrite>
@@ -461,7 +461,7 @@ Item2 as WheelDistance)</scr:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\Users\Jenkin\OneDrive - University College London\Desktop\work\sub-test\ses-06_date-2026-07-27T14-05-42\LogData.csv</io:FileName>
+                    <io:FileName />
                     <io:Append>false</io:Append>
                     <io:Overwrite>true</io:Overwrite>
                     <io:Suffix>None</io:Suffix>
@@ -617,6 +617,10 @@ Item2 as WheelDistance)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="rx:BehaviorSubject">
                     <Name>Area</Name>
+                  </Expression>
+                  <Expression xsi:type="PropertySource" TypeArguments="cv:VideoWriter,io:PathSuffix">
+                    <MemberName>Suffix</MemberName>
+                    <Value>None</Value>
                   </Expression>
                 </Nodes>
                 <Edges>
