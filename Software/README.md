@@ -55,6 +55,34 @@ With the workflow loaded, click the blank workspace to bring up the experiment s
 Recording stops automatically at the trial length, saving a **CSV** of behavioural data and a
 **video**.
 
+### Data output
+
+The CSV is written as `LogData.csv` in the save directory, one row per camera frame, with a header.
+
+| Column | Meaning |
+|---|---|
+| `Seconds` | Harp clock time of the frame |
+| `Timestamp` | Camera chunk timestamp |
+| `FrameID` | Camera frame counter |
+| `ExposureTime` | Exposure of that frame, from the camera chunk |
+| `MouseLocation` | `Wheel` or `Arena` (see [Mouse Centroid Tracking](#mouse-centroid-tracking)) |
+| `Area` | Size of the thresholded mouse, in pixels |
+| `WheelDistance` | Cumulative distance run since the recording started, in cm |
+
+Acquisition constants, all set in the workflow:
+
+| | Value |
+|---|---|
+| Frame rate | 50 Hz, camera hardware-triggered by the Harp board |
+| Encoder counts per revolution | 4096 (1024 ppr, quadrature decoded x4) |
+| Wheel diameter | 150 mm, so a circumference of 47.12 cm |
+| Distance per encoder count | 0.0115 cm |
+
+`WheelDistance` accumulates the per-sample encoder difference, with 16-bit counter wraparound
+corrected, so it increases monotonically while the animal runs forwards and is not reset within a
+session. Change `CountsPerRev` or `WheelDiameterMm` in the workflow if you use a different encoder
+or wheel, or the distances will be silently wrong.
+
 ---
 
 ## Camera Settings
@@ -84,9 +112,10 @@ Position is estimated by **centroid tracking**. Compared with pose estimation or
 computationally light, robust, and accurate enough for locomotion and area classification, which
 suits a standardised screening platform.
 
-Each frame's centroid **X** and **Y** go to the output CSV. To tell whether the mouse is on the
-**running wheel** or in the **arena**, the workflow tests whether the centroid falls inside a
-user-defined polygon covering the wheel: inside is **Wheel**, outside is **Arena**.
+To tell whether the mouse is on the **running wheel** or in the **arena**, the workflow tests whether
+the centroid falls inside a user-defined polygon covering the wheel: inside is **Wheel**, outside is
+**Arena**. That classification is what reaches the CSV, in the `MouseLocation` column. The centroid
+coordinates themselves are computed but not currently logged.
 
 ## Wheel Region Calibration
 
