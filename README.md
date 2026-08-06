@@ -165,4 +165,8 @@ Configure the camera and experiment settings first — see [Software/](Software/
 
 ## License
 
-[LICENSE](LICENSE)
+Released under the [MIT License](LICENSE).
+
+The five UclOpen packages in `local_packages/` are redistributed under the BSD 3-Clause Licence, and
+everything `Setup.cmd` downloads stays under its own terms. See
+[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
