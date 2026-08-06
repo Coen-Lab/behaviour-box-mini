@@ -72,6 +72,7 @@ Two things to watch:
 ## Build Guide
 
 1. **Print** — STL files in [assembly/](assembly/). 15% infill, no supports needed for any part.
+   Everything prints straight off a standard Bambu Lab printer or equivalent.
 2. **Assemble** — [assembly guide](assembly/assembly-guide.md).
 3. **Wire** — [wiring](assembly/wiring.md).
 4. **Software** — [software](Softwares/software.md).
