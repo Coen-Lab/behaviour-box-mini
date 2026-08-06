@@ -1,0 +1,4 @@
+# Bonsai restores these from Bonsai.config on first run - see Setup.cmd.
+# local_packages/ is NOT ignored: those UclOpen packages are not on nuget.org
+# and nothing restores without them.
+**/.bonsai/Packages/
