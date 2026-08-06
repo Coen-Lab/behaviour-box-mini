@@ -1,41 +1,33 @@
 # Behaviour Box Mini
-A simplified, open-source behavioural recording platform focusing on robust mouse locomotion tracking as the first step towards scalable behavioural phenotyping.
-<p align="center">
-<img src="assembly/Pictures/Exploded%20parts.png" width="420" alt="Exploded render of the printed parts">
-</p>
+A deliberately simple, open-source box for recording mouse locomotion, built as a first step
+towards scalable behavioural phenotyping.
 
+<p align="center">
+<img src="assembly/Pictures/Box%20render.png" width="440" alt="Exploded render of the printed parts">
+</p>
 
 ## Overview
 
-The Mini Behaviour Box is an open-source, standardised behavioural recording platform for automated mouse locomotion tracking. The system combines video acquisition with rotary encoder-based locomotion measurement and is built around the Harp ecosystem using Bonsai for hardware control, data synchronisation, and data acquisition.
-The long-term objective of this project is to establish a scalable behavioural phenotyping pipeline that can be used to pre-screen experimental animals before downstream experiments. By identifying behavioural differences at an early stage, the platform aims to improve experimental efficiency, reduce unnecessary resource use, and support the principles of animal welfare by helping minimise the number of animals required for subsequent studies.
+Every part is either printed or bought off the shelf, the whole build is six printed pieces and
+two screws, and a session needs one cable to the computer. Simplicity is the point: a box that is
+quick to replicate, cheap enough to run in parallel, and hard to set up wrongly.
 
-Example frames from a recording session:
+The box pairs video capture with rotary-encoder wheel tracking, using Harp for synchronised
+timestamping and Bonsai for control and acquisition. The aim is to pre-screen animals before
+downstream experiments, so behavioural differences show up early — improving experimental
+efficiency and reducing the number of animals needed later.
 
 ![Example frames captured inside the box](assembly/Pictures/Example%20frames.jpg)
 
 ## Features
 
-Standardised behavioural acquisition
-Reproducible recording of spontaneous mouse behaviour across experiments.
-
-Video-based tracking
-Continuous camera capture for behavioural observation and offline analysis.
-
-Rotary encoder locomotion measurement
-High-temporal-resolution quantification of voluntary wheel movement.
-
-Harp ecosystem integration
-Reliable hardware communication and synchronised timestamping.
-
-Bonsai-based acquisition workflows
-Open, modular, and easily customisable data acquisition pipelines.
-
-Designed for behavioural pre-screening
-Supports early identification of behavioural phenotypes before downstream experimental procedures.
-
-Open-source and extensible
-Built to facilitate community development and future integration of additional behavioural measurements.
+- **Simple to build** — printed parts, off-the-shelf components, no machining
+- **Standardised acquisition** — reproducible recording of spontaneous behaviour across experiments
+- **Video tracking** — continuous capture for observation and offline analysis
+- **Wheel locomotion** — high-temporal-resolution measurement of voluntary movement
+- **Harp integration** — reliable hardware communication and synchronised timestamping
+- **Bonsai workflows** — open, modular, easily customisable pipelines
+- **Extensible** — built for community development and further behavioural measures
 
 ## Bill of Materials
 
@@ -50,7 +42,7 @@ Built to facilitate community development and future integration of additional b
 | 7 |[Varifocal lens, 2.8-12 mm, CS mount](https://www.aliexpress.com/item/1005006136279769.html)|1|Ali-Express|12.49|Manual zoom and focus, no IR filter|
 | 8 |[IR LED strip, 850 nm, 12 V](https://www.aliexpress.com/item/1005009046927133.html)|0.5 m|Ali-Express|8.29|Also stocked in 2 m|
 | 9 |[Mini PC, e.g. GEEKOM Air12](https://www.amazon.co.uk/dp/B0CPLNDHZ5)|1|Amazon|240|Meets the minimum specification below|
-| 10 |[M3 hex screw set, 6-14 mm](https://www.aliexpress.com/item/1005008068815080.html)|1|Ali-Express|9|50 each of 6, 8, 10, 12 and 14 mm|
+| 10 |[M3 hex screw set, 6-14 mm](https://www.aliexpress.com/item/1005008068815080.html)|1|Ali-Express|9|Mounts the rotary encoder (3 × M3 × 8 mm). Set covers 6-14 mm|
 
 Approximate total: £1070
 
@@ -67,50 +59,49 @@ unit we have found that clears the bar, so its specification is the floor:
 | USB | One USB 3.2 Gen 1 Type-A port dedicated to the camera |
 | OS | Windows 11, for Bonsai and the Spinnaker SDK |
 
-A mini PC has no PCIe slot, so the camera has to run from a built-in port rather than an expansion
-card. On storage, compressed video at 1440 x 1080 runs at roughly 1-4 GB per hour, so a 512 GB drive
-holds weeks of recording. Writing uncompressed would fill it in under three hours at 30 fps.
+Two things to watch:
+
+- **No PCIe slot** on a mini PC, so the camera runs from a built-in port rather than an expansion card.
+- **Storage** — compressed video runs at roughly 1-4 GB per hour, so 512 GB holds weeks. Uncompressed
+  would fill it in under three hours at 30 fps.
 
 ## Build Guide
 
-1. **Print and Assemble** — STL files in (assembly/). Print settings: 15% infill, enable support when needed.
-2. Follow the [assembly guide](assembly/assembly-guide.md).
-3. **Wire** — See [wiring](assembly/wiring.md) .
-4. **Software** — See [Software](assembly/software.md)
+1. **Print** — STL files in [assembly/](assembly/). 15% infill, supports where needed.
+2. **Assemble** — [assembly guide](assembly/assembly-guide.md).
+3. **Wire** — [wiring](assembly/wiring.md).
+4. **Software** — [software](Softwares/software.md).
 
-Brief instructions to go from assembled box to running a first session:
 ## How to Run the Workflow
 
-The **Software** section explains how to configure the camera and experiment settings. Once the hardware has been assembled and configured, follow the steps below to perform a behavioural recording.
+Configure the camera and experiment settings first — see [software](Softwares/software.md). Then:
 
-1. Clean the behaviour box using **dehydrated ethanol** (or another suitable disinfectant), then wipe all surfaces thoroughly to ensure the box is completely dry.
+1. Clean the box with **dehydrated ethanol** or another disinfectant, and wipe it completely dry.
 
-2. Place the mouse into the behaviour box.
+2. Place the mouse in the box.
 
-3. Install the lid with the camera attached.
+3. Fit the lid with the camera attached.
 
-   > **Note:** If area measurements (e.g. mouse area per frame) are required, ensure that the camera orientation matches the predefined crop region. See the **Software** section for further details.
+   > **Note:** For area measurements (e.g. mouse area per frame), the camera orientation must match the predefined crop region. See [software](Softwares/software.md).
 
-4. Connect all required hardware:
+4. Connect the hardware:
    - 12 V power supply to the Harp Behaviour Board
    - Rotary encoder to the Harp Behaviour Board (default **Port P0**)
    - IR LED strip power supply
    - Camera USB cable to the computer
    - Camera GPIO trigger cable to the Harp Behaviour Board
 
-5. Minimise external lighting by either:
-   - Turning off the room lights, or
-   - Covering the behaviour box with black fabric (**recommended**).
+5. Minimise external light — turn the room lights off, or cover the box with black fabric (**recommended**).
 
-6. Open the Bonsai workflow and verify that the **live camera preview** is updating correctly.
+6. Open the Bonsai workflow and check the **live camera preview** is updating.
 
-7. Configure the experiment settings (e.g. save directory, subject ID, session ID and trial length), then click **Start**.
+7. Set the save directory, subject ID, session ID and trial length, then click **Start**.
 
-8. Recording will stop automatically once the specified trial length has been reached. Both a video recording and a CSV file containing the behavioural data will be saved automatically.
+8. Recording stops automatically at the trial length, saving a video and a CSV of the behavioural data.
 
-9. Remove the mouse from the behaviour box and return it to its home cage.
+9. Return the mouse to its home cage.
 
-10. Clean the behaviour box before the next recording. Carefully inspect all corners of the box, as mouse faeces can be difficult to spot.
+10. Clean the box before the next recording, checking the corners carefully — faeces are easy to miss.
 
 ## Troubleshooting
 
