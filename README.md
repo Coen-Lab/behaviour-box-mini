@@ -114,7 +114,7 @@ Configure the camera and experiment settings first — see [Software/](Software/
 
 4. Connect the hardware:
    - 12 V power supply to the Harp Behaviour Board
-   - Rotary encoder to the Harp Behaviour Board (default **Port P0**)
+   - Rotary encoder to the Harp Behaviour Board (**Port 2**)
    - IR LED strip power supply
    - Camera USB cable to the computer
    - Camera GPIO trigger cable to the Harp Behaviour Board

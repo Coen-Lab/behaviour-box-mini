@@ -33,8 +33,10 @@ Camera configuration is covered in [software](../Software/).
 
 ## Rotary encoder
 
-The encoder connects to the Harp Behaviour Board over RJ45, on **Port P0** by default. To simplify
-assembly and replacement, terminate the encoder wires in a **5-way screw terminal block** first.
+The encoder connects to the Harp Behaviour Board over RJ45, on **Port 2**. This is not a preference:
+Port 2 is the only one of the three ports wired to the board's quadrature counter, and the workflow
+enables it by name. To simplify assembly and replacement, terminate the encoder wires in a **5-way
+screw terminal block** first.
 
 The encoder has five wires, four of which are used:
 
@@ -59,7 +61,7 @@ The board is the central interface between camera, encoder and computer. It need
 - USB to the computer
 - 12 V DC power in
 - GPIO output to the camera trigger cable
-- RJ45 to the rotary encoder (**Port P0** by default)
+- RJ45 to the rotary encoder (**Port 2**, the only port with a quadrature counter)
 
 <p align="center">
   <img src="Pictures/Behaviour.jpg" width="48%" alt="Harp Behaviour Board connections">
