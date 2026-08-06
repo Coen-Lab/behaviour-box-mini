@@ -20,9 +20,13 @@ An account is needed, so this step cannot be scripted and must be done by hand.
 
 > **Important**
 >
-> Bonsai works only with Spinnaker SDK **4.2.0.83**. Another version may stop Bonsai detecting the
-> camera, or make it behave unexpectedly or crash. Pick the version deliberately — the download page
+> Bonsai works only with Spinnaker SDK **4.2.0.83**. Pick the version deliberately: the download page
 > defaults to the latest.
+>
+> This is upstream's requirement, not a local quirk. `Bonsai.Spinnaker 0.9.1` states it in its package
+> description and ships a matching `SpinnakerNET_v140.dll` at exactly 4.2.0.83. The package provides
+> the managed wrapper while the SDK provides the native runtime, and the two are version-locked, so a
+> mismatch fails at interop and shows up as the camera simply not appearing.
 
 ---
 
