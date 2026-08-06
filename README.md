@@ -79,11 +79,11 @@ Two things to watch:
 
 ## Build guide
 
-Four steps, roughly a day of printing and half an hour of assembly.
+Four steps, a couple of days of printing and half an hour of assembly.
 
 | Step | What it involves | Guide |
 |---|---|---|
-| 1. Print | Six parts in one STL: box body, lid, camera holder, running wheel and two screws. 15% infill, no supports, straight off a standard Bambu Lab printer or equivalent. | [assembly/](assembly/) |
+| 1. Print | Six parts in one STL: box body, lid, camera holder, running wheel and two screws. 15% infill, no supports, three plates on a standard Bambu Lab printer or equivalent. | [assembly/](assembly/) |
 | 2. Assemble | Mount the encoder, fit the wheel to its D-shaft, clamp the camera in its holder with the lens, and line three walls with the IR strip. 20-30 minutes. | [assembly/](assembly/) |
 | 3. Wire | Camera to computer over locking USB, GPIO trigger and encoder to the Harp board. | [wiring](assembly/wiring.md) |
 | 4. Software | Install the Spinnaker SDK, run `Setup.cmd`, open the workflow. | [Software/](Software/) |
