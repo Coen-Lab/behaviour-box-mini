@@ -1,6 +1,8 @@
 # Behaviour Box Mini
 A simplified, open-source behavioural recording platform focusing on robust mouse locomotion tracking as the first step towards scalable behavioural phenotyping.
-<img width="1001" height="1001" alt="behaviour box model" src="https://github.com/user-attachments/assets/24f0d75a-5f1c-4b53-864f-57188c86a247" />
+<p align="center">
+<img src="assembly/Pictures/Exploded%20render.png" width="420" alt="Exploded render of the printed parts">
+</p>
 
 
 ## Overview
@@ -72,11 +74,6 @@ holds weeks of recording. Writing uncompressed would fill it in under three hour
 ## Build Guide
 
 1. **Print and Assemble** — STL files in (assembly/). Print settings: 15% infill, enable support when needed.
-
-<p align="center">
-<img src="assembly/Pictures/Exploded%20render.png" width="360" alt="Exploded render of the printed parts">
-</p>
-
 2. Follow the [assembly guide](assembly/assembly-guide.md).
 3. **Wire** — See [wiring](assembly/wiring.md) .
 4. **Software** — See [Software](assembly/software.md)
