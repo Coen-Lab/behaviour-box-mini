@@ -52,6 +52,9 @@ With the workflow loaded, click the blank workspace to bring up the experiment s
 - Subject ID
 - Trial length (minutes)
 
+Recording stops automatically at the trial length, saving a **CSV** of behavioural data and a
+**video**.
+
 ### Serial port
 
 One thing has to be set once per machine. The Harp Behaviour Board appears as a COM port, and the
@@ -60,9 +63,6 @@ Manager under **Ports (COM & LPT)**, then double-click **metadata**, then **Beha
 the **BehaviorBoard** node and set **PortName** in the **Properties** panel.
 
 Get this wrong and the workflow fails on startup without saying why.
-
-Recording stops automatically at the trial length, saving a **CSV** of behavioural data and a
-**video**.
 
 ### Data output
 
@@ -173,9 +173,8 @@ own box: put a ruler or a printed grid on the floor, record a frame, and measure
 pixel. The lens is a varifocal focused by hand, so the scale belongs to your box and changes the
 moment anyone touches the zoom ring.
 
-Each frame's centroid is written to the CSV as `MouseLocation`, in pixels. Nothing is classified
-online: if you need to know whether the animal was on the wheel or in the arena, test the logged
-coordinates against a wheel region offline. Doing it after the fact means one region definition
+Nothing is classified online: if you need to know whether the animal was on the wheel or in the
+arena, test the logged coordinates against a wheel region offline. Doing it after the fact means one region definition
 applied identically to every session, rather than one drawn by hand per rig.
 
 > **Note**
