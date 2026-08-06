@@ -109,7 +109,7 @@ Full detail, including camera settings, is in [Software/](Software/).
 
 Configure the camera and experiment settings first — see [Software/](Software/). Then:
 
-1. Clean the box with **dehydrated ethanol** or another disinfectant, and wipe it completely dry.
+1. Clean the box with **70% ethanol** or another disinfectant, and wipe it completely dry.
 
 2. Place the mouse in the box.
 
@@ -165,7 +165,8 @@ Configure the camera and experiment settings first — see [Software/](Software/
 
 ## License
 
-Released under the [MIT License](LICENSE).
+Released under the [MIT License](LICENSE), which covers the printed design as well as the workflow
+and the documentation.
 
 The five UclOpen packages in `local_packages/` are redistributed under the BSD 3-Clause Licence, and
 everything `Setup.cmd` downloads stays under its own terms. See
