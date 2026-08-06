@@ -46,9 +46,14 @@ efficiency and reducing the number of animals needed later.
 
 Approximate total: £1070
 
-Omron E6B2-C encoders ship with an E69-2 mounting bracket and three M3 × 10 Phillips screws, which
-may cover the encoder mount on their own. The assembly guide calls for three M3 × 8 mm hex screws
-and a 2 mm Allen key, so check what arrives before ordering row 10.
+**Notes**
+
+- **Rotary encoder alternative** — [Omron E6B2-CWZ6C 360P/R 0.5M](https://uk.rs-online.com/web/p/motion-control-sensors/2158863),
+  RS stock 215-8863, £216.14 exc VAT. Same NPN open-collector output and 6 mm shaft, but 360 ppr
+  rather than 1024, and about twelve times the price. Worth it only if you need a warranted part.
+- **Screws** — Omron encoders ship with an E69-2 bracket and three M3 × 10 Phillips screws, which may
+  cover the encoder mount on their own. The assembly guide calls for three M3 × 8 mm hex screws and a
+  2 mm Allen key, so check what arrives before ordering row 10.
 
 ### Computer minimum specification
 
