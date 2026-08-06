@@ -62,6 +62,8 @@ should slide on smoothly, without excessive force.
 2. Insert the camera through the camera holder from the rear.
 3. Reattach the lens from the front, clamping the holder between the camera body and the lens so it
    cannot move.
+4. Slide the holder into the square opening at the top of the lid and lock it with the two printed
+   screws. Either screw goes in either hole.
 
 See [wiring](wiring.md) for the camera power and trigger connections.
 
