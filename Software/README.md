@@ -57,10 +57,10 @@ Recording stops automatically at the trial length, saving a **CSV** of behaviour
 
 ### Serial port
 
-One thing has to be set once per machine. The Harp Behaviour Board appears as a COM port, and the
-workflow ships pointing at **COM3**, which will be wrong on most computers. Find the board in Device
-Manager under **Ports (COM & LPT)**, then double-click **metadata**, then **BehaviorBoards**, select
-the **BehaviorBoard** node and set **PortName** in the **Properties** panel.
+One thing is set once per machine rather than per recording. The Harp Behaviour Board appears as a
+COM port, and the workflow ships pointing at **COM3**, which will be wrong on most computers. Find
+the board in Device Manager under **Ports (COM & LPT)**, then set **PortName** in the same
+**Properties** panel.
 
 Get this wrong and the workflow fails on startup without saying why.
 

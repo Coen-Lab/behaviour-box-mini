@@ -14,6 +14,7 @@
     <Nodes>
       <Expression xsi:type="ExternalizedMapping">
         <Property Name="SerialNumber" />
+        <Property Name="PortName" />
       </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>metadata</Name>
@@ -202,10 +203,14 @@
                   <Expression xsi:type="MulticastSubject">
                     <Name>StartCameras</Name>
                   </Expression>
+                  <Expression xsi:type="ExternalizedMapping">
+                    <Property Name="PortName" Description="The serial port the Harp Behaviour Board is connected to" />
+                  </Expression>
                 </Nodes>
                 <Edges>
                   <Edge From="3" To="4" Label="Source1" />
                   <Edge From="4" To="5" Label="Source1" />
+                  <Edge From="6" To="0" Label="Source1" />
                 </Edges>
               </Workflow>
             </Expression>
@@ -233,11 +238,15 @@
             <Expression xsi:type="MemberSelector">
               <Selector>Value.ChunkData.Width</Selector>
             </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="PortName" />
+            </Expression>
           </Nodes>
           <Edges>
             <Edge From="1" To="2" Label="Source1" />
             <Edge From="3" To="4" Label="Source1" />
             <Edge From="3" To="5" Label="Source1" />
+            <Edge From="6" To="0" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
