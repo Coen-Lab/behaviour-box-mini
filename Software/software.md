@@ -5,6 +5,8 @@ Two components:
 - **Spinnaker SDK (SpinView)** — camera driver and configuration
 - **Bonsai** — acquisition, encoder recording, trigger control and data saving
 
+Install them in that order: Bonsai cannot see the camera without the Spinnaker driver.
+
 ---
 
 ## Spinnaker SDK (SpinView)
@@ -12,18 +14,26 @@ Two components:
 Spinnaker is Teledyne FLIR's official package. It provides the camera driver and lets you configure
 image size, exposure time, gain, frame rate and trigger mode.
 
+Download it from
+[Teledyne Vision Solutions](https://www.teledynevisionsolutions.com/support/support-center/software-firmware-downloads/iis/spinnaker-sdk-download/spinnaker-sdk--download-files/?pn=Spinnaker+SDK&vn=Spinnaker+SDK).
+An account is needed, so this step cannot be scripted and must be done by hand.
+
 > **Important**
 >
 > Bonsai works only with Spinnaker SDK **4.2.0.83**. Another version may stop Bonsai detecting the
-> camera, or make it behave unexpectedly or crash.
+> camera, or make it behave unexpectedly or crash. Pick the version deliberately — the download page
+> defaults to the latest.
 
 ---
 
 ## Bonsai
 
-The installers, packages and workflow are in
-[`Behaviour_box_ucl_open`](Behaviour_box_ucl_open/). Because of compatibility patches in this
-project, open the workflow manually rather than launching it directly:
+Run [`Setup.cmd`](Behaviour_box_ucl_open/.bonsai/Setup.cmd) once. It downloads Bonsai and restores
+the packages listed in `Bonsai.config` from nuget.org and `local_packages/`, so nothing else needs
+installing by hand.
+
+Then, because of compatibility patches in this project, open the workflow manually rather than
+launching it directly:
 
 1. Open **Bonsai**.
 2. Select **File → Open**.
