@@ -88,6 +88,9 @@ Acquisition constants, all set in the workflow:
 | | Value |
 |---|---|
 | Frame rate | 50 Hz, camera hardware-triggered by the Harp board |
+| Exposure | 19 ms |
+| Gain | 20 dB |
+| Binning | 2, so the 1440 x 1080 sensor gives 720 x 540 images |
 | Encoder counts per revolution | 4096 (1024 ppr, quadrature decoded x4) |
 | Wheel diameter | 150 mm, so a circumference of 47.12 cm |
 | Distance per encoder count | 0.0115 cm |
@@ -105,20 +108,37 @@ The workflow ships with recommended settings and should not need changing. If it
 
 ### Exposure time, gain and binning
 
-1. Double-click the **Metadata** node.
+1. Double-click the **metadata** node.
 2. Click on an empty area within the editor.
 3. Modify the desired parameters in the **Properties** panel.
 
+The order to tune them in is exposure first, then gain, then binning:
+
+- **Exposure** buys image quality for free, so make it as long as the frame period allows. At 50 Hz
+  a frame lasts 20 ms, and the shipped 19 ms leaves a millisecond of margin. Going over the frame
+  period does not slow the camera down gracefully: it drops triggers, and because frames are paired
+  with trigger events in order, a dropped one shifts every timestamp after it.
+- **Gain** amplifies noise along with signal, so keep it as low as the image allows. Reach for it
+  only once exposure is maxed out and the picture is still too dark, and prefer adding IR
+  illumination instead.
+- **Binning** is the file-size control. It sums neighbouring pixels, so it also brightens the image
+  and cuts noise, at the cost of resolution: binning 2 turns the 1440 x 1080 sensor into 720 x 540
+  and quarters the data rate.
+
 ### Frame rate
 
-1. Double-click the **Logging** node.
-2. Click on an empty area.
-3. Adjust the frame rate in the **Properties** panel.
+The camera is hardware-triggered, so its frame rate is set by the Harp board rather than by the
+camera. Changing it means changing three things together, or the recordings go wrong quietly:
 
-> **Note**
->
-> Changing **Binning** also changes the output resolution. If you need a specific image size, set the
-> camera dimensions manually in **SpinView** afterwards.
+1. **Trigger0Frequency** on the `CameraTriggerController` node, inside **metadata** then
+   **BehaviorBoards**. This is the one that actually sets the rate.
+2. The **frames-per-second multiplier** in the **logging** group, which turns the trial length in
+   minutes into a frame count. If it disagrees with the trigger, recordings stop at the wrong
+   length.
+3. **FrameRate** on the `VideoWriter` node, inside **logging** then **LogVideo**. This only labels
+   the AVI, but if it is wrong the video plays back at the wrong speed.
+
+Check the exposure still fits inside the new frame period.
 
 ## Mouse centroid tracking
 

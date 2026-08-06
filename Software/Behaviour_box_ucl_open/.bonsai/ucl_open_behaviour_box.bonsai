@@ -216,7 +216,7 @@
               <Property Name="Binning" />
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="UclOpen.Devices:TriggeredSpinnaker.bonsai">
-              <ExposureTime>33000</ExposureTime>
+              <ExposureTime>19000</ExposureTime>
               <Gain>20</Gain>
               <Binning>2</Binning>
               <SerialNumber />
@@ -284,7 +284,7 @@
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="rx:Take">
-                      <rx:Count>1800</rx:Count>
+                      <rx:Count>3000</rx:Count>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="MemberSelector">
@@ -358,7 +358,7 @@
                       <cv:Buffered>true</cv:Buffered>
                       <cv:Overwrite>true</cv:Overwrite>
                       <cv:FourCC>FMP4</cv:FourCC>
-                      <cv:FrameRate>30</cv:FrameRate>
+                      <cv:FrameRate>50</cv:FrameRate>
                       <cv:FrameSize>
                         <cv:Width>0</cv:Width>
                         <cv:Height>0</cv:Height>
@@ -550,7 +550,7 @@ Item2 as WheelDistance)</scr:Expression>
             </Expression>
             <Expression xsi:type="Multiply">
               <Operand xsi:type="WorkflowProperty" TypeArguments="sys:Int64">
-                <Value>30</Value>
+                <Value>50</Value>
               </Operand>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">

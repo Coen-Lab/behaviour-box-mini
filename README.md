@@ -72,7 +72,7 @@ Two things to watch:
 
 - **No PCIe slot** on a mini PC, so the camera runs from a built-in port rather than an expansion card.
 - **Storage** — compressed video runs at roughly 1-4 GB per hour, so 512 GB holds weeks. Uncompressed
-  would fill it in under three hours at 30 fps.
+  it would fill in about seven hours, at the shipped 720 x 540 and 50 Hz.
 
 ## Build guide
 
