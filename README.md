@@ -8,6 +8,10 @@ A simplified, open-source behavioural recording platform focusing on robust mous
 The Mini Behaviour Box is an open-source, standardised behavioural recording platform for automated mouse locomotion tracking. The system combines video acquisition with rotary encoder-based locomotion measurement and is built around the Harp ecosystem using Bonsai for hardware control, data synchronisation, and data acquisition.
 The long-term objective of this project is to establish a scalable behavioural phenotyping pipeline that can be used to pre-screen experimental animals before downstream experiments. By identifying behavioural differences at an early stage, the platform aims to improve experimental efficiency, reduce unnecessary resource use, and support the principles of animal welfare by helping minimise the number of animals required for subsequent studies.
 
+Example frames from a recording session:
+
+![Example frames captured inside the box](assembly/Pictures/Example%20frames.jpg)
+
 ## Features
 
 Standardised behavioural acquisition
@@ -35,18 +39,44 @@ Built to facilitate community development and future integration of additional b
 
 | # | Part | Qty | Supplier | Cost | Notes |
 |---|------|-----|----------|------|-------|
-| 1 |3D Print Filament|2|Bambu Lab|18*2|PLA|
-| 2 |FLIR cameras|1|FLIR|277|BFS-U3-16S2M-CS|
+| 1 |[3D Print Filament](https://uk.store.bambulab.com/products/pla-basic-filament)|2|Bambu Lab|18*2|PLA|
+| 2 |[FLIR cameras](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/BFS-U3-16S2M-CS/16528335)|1|Digikey|277|BFS-U3-16S2M-CS|
 | 3 |Rotary Encoder|1|Ali-Express|18||
 | 4 |HARP Behaviour Board|1|HARP|415||
-| 5 |locking USB 3.0 Micro-B cable|1|Amazon|18||
-| 6 |GPIO cable|1|Digikey|33|For Camera Trigger|
+| 5 |[locking USB 3.0 Micro-B cable](https://www.amazon.co.uk/dp/B0BYDYKB75)|1|Amazon|18|5 m, black straight connector|
+| 6 |[GPIO cable](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/ACC-01-3010/16528421)|1|Digikey|33|For Camera Trigger. FLIR ACC-01-3010, Hirose HR10 6-pin|
+| 7 |[Varifocal lens, 2.8-12 mm, CS mount](https://www.aliexpress.com/item/1005006136279769.html)|1|Ali-Express|12.49|Manual zoom and focus, no IR filter|
+| 8 |[IR LED strip, 850 nm, 12 V](https://www.aliexpress.com/item/1005009046927133.html)|0.5 m|Ali-Express|8.29|Also stocked in 2 m|
+| 9 |[Mini PC, e.g. GEEKOM Air12](https://www.amazon.co.uk/dp/B0CPLNDHZ5)|1|Amazon|240|Meets the minimum specification below|
+| 10 |[M3 hex screw set, 6-14 mm](https://www.aliexpress.com/item/1005008068815080.html)|1|Ali-Express|9|50 each of 6, 8, 10, 12 and 14 mm|
 
-Approximate total: £800
+Approximate total: £1070
+
+### Computer minimum specification
+
+One machine per box runs Bonsai and writes the video. The GEEKOM Air12 in row 9 is the cheapest
+unit we have found that clears the bar, so its specification is the floor:
+
+| | Minimum |
+|---|---|
+| CPU | 4-core x86, Intel N-series or PT7505 class |
+| RAM | 16 GB |
+| Storage | 512 GB NVMe SSD |
+| USB | One USB 3.2 Gen 1 Type-A port dedicated to the camera |
+| OS | Windows 11, for Bonsai and the Spinnaker SDK |
+
+A mini PC has no PCIe slot, so the camera has to run from a built-in port rather than an expansion
+card. On storage, compressed video at 1440 x 1080 runs at roughly 1-4 GB per hour, so a 512 GB drive
+holds weeks of recording. Writing uncompressed would fill it in under three hours at 30 fps.
 
 ## Build Guide
 
 1. **Print and Assemble** — STL files in (assembly/). Print settings: 15% infill, enable support when needed.
+
+<p align="center">
+<img src="assembly/Pictures/Exploded%20render.png" width="360" alt="Exploded render of the printed parts">
+</p>
+
 2. Follow the [assembly guide](assembly/assembly-guide.md).
 3. **Wire** — See [wiring](assembly/wiring.md) .
 4. **Software** — See [Software](assembly/software.md)
