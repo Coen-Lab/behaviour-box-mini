@@ -80,14 +80,31 @@ Four steps, roughly a day of printing and half an hour of assembly.
 
 | Step | What it involves | Guide |
 |---|---|---|
-| 1. Print | Four PLA parts: box body, lid, camera holder, running wheel. 15% infill, no supports, straight off a standard Bambu Lab printer or equivalent. | [assembly/](assembly/) |
+| 1. Print | Six parts in one STL: box body, lid, camera holder, running wheel and two screws. 15% infill, no supports, straight off a standard Bambu Lab printer or equivalent. | [assembly/](assembly/) |
 | 2. Assemble | Mount the encoder, fit the wheel to its D-shaft, clamp the camera in its holder with the lens. 20-30 minutes. | [assembly/](assembly/) |
 | 3. Wire | Camera to computer over locking USB, GPIO trigger and encoder to the Harp board. | [wiring](assembly/wiring.md) |
-| 4. Software | Install the Spinnaker SDK, run `Setup.cmd` to restore Bonsai, open the workflow. | [Software/](Software/) |
+| 4. Software | Install the Spinnaker SDK, run `Setup.cmd`, open the workflow. | [Software/](Software/) |
+
+### Installing the software
+
+Order matters: Bonsai cannot see the camera without the Spinnaker driver already in place.
+
+1. **Spinnaker SDK 4.2.0.83** — download from
+   [Teledyne Vision Solutions](https://www.teledynevisionsolutions.com/support/support-center/software-firmware-downloads/iis/spinnaker-sdk-download/spinnaker-sdk--download-files/?pn=Spinnaker+SDK&vn=Spinnaker+SDK).
+   The version must match exactly; the download page defaults to the latest, so choose deliberately.
+   An account is required, so this step cannot be scripted.
+2. **Bonsai** — run `Software\Behaviour_box_ucl_open\.bonsai\Setup.cmd`. It downloads Bonsai and
+   restores every package from `Bonsai.config`, and warns if Spinnaker is missing or the wrong
+   version. Nothing else needs installing by hand.
+3. **Open the workflow** — start Bonsai, then **File → Open** →
+   `ucl_open_behaviour_box.bonsai`. Do not launch the workflow file directly: this project relies on
+   compatibility patches.
+
+Full detail, including camera settings and wheel-region calibration, is in [Software/](Software/).
 
 ## How to Run the Workflow
 
-Configure the camera and experiment settings first — see [software](Software/). Then:
+Configure the camera and experiment settings first — see [Software/](Software/). Then:
 
 1. Clean the box with **dehydrated ethanol** or another disinfectant, and wipe it completely dry.
 

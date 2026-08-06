@@ -3,12 +3,13 @@
 Printing, assembling and wiring the box. For the parts list and prices see the
 [Bill of Materials](../README.md#bill-of-materials); for wiring see [wiring.md](wiring.md).
 
-The box is four 3D-printed PLA parts:
+The STL contains six printed parts:
 
 - Behaviour box body
 - Lid
 - Camera holder
 - Running wheel
+- Two screws
 
 Everything else is bought off the shelf, as listed in the [Bill of Materials](../README.md#bill-of-materials).
 Assembly takes 20-30 minutes.
@@ -24,7 +25,7 @@ Assembly takes 20-30 minutes.
 
 ## Step 1 - Print the components
 
-Print the four parts from [`Behaviour_box_Mini.stl`](Behaviour_box_Mini.stl).
+Print all six parts from [`Behaviour_box_Mini.stl`](Behaviour_box_Mini.stl).
 
 | Setting | Value |
 |---|---|
