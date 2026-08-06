@@ -100,7 +100,7 @@ Order matters: Bonsai cannot see the camera without the Spinnaker driver already
    `ucl_open_behaviour_box.bonsai`. Do not launch the workflow file directly: this project relies on
    compatibility patches.
 
-Full detail, including camera settings and wheel-region calibration, is in [Software/](Software/).
+Full detail, including camera settings, is in [Software/](Software/).
 
 ## How to Run the Workflow
 
@@ -111,8 +111,6 @@ Configure the camera and experiment settings first — see [Software/](Software/
 2. Place the mouse in the box.
 
 3. Fit the lid with the camera attached.
-
-   > **Note:** For area measurements (e.g. mouse area per frame), the camera orientation must match the predefined crop region. See [software](Software/).
 
 4. Connect the hardware:
    - 12 V power supply to the Harp Behaviour Board

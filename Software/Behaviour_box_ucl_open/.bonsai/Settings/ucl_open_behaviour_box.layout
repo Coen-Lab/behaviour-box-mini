@@ -18,7 +18,7 @@
               <IplImageVisualizer />
             </VisualizerSettings>
           </WindowSettings>
-          <WindowSettings Index="18">
+          <WindowSettings Index="17">
             <Location>
               <X>528</X>
               <Y>422</Y>
@@ -37,7 +37,7 @@
               </TimeSeriesVisualizer>
             </VisualizerSettings>
           </WindowSettings>
-          <WindowSettings Index="23">
+          <WindowSettings Index="22">
             <Location>
               <X>570</X>
               <Y>313</Y>

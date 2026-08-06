@@ -9,7 +9,6 @@
                  xmlns:sys="clr-namespace:System;assembly=mscorlib"
                  xmlns:cv="clr-namespace:Bonsai.Vision;assembly=Bonsai.Vision"
                  xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
-                 xmlns:p1="clr-namespace:OpenCV.Net;assembly=OpenCV.Net"
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
     <Nodes>
@@ -383,9 +382,6 @@
                   <Expression xsi:type="SubscribeSubject">
                     <Name>Mouse_centroid</Name>
                   </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>Area</Name>
-                  </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="rx:Zip" />
                   </Expression>
@@ -402,7 +398,6 @@ Item1.Item2 as Timestamp,
 Item1.Item3 as FrameID,
 Item1.Item4 as ExposureTime,
 Item1.Item5 as MouseLocation,
-Item1.Item6 as Area,
 Item2 as WheelDistance)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="GroupWorkflow">
@@ -502,123 +497,7 @@ Item2 as WheelDistance)</scr:Expression>
                   <Expression xsi:type="rx:BehaviorSubject">
                     <Name>Mouse_centroid</Name>
                   </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>Mouse_centroid</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="cv:CropPolygon">
-                      <cv:Regions>
-                        <cv:ArrayOfPoint>
-                          <cv:Point>
-                            <cv:X>99</cv:X>
-                            <cv:Y>418</cv:Y>
-                          </cv:Point>
-                          <cv:Point>
-                            <cv:X>621</cv:X>
-                            <cv:Y>418</cv:Y>
-                          </cv:Point>
-                          <cv:Point>
-                            <cv:X>621</cv:X>
-                            <cv:Y>539</cv:Y>
-                          </cv:Point>
-                          <cv:Point>
-                            <cv:X>99</cv:X>
-                            <cv:Y>539</cv:Y>
-                          </cv:Point>
-                        </cv:ArrayOfPoint>
-                      </cv:Regions>
-                      <cv:MaskType>ToZero</cv:MaskType>
-                      <cv:FillValue>
-                        <cv:Val0>255</cv:Val0>
-                        <cv:Val1>255</cv:Val1>
-                        <cv:Val2>255</cv:Val2>
-                        <cv:Val3>255</cv:Val3>
-                      </cv:FillValue>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="PropertySource" TypeArguments="cv:CropPolygon,p1:Point[][]">
-                    <MemberName>Regions</MemberName>
-                    <Value>
-                      <ArrayOfPoint>
-                        <Point>
-                          <X>76</X>
-                          <Y>429</Y>
-                        </Point>
-                        <Point>
-                          <X>661</X>
-                          <Y>429</Y>
-                        </Point>
-                        <Point>
-                          <X>661</X>
-                          <Y>539</Y>
-                        </Point>
-                        <Point>
-                          <X>76</X>
-                          <Y>539</Y>
-                        </Point>
-                      </ArrayOfPoint>
-                    </Value>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:WithLatestFrom" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="cv:ContainsPoint" />
-                  </Expression>
-                  <Expression xsi:type="rx:Condition">
-                    <Name>False</Name>
-                    <Workflow>
-                      <Nodes>
-                        <Expression xsi:type="WorkflowInput">
-                          <Name>Source1</Name>
-                        </Expression>
-                        <Expression xsi:type="scr:ExpressionTransform">
-                          <scr:Expression>it == False</scr:Expression>
-                        </Expression>
-                        <Expression xsi:type="WorkflowOutput" />
-                      </Nodes>
-                      <Edges>
-                        <Edge From="0" To="1" Label="Source1" />
-                        <Edge From="1" To="2" Label="Source1" />
-                      </Edges>
-                    </Workflow>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="StringProperty">
-                      <Value>Arena</Value>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="rx:Condition">
-                    <Name>True</Name>
-                    <Description />
-                    <Workflow>
-                      <Nodes>
-                        <Expression xsi:type="WorkflowInput">
-                          <Name>Source1</Name>
-                        </Expression>
-                        <Expression xsi:type="scr:ExpressionTransform">
-                          <scr:Expression>it == True</scr:Expression>
-                        </Expression>
-                        <Expression xsi:type="WorkflowOutput" />
-                      </Nodes>
-                      <Edges>
-                        <Edge From="0" To="1" Label="Source1" />
-                        <Edge From="1" To="2" Label="Source1" />
-                      </Edges>
-                    </Workflow>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="StringProperty">
-                      <Value>Wheel</Value>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Merge" />
-                  </Expression>
-                  <Expression xsi:type="rx:BehaviorSubject">
-                    <Name>Area</Name>
-                  </Expression>
-                </Nodes>
+                  </Nodes>
                 <Edges>
                   <Edge From="0" To="3" Label="Source1" />
                   <Edge From="1" To="2" Label="Source1" />
@@ -629,44 +508,31 @@ Item2 as WheelDistance)</scr:Expression>
                   <Edge From="3" To="13" Label="Source1" />
                   <Edge From="3" To="14" Label="Source1" />
                   <Edge From="4" To="9" Label="Source1" />
-                  <Edge From="4" To="24" Label="Source1" />
-                  <Edge From="4" To="32" Label="Source1" />
+                  <Edge From="4" To="23" Label="Source1" />
                   <Edge From="5" To="6" Label="Source1" />
-                  <Edge From="5" To="21" Label="Source1" />
+                  <Edge From="5" To="20" Label="Source1" />
                   <Edge From="6" To="7" Label="Source1" />
                   <Edge From="7" To="9" Label="Source2" />
                   <Edge From="8" To="9" Label="Source3" />
                   <Edge From="9" To="10" Label="Source1" />
-                  <Edge From="11" To="17" Label="Source1" />
-                  <Edge From="12" To="17" Label="Source2" />
-                  <Edge From="13" To="17" Label="Source3" />
-                  <Edge From="14" To="17" Label="Source4" />
-                  <Edge From="15" To="17" Label="Source5" />
-                  <Edge From="16" To="17" Label="Source6" />
-                  <Edge From="17" To="19" Label="Source1" />
-                  <Edge From="18" To="19" Label="Source2" />
-                  <Edge From="19" To="20" Label="Source1" />
-                  <Edge From="20" To="23" Label="Source1" />
-                  <Edge From="21" To="22" Label="Source1" />
-                  <Edge From="22" To="23" Label="Source2" />
+                  <Edge From="11" To="16" Label="Source1" />
+                  <Edge From="12" To="16" Label="Source2" />
+                  <Edge From="13" To="16" Label="Source3" />
+                  <Edge From="14" To="16" Label="Source4" />
+                  <Edge From="15" To="16" Label="Source5" />
+                  <Edge From="16" To="18" Label="Source1" />
+                  <Edge From="17" To="18" Label="Source2" />
+                  <Edge From="18" To="19" Label="Source1" />
+                  <Edge From="19" To="22" Label="Source1" />
+                  <Edge From="20" To="21" Label="Source1" />
+                  <Edge From="21" To="22" Label="Source2" />
+                  <Edge From="23" To="24" Label="Source1" />
                   <Edge From="24" To="25" Label="Source1" />
                   <Edge From="25" To="26" Label="Source1" />
                   <Edge From="26" To="27" Label="Source1" />
                   <Edge From="27" To="28" Label="Source1" />
                   <Edge From="28" To="29" Label="Source1" />
-                  <Edge From="29" To="30" Label="Source1" />
-                  <Edge From="31" To="34" Label="Source1" />
-                  <Edge From="32" To="33" Label="Source1" />
-                  <Edge From="33" To="34" Label="Source2" />
-                  <Edge From="34" To="35" Label="Source1" />
-                  <Edge From="35" To="36" Label="Source1" />
-                  <Edge From="35" To="38" Label="Source1" />
-                  <Edge From="36" To="37" Label="Source1" />
-                  <Edge From="37" To="40" Label="Source1" />
-                  <Edge From="38" To="39" Label="Source1" />
-                  <Edge From="39" To="40" Label="Source2" />
-                  <Edge From="40" To="41" Label="Source1" />
-                </Edges>
+                  </Edges>
               </Workflow>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">

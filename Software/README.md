@@ -66,7 +66,6 @@ The CSV is written as `LogData.csv` in the save directory, one row per camera fr
 | `FrameID` | Camera frame counter |
 | `ExposureTime` | Exposure of that frame, from the camera chunk |
 | `MouseLocation` | Mouse centroid position, X and Y in pixels |
-| `Area` | Which region the mouse is in: `Wheel` or `Arena` |
 | `WheelDistance` | Cumulative distance run since the recording started, in cm |
 
 Acquisition constants, all set in the workflow:
@@ -109,47 +108,13 @@ The workflow ships with recommended settings and should not need changing. If it
 ## Mouse Centroid Tracking
 
 Position is estimated by **centroid tracking**. Compared with pose estimation or segmentation it is
-computationally light, robust, and accurate enough for locomotion and area classification, which
-suits a standardised screening platform.
+computationally light, robust, and accurate enough for locomotion, which suits a standardised
+screening platform.
 
-Each frame's centroid is written to the CSV as `MouseLocation`. To tell whether the mouse is on the
-**running wheel** or in the **arena**, the workflow also tests whether the centroid falls inside a
-user-defined polygon covering the wheel: inside is **Wheel**, outside is **Arena**. That
-classification is the `Area` column, meaning the region occupied rather than a pixel count.
-
-## Wheel Region Calibration
-
-The wheel region is a **CropPolygon** node, set up for the reference hardware used during
-development. Any of the following will throw the polygon out of alignment:
-
-- Camera height
-- Lens focal length
-- Camera orientation (rotation)
-- Behaviour box geometry
-
-**Recalibrate the polygon after assembling the system**, or area classification will be wrong.
-
-### Updating the polygon
-
-1. Open the Bonsai workflow.
-2. Navigate to the **CropPolygon** node.
-3. Replace the existing polygon so that it accurately covers the running wheel.
-
-Keep the following settings unchanged:
-
-- **Fill Value:** `255,255,255,255`
-- **Mask Type:** `ToZero`
-
-If editing the existing polygon is difficult, it is often easier to create a new one:
-
-1. Delete the existing **CropPolygon** node.
-2. Add a new **CropPolygon** node (keep the settings above unchanged).
-3. Start the workflow.
-4. Select the **CropPolygon** node.
-5. Click the **(...)** button next to the **Regions** property.
-6. Draw a new polygon around the running wheel directly on the live camera image.
-
-Once updated, the workflow will automatically classify each frame as either **Wheel** or **Arena** based on the mouse centroid location.
+Each frame's centroid is written to the CSV as `MouseLocation`, in pixels. Nothing is classified
+online: if you need to know whether the animal was on the wheel or in the arena, test the logged
+coordinates against a wheel region offline. Doing it after the fact means one region definition
+applied identically to every session, rather than one drawn by hand per rig.
 
 > **Note**
 >

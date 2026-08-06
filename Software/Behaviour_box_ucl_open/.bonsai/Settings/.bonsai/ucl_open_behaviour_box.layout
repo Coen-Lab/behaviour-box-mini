@@ -59,7 +59,7 @@
               <IplImageVisualizer />
             </VisualizerSettings>
           </WindowSettings>
-          <WindowSettings Index="23">
+          <WindowSettings Index="22">
             <Location>
               <X>717</X>
               <Y>376</Y>
@@ -73,7 +73,7 @@
               <ObjectTextVisualizer />
             </VisualizerSettings>
           </WindowSettings>
-          <WindowSettings Index="27">
+          <WindowSettings Index="26">
             <Visible>false</Visible>
             <Location>
               <X>52</X>
