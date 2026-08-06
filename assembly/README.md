@@ -1,4 +1,7 @@
-# Assembly Guide
+# Assembly
+
+Printing, assembling and wiring the box. For the parts list and prices see the
+[Bill of Materials](../README.md#bill-of-materials); for wiring see [wiring.md](wiring.md).
 
 The box is four 3D-printed PLA parts:
 
@@ -21,8 +24,16 @@ Assembly takes 20-30 minutes.
 
 ## Step 1 - Print the components
 
-Print the four PLA parts. No supports are needed; they print straight off a standard Bambu Lab
-printer or equivalent, at 15% infill.
+Print the four parts from [`Behaviour_box_Mini.stl`](Behaviour_box_Mini.stl).
+
+| Setting | Value |
+|---|---|
+| Material | PLA |
+| Infill | 15% |
+| Supports | None needed |
+| Printer | Standard Bambu Lab or equivalent |
+
+Print the box in a darker colour if you plan to record white or light-coloured mice, for contrast.
 
 ## Step 2 - Install the rotary encoder
 

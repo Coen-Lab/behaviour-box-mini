@@ -76,15 +76,18 @@ Two things to watch:
 
 ## Build Guide
 
-1. **Print** — STL files in [assembly/](assembly/). 15% infill, no supports needed for any part.
-   Everything prints straight off a standard Bambu Lab printer or equivalent.
-2. **Assemble** — [assembly guide](assembly/assembly-guide.md).
-3. **Wire** — [wiring](assembly/wiring.md).
-4. **Software** — [software](Software/software.md).
+Four steps, roughly a day of printing and half an hour of assembly.
+
+| Step | What it involves | Guide |
+|---|---|---|
+| 1. Print | Four PLA parts: box body, lid, camera holder, running wheel. 15% infill, no supports, straight off a standard Bambu Lab printer or equivalent. | [assembly/](assembly/) |
+| 2. Assemble | Mount the encoder, fit the wheel to its D-shaft, clamp the camera in its holder with the lens. 20-30 minutes. | [assembly/](assembly/) |
+| 3. Wire | Camera to computer over locking USB, GPIO trigger and encoder to the Harp board. | [wiring](assembly/wiring.md) |
+| 4. Software | Install the Spinnaker SDK, run `Setup.cmd` to restore Bonsai, open the workflow. | [Software/](Software/) |
 
 ## How to Run the Workflow
 
-Configure the camera and experiment settings first — see [software](Software/software.md). Then:
+Configure the camera and experiment settings first — see [software](Software/). Then:
 
 1. Clean the box with **dehydrated ethanol** or another disinfectant, and wipe it completely dry.
 
@@ -92,7 +95,7 @@ Configure the camera and experiment settings first — see [software](Software/s
 
 3. Fit the lid with the camera attached.
 
-   > **Note:** For area measurements (e.g. mouse area per frame), the camera orientation must match the predefined crop region. See [software](Software/software.md).
+   > **Note:** For area measurements (e.g. mouse area per frame), the camera orientation must match the predefined crop region. See [software](Software/).
 
 4. Connect the hardware:
    - 12 V power supply to the Harp Behaviour Board

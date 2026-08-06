@@ -27,7 +27,7 @@ For the **FLIR Blackfly S (BFS-U3-16S2M-CS)** in the Bill of Materials:
   <img src="Pictures/GPIO.jpg" width="48%" alt="GPIO trigger wiring">
 </p>
 
-Camera configuration is covered in [software](../Software/software.md).
+Camera configuration is covered in [software](../Software/).
 
 ---
 
@@ -65,5 +65,5 @@ The board is the central interface between camera, encoder and computer. It need
   <img src="Pictures/Behaviour.jpg" width="48%" alt="Harp Behaviour Board connections">
 </p>
 
-With the hardware connected, go to [software](../Software/software.md) for device configuration and
+With the hardware connected, go to [software](../Software/) for device configuration and
 acquisition.
