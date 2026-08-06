@@ -38,13 +38,16 @@ efficiency and reducing the number of animals needed later.
 | 3 | [Rotary encoder](https://www.aliexpress.com/item/1005005665235932.html) | 1 | AliExpress | 18 | 1024 ppr version |
 | 4 | [Harp Behaviour Board](https://open-ephys.org/harp/oeps-1216) | 1 | Open Ephys | 415 | Listed at €510 |
 | 5 | [Locking USB 3.0 Micro-B cable](https://www.amazon.co.uk/dp/B0BYDYKB75) | 1 | Amazon | 18 | 5 m, straight connector |
-| 6 | [GPIO cable](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/ACC-01-3010/16528421) | 1 | DigiKey | 33 | Camera trigger. FLIR ACC-01-3010, Hirose HR10 6-pin |
+| 6 | [GPIO cable](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/ACC-01-3010/16528421) | 1 | DigiKey | 33 | Camera trigger. FLIR ACC-01-3010, Hirose HR10 6-pin, 4.5 m |
 | 7 | [Varifocal lens, 2.8-12 mm, CS mount](https://www.aliexpress.com/item/1005006136279769.html) | 1 | AliExpress | 12.49 | Manual zoom and focus, no IR filter |
 | 8 | [IR LED strip, 850 nm, 12 V](https://www.aliexpress.com/item/1005009046927133.html) | 2 m | AliExpress | 26 | Cut to length. Three walls need about 0.6 m |
 | 9 | [Mini PC, e.g. GEEKOM Air12](https://www.amazon.co.uk/dp/B0CPLNDHZ5) | 1 | Amazon | 240 | Meets the minimum specification below |
 | 10 | [M3 hex screw set, 6-14 mm](https://www.aliexpress.com/item/1005008068815080.html) | 1 | AliExpress | 9 | May be optional, see notes |
+| 11 | [RJ45 breakout](https://www.aliexpress.com/item/1005009050450182.html) | 1 | AliExpress | 2 | Gets the encoder wires into Port 2 |
+| 12 | [Screw terminal blocks, 5-way](https://www.aliexpress.com/item/1005007993530438.html) | 1 | AliExpress | 6.25 | Pack of 10. One terminates the encoder |
+| 13 | [12 V power supply](https://www.aliexpress.com/item/4000056698173.html) | 1 | AliExpress | 2.45 | For the IR LED strip |
 
-Approximate total: £1085
+Approximate total: £1095
 
 **Notes**
 
