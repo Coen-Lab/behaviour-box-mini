@@ -42,9 +42,13 @@ efficiency and reducing the number of animals needed later.
 | 7 |[Varifocal lens, 2.8-12 mm, CS mount](https://www.aliexpress.com/item/1005006136279769.html)|1|Ali-Express|12.49|Manual zoom and focus, no IR filter|
 | 8 |[IR LED strip, 850 nm, 12 V](https://www.aliexpress.com/item/1005009046927133.html)|0.5 m|Ali-Express|8.29|Also stocked in 2 m|
 | 9 |[Mini PC, e.g. GEEKOM Air12](https://www.amazon.co.uk/dp/B0CPLNDHZ5)|1|Amazon|240|Meets the minimum specification below|
-| 10 |[M3 hex screw set, 6-14 mm](https://www.aliexpress.com/item/1005008068815080.html)|1|Ali-Express|9|Mounts the rotary encoder (3 × M3 × 8 mm). Set covers 6-14 mm|
+| 10 |[M3 hex screw set, 6-14 mm](https://www.aliexpress.com/item/1005008068815080.html)|1|Ali-Express|9|May be optional — see note below|
 
 Approximate total: £1070
+
+Omron E6B2-C encoders ship with an E69-2 mounting bracket and three M3 × 10 Phillips screws, which
+may cover the encoder mount on their own. The assembly guide calls for three M3 × 8 mm hex screws
+and a 2 mm Allen key, so check what arrives before ordering row 10.
 
 ### Computer minimum specification
 
@@ -67,7 +71,7 @@ Two things to watch:
 
 ## Build Guide
 
-1. **Print** — STL files in [assembly/](assembly/). 15% infill, supports where needed.
+1. **Print** — STL files in [assembly/](assembly/). 15% infill, no supports needed for any part.
 2. **Assemble** — [assembly guide](assembly/assembly-guide.md).
 3. **Wire** — [wiring](assembly/wiring.md).
 4. **Software** — [software](Softwares/software.md).
