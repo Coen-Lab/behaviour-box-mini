@@ -42,7 +42,7 @@ Built to facilitate community development and future integration of additional b
 | 1 |[3D Print Filament](https://uk.store.bambulab.com/products/pla-basic-filament)|2|Bambu Lab|18*2|PLA|
 | 2 |[FLIR cameras](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/BFS-U3-16S2M-CS/16528335)|1|Digikey|277|BFS-U3-16S2M-CS|
 | 3 |Rotary Encoder|1|Ali-Express|18||
-| 4 |HARP Behaviour Board|1|HARP|415||
+| 4 |[HARP Behaviour Board](https://open-ephys.org/harp/oeps-1216)|1|Open Ephys|415|Listed at €510|
 | 5 |[locking USB 3.0 Micro-B cable](https://www.amazon.co.uk/dp/B0BYDYKB75)|1|Amazon|18|5 m, black straight connector|
 | 6 |[GPIO cable](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/ACC-01-3010/16528421)|1|Digikey|33|For Camera Trigger. FLIR ACC-01-3010, Hirose HR10 6-pin|
 | 7 |[Varifocal lens, 2.8-12 mm, CS mount](https://www.aliexpress.com/item/1005006136279769.html)|1|Ali-Express|12.49|Manual zoom and focus, no IR filter|
