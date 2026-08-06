@@ -8,9 +8,9 @@ towards scalable behavioural phenotyping.
 
 ## Overview
 
-Every part is either printed or bought off the shelf, the whole build is six printed pieces and
-two screws, and a session needs one cable to the computer. Simplicity is the point: a box that is
-quick to replicate, cheap enough to run in parallel, and hard to set up wrongly.
+Every part is either printed or bought off the shelf, nothing needs machining, and the printed
+parts need no supports. Simplicity is the point: a box that is quick to replicate, cheap enough to
+run in parallel, and hard to set up wrongly.
 
 The box pairs video capture with rotary-encoder wheel tracking, using Harp for synchronised
 timestamping and Bonsai for control and acquisition. The aim is to pre-screen animals before
