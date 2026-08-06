@@ -31,18 +31,18 @@ efficiency and reducing the number of animals needed later.
 
 ## Bill of Materials
 
-| # | Part | Qty | Supplier | Cost | Notes |
+| # | Part | Qty | Supplier | Cost (£) | Notes |
 |---|------|-----|----------|------|-------|
-| 1 |[3D Print Filament](https://uk.store.bambulab.com/products/pla-basic-filament)|2|Bambu Lab|18*2|PLA|
-| 2 |[FLIR cameras](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/BFS-U3-16S2M-CS/16528335)|1|Digikey|277|BFS-U3-16S2M-CS|
-| 3 |[Rotary Encoder](https://www.aliexpress.com/item/1005005665235932.html)|1|Ali-Express|18|1024 PR version|
-| 4 |[HARP Behaviour Board](https://open-ephys.org/harp/oeps-1216)|1|Open Ephys|415|Listed at €510|
-| 5 |[locking USB 3.0 Micro-B cable](https://www.amazon.co.uk/dp/B0BYDYKB75)|1|Amazon|18|5 m, black straight connector|
-| 6 |[GPIO cable](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/ACC-01-3010/16528421)|1|Digikey|33|For Camera Trigger. FLIR ACC-01-3010, Hirose HR10 6-pin|
-| 7 |[Varifocal lens, 2.8-12 mm, CS mount](https://www.aliexpress.com/item/1005006136279769.html)|1|Ali-Express|12.49|Manual zoom and focus, no IR filter|
-| 8 |[IR LED strip, 850 nm, 12 V](https://www.aliexpress.com/item/1005009046927133.html)|0.5 m|Ali-Express|8.29|Also stocked in 2 m|
-| 9 |[Mini PC, e.g. GEEKOM Air12](https://www.amazon.co.uk/dp/B0CPLNDHZ5)|1|Amazon|240|Meets the minimum specification below|
-| 10 |[M3 hex screw set, 6-14 mm](https://www.aliexpress.com/item/1005008068815080.html)|1|Ali-Express|9|May be optional — see note below|
+| 1 | [PLA filament](https://uk.store.bambulab.com/products/pla-basic-filament) | 2 | Bambu Lab | 36 | 18 each |
+| 2 | [FLIR Blackfly S camera](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/BFS-U3-16S2M-CS/16528335) | 1 | DigiKey | 277 | BFS-U3-16S2M-CS |
+| 3 | [Rotary encoder](https://www.aliexpress.com/item/1005005665235932.html) | 1 | AliExpress | 18 | 1024 ppr version |
+| 4 | [Harp Behaviour Board](https://open-ephys.org/harp/oeps-1216) | 1 | Open Ephys | 415 | Listed at €510 |
+| 5 | [Locking USB 3.0 Micro-B cable](https://www.amazon.co.uk/dp/B0BYDYKB75) | 1 | Amazon | 18 | 5 m, straight connector |
+| 6 | [GPIO cable](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/ACC-01-3010/16528421) | 1 | DigiKey | 33 | Camera trigger. FLIR ACC-01-3010, Hirose HR10 6-pin |
+| 7 | [Varifocal lens, 2.8-12 mm, CS mount](https://www.aliexpress.com/item/1005006136279769.html) | 1 | AliExpress | 12.49 | Manual zoom and focus, no IR filter |
+| 8 | [IR LED strip, 850 nm, 12 V](https://www.aliexpress.com/item/1005009046927133.html) | 0.5 m | AliExpress | 8.29 | Also stocked in 2 m |
+| 9 | [Mini PC, e.g. GEEKOM Air12](https://www.amazon.co.uk/dp/B0CPLNDHZ5) | 1 | Amazon | 240 | Meets the minimum specification below |
+| 10 | [M3 hex screw set, 6-14 mm](https://www.aliexpress.com/item/1005008068815080.html) | 1 | AliExpress | 9 | May be optional, see notes |
 
 Approximate total: £1070
 
@@ -80,11 +80,11 @@ Two things to watch:
    Everything prints straight off a standard Bambu Lab printer or equivalent.
 2. **Assemble** — [assembly guide](assembly/assembly-guide.md).
 3. **Wire** — [wiring](assembly/wiring.md).
-4. **Software** — [software](Softwares/software.md).
+4. **Software** — [software](Software/software.md).
 
 ## How to Run the Workflow
 
-Configure the camera and experiment settings first — see [software](Softwares/software.md). Then:
+Configure the camera and experiment settings first — see [software](Software/software.md). Then:
 
 1. Clean the box with **dehydrated ethanol** or another disinfectant, and wipe it completely dry.
 
@@ -92,7 +92,7 @@ Configure the camera and experiment settings first — see [software](Softwares/
 
 3. Fit the lid with the camera attached.
 
-   > **Note:** For area measurements (e.g. mouse area per frame), the camera orientation must match the predefined crop region. See [software](Softwares/software.md).
+   > **Note:** For area measurements (e.g. mouse area per frame), the camera orientation must match the predefined crop region. See [software](Software/software.md).
 
 4. Connect the hardware:
    - 12 V power supply to the Harp Behaviour Board
@@ -115,20 +115,14 @@ Configure the camera and experiment settings first — see [software](Softwares/
 
 ## Troubleshooting
 
-- **No live camera preview**
-  - Check that the camera is connected via the Locking USB 3.0 cable.
-  - Verify that the correct version of the Spinnaker SDK is installed.
-  - Ensure the camera serial number matches the connected device.
+- **No live camera preview** — check the locking USB 3.0 cable is connected, the correct Spinnaker
+  SDK version is installed, and the camera serial number matches the connected device.
+- **Rotary encoder not responding** — check the RJ45 connection to the Harp Behaviour Board and that
+  the encoder is on the correct input pins.
 
-- **Rotary encoder not responding**
-  - Check the RJ45 connection to the Harp Behaviour Board.
-  - Verify that the encoder is connected to the correct input pins.
+- **Preview or CSV window missing** — reopen them manually, as below.
 
-### I cannot see the camera preview or CSV output
-
-If the camera preview and CSV output windows do not appear after starting the workflow, they can be reopened manually.
-
-#### Camera Preview
+### Reopening the camera preview
 
 1. Right-click the **Logging** node and select **Show Default Editor...**
 2. In the editor window, right-click the **LogVideo** node and select **Show Default Editor...**
@@ -136,7 +130,7 @@ If the camera preview and CSV output windows do not appear after starting the wo
    - **Show Visualizer**
    - **Bonsai.*ImageVisualizer**
 
-#### CSV Output
+### Reopening the CSV output
 
 1. Right-click the **CSVWriter** node.
 2. Select:
@@ -145,7 +139,9 @@ If the camera preview and CSV output windows do not appear after starting the wo
 
 > **Tip**
 >
-> Avoid closing these visualizer windows manually. When the workflow is stopped, Bonsai will close them automatically. If they remain open during normal operation, they will automatically reappear the next time the workflow is started.
+> Do not close these visualizer windows by hand. Bonsai closes them when the workflow stops, and
+> reopens them on the next run.
+
 ## License
 
 [LICENSE](LICENSE)

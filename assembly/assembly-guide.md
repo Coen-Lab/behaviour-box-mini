@@ -1,42 +1,45 @@
 # Assembly Guide
 
-The Mini Behaviour Box consists of four 3D-printed components:
-Behaviour box body
-Lid
-Camera holder
-Running wheel
+The box is four 3D-printed PLA parts:
 
-All printed parts are designed for PLA. The remaining hardware and electronics should be purchased separately as listed in the Bill of Materials.
+- Behaviour box body
+- Lid
+- Camera holder
+- Running wheel
+
+Everything else is bought off the shelf, as listed in the [Bill of Materials](../README.md#bill-of-materials).
+Assembly takes 20-30 minutes.
+
 <p align="center">
-  <img src="Pictures/Setup.jpg" width="68%">
-
-（Estimated assembly time: ~20–30 minutes）
+  <img src="Pictures/Setup.jpg" width="68%" alt="Assembled behaviour box">
+</p>
 
 ## Tools Required
-2 mm Allen key (for M3 screws)
 
-Flat-head screwdriver
+- 2 mm Allen key, for the M3 screws
+- Flat-head screwdriver
 
-## Step 1 - Print the Components
-Print the following four PLA components:
-Behaviour box body
-Lid
-Camera holder
-Running wheel
+## Step 1 - Print the components
 
-## Step 2 — Install the Rotary Encoder
-Secure the rotary encoder to the side wall of the behaviour box using three M3 × 8 mm screws.
-Ensure that the encoder shaft is facing towards the inside of the box.
-Refer to the Wiring section for encoder connections.
+Print the four PLA parts. No supports are needed; they print straight off a standard Bambu Lab
+printer or equivalent, at 15% infill.
 
-## Step 3 - Install the Running Wheel
-Slide the running wheel onto the encoder shaft.
-The wheel is designed to mate with the D-shaped encoder shaft
-Align the flat side of the shaft with the matching flat section inside the wheel hub before pushing the wheel fully into position. The wheel should slide on smoothly without excessive force.
+## Step 2 - Install the rotary encoder
 
-## Step 4 - Install the Camera
-Remove the lens from the camera body.
-Insert the camera through the camera holder from the rear.
-Reattach the lens from the front so that the camera holder is clamped securely between the camera body and the lens, preventing any movement of the holder.
-Refer to the Wiring section for camera power and trigger connections.
+Secure the encoder to the side wall of the box with three M3 x 8 mm screws, with the shaft facing
+inwards. See [wiring](wiring.md) for the encoder connections.
 
+## Step 3 - Install the running wheel
+
+Slide the wheel onto the encoder shaft. The hub is designed to mate with the D-shaped shaft, so
+align the flat of the shaft with the matching flat inside the hub before pushing the wheel home. It
+should slide on smoothly, without excessive force.
+
+## Step 4 - Install the camera
+
+1. Remove the lens from the camera body.
+2. Insert the camera through the camera holder from the rear.
+3. Reattach the lens from the front, clamping the holder between the camera body and the lens so it
+   cannot move.
+
+See [wiring](wiring.md) for the camera power and trigger connections.

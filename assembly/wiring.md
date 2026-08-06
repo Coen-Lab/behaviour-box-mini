@@ -1,79 +1,69 @@
 # Wiring
 
-The Mini Behaviour Box consists of three hardware connections:
-
-1. Camera
-2. Rotary Encoder
-3. Harp Behaviour Board
+Three things connect to the system: the camera, the rotary encoder and the Harp Behaviour Board.
 
 <p align="center">
-  <img src="Pictures/Computer.jpg" width="48%">
-
-
-Refer to the wiring diagrams below for the complete connection layout.
+  <img src="Pictures/Computer.jpg" width="48%" alt="Computer and Harp Behaviour Board">
+</p>
 
 ---
 
 ## Camera
 
-The camera requires two connections:
+The camera needs two connections:
 
-- **Locking USB 3.0 Micro-B cable**
-- **GPIO trigger cable**
-(Fig.1)
-The Locking USB 3.0 Micro-B cable is connected directly to the computer for image acquisition.
+- **Locking USB 3.0 Micro-B cable** — straight to the computer, for image acquisition.
+- **GPIO trigger cable** — to the **Output** port of the Harp Behaviour Board, for hardware triggering.
 
-The GPIO trigger cable is connected to the **Output** port of the Harp Behaviour Board to enable hardware triggering(Fig.2).
+For the **FLIR Blackfly S (BFS-U3-16S2M-CS)** in the Bill of Materials:
 
-For the **FLIR Blackfly S (BFS-U3-16S2M-CS)** listed in the Bill of Materials:
-
-| Camera Wire | Connect To |
+| Camera wire | Connect to |
 |-------------|------------|
 | Blue (Opto GND) | GND |
-| Black (OPTO IN) | Trigger |
+| Black (Opto In) | Trigger |
 
 <p align="center">
-  <img src="Pictures/Camera.jpg" width="48%">
-  <img src="Pictures/GPIO.jpg" width="48%">
+  <img src="Pictures/Camera.jpg" width="48%" alt="Camera connections">
+  <img src="Pictures/GPIO.jpg" width="48%" alt="GPIO trigger wiring">
 </p>
-Camera software configuration is described in the **Software** section.
+
+Camera configuration is covered in [software](../Software/software.md).
 
 ---
 
-## Rotary Encoder
+## Rotary encoder
 
-The rotary encoder connects to the Harp Behaviour Board through an RJ45 cable (default **Port P0**).
+The encoder connects to the Harp Behaviour Board over RJ45, on **Port P0** by default. To simplify
+assembly and replacement, terminate the encoder wires in a **5-way screw terminal block** first.
 
-To simplify assembly and replacement, we recommend terminating the encoder wires using a **5-way screw terminal block** before connecting them to the Harp Behaviour Board.
+The encoder has five wires, four of which are used:
 
-The encoder provides five wires, of which four are used:
-
-| Encoder Connection | Harp Pin |
-|--------------------|----------|
+| Encoder wire | Harp pin |
+|--------------|----------|
 | Black (Channel A) | DI (Input A) |
 | White (Channel B) | DIO (Input B) |
-| *(Leave empty)* | Pin 3 |
+| *(not used)* | Pin 3 |
 | +5 V | Pin 4 |
 | GND | Pin 5 |
 
->
 <p align="center">
-  <img src="Pictures/Rotary encoder.jpg" width="48%">
+  <img src="Pictures/Rotary%20encoder.jpg" width="48%" alt="Rotary encoder wiring">
+</p>
 
 ---
 
 ## Harp Behaviour Board
 
-The Harp Behaviour Board serves as the central interface between the camera, rotary encoder and computer.
+The board is the central interface between camera, encoder and computer. It needs:
 
-The following connections are required:
+- USB to the computer
+- 12 V DC power in
+- GPIO output to the camera trigger cable
+- RJ45 to the rotary encoder (**Port P0** by default)
 
-- USB connection to the computer
-- 12 V DC power input
-- GPIO output connected to the camera trigger cable
-- RJ45 connection to the rotary encoder (default **Port P0**)
-
-Once all hardware connections are complete, proceed to the **Software** section for device configuration and data acquisition.
 <p align="center">
-  <img src="Pictures/Behaviour.jpg" width="48%">
+  <img src="Pictures/Behaviour.jpg" width="48%" alt="Harp Behaviour Board connections">
+</p>
 
+With the hardware connected, go to [software](../Software/software.md) for device configuration and
+acquisition.
