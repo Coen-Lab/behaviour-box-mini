@@ -217,7 +217,7 @@
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="UclOpen.Devices:TriggeredSpinnaker.bonsai">
               <ExposureTime>19000</ExposureTime>
-              <Gain>20</Gain>
+              <Gain>5</Gain>
               <Binning>2</Binning>
               <SerialNumber />
               <ColorProcessing>Default</ColorProcessing>

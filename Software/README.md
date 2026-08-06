@@ -89,7 +89,7 @@ Acquisition constants, all set in the workflow:
 |---|---|
 | Frame rate | 50 Hz, camera hardware-triggered by the Harp board |
 | Exposure | 19 ms |
-| Gain | 20 dB |
+| Gain | 5 dB |
 | Binning | 2, so the 1440 x 1080 sensor gives 720 x 540 images |
 | Encoder counts per revolution | 4096 (1024 ppr, quadrature decoded x4) |
 | Wheel diameter | 150 mm, so a circumference of 47.12 cm |
