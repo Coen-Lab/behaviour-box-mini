@@ -32,7 +32,7 @@ An account is needed, so this step cannot be scripted and must be done by hand.
 
 ## Bonsai
 
-Run [`Setup.cmd`](Behaviour_box_ucl_open/.bonsai/Setup.cmd) once. It downloads Bonsai and restores
+Run [`Setup.cmd`](Setup.cmd) once. It downloads Bonsai and restores
 the packages listed in `Bonsai.config` from nuget.org and `local_packages/`, so nothing else needs
 installing by hand.
 
@@ -84,17 +84,17 @@ or wheel, or the distances will be silently wrong.
 
 ---
 
-## Camera Settings
+## Camera settings
 
 The workflow ships with recommended settings and should not need changing. If it does:
 
-### Exposure Time, Gain and Binning
+### Exposure time, gain and binning
 
 1. Double-click the **Metadata** node.
 2. Click on an empty area within the editor.
 3. Modify the desired parameters in the **Properties** panel.
 
-### Frame Rate
+### Frame rate
 
 1. Double-click the **Logging** node.
 2. Click on an empty area.
@@ -105,7 +105,7 @@ The workflow ships with recommended settings and should not need changing. If it
 > Changing **Binning** also changes the output resolution. If you need a specific image size, set the
 > camera dimensions manually in **SpinView** afterwards.
 
-## Mouse Centroid Tracking
+## Mouse centroid tracking
 
 Position is estimated by **centroid tracking**. Compared with pose estimation or segmentation it is
 computationally light, robust, and accurate enough for locomotion, which suits a standardised

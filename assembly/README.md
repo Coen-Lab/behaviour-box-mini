@@ -18,7 +18,7 @@ Assembly takes 20-30 minutes.
   <img src="Pictures/Setup.jpg" width="68%" alt="Assembled behaviour box">
 </p>
 
-## Tools Required
+## Tools required
 
 - 2 mm Allen key, for the M3 screws
 - Flat-head screwdriver

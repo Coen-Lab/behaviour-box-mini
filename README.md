@@ -29,7 +29,7 @@ efficiency and reducing the number of animals needed later.
 - **Bonsai workflows** — open, modular, easily customisable pipelines
 - **Extensible** — built for community development and further behavioural measures
 
-## Bill of Materials
+## Bill of materials
 
 | # | Part | Qty | Supplier | Cost (£) | Notes |
 |---|------|-----|----------|------|-------|
@@ -74,7 +74,7 @@ Two things to watch:
 - **Storage** — compressed video runs at roughly 1-4 GB per hour, so 512 GB holds weeks. Uncompressed
   would fill it in under three hours at 30 fps.
 
-## Build Guide
+## Build guide
 
 Four steps, roughly a day of printing and half an hour of assembly.
 
@@ -93,7 +93,7 @@ Order matters: Bonsai cannot see the camera without the Spinnaker driver already
    [Teledyne Vision Solutions](https://www.teledynevisionsolutions.com/support/support-center/software-firmware-downloads/iis/spinnaker-sdk-download/spinnaker-sdk--download-files/?pn=Spinnaker+SDK&vn=Spinnaker+SDK).
    The version must match exactly; the download page defaults to the latest, so choose deliberately.
    An account is required, so this step cannot be scripted.
-2. **Bonsai** — run `Software\Behaviour_box_ucl_open\.bonsai\Setup.cmd`. It downloads Bonsai and
+2. **Bonsai** — run `Software\Setup.cmd`. It downloads Bonsai and
    restores every package from `Bonsai.config`, and warns if Spinnaker is missing or the wrong
    version. Nothing else needs installing by hand.
 3. **Open the workflow** — start Bonsai, then **File → Open** →
@@ -102,7 +102,7 @@ Order matters: Bonsai cannot see the camera without the Spinnaker driver already
 
 Full detail, including camera settings, is in [Software/](Software/).
 
-## How to Run the Workflow
+## How to run the workflow
 
 Configure the camera and experiment settings first — see [Software/](Software/). Then:
 
