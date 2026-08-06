@@ -52,6 +52,15 @@ With the workflow loaded, click the blank workspace to bring up the experiment s
 - Subject ID
 - Trial length (minutes)
 
+### Serial port
+
+One thing has to be set once per machine. The Harp Behaviour Board appears as a COM port, and the
+workflow ships pointing at **COM3**, which will be wrong on most computers. Find the board in Device
+Manager under **Ports (COM & LPT)**, then double-click **metadata**, then **BehaviorBoards**, select
+the **BehaviorBoard** node and set **PortName** in the **Properties** panel.
+
+Get this wrong and the workflow fails on startup without saying why.
+
 Recording stops automatically at the trial length, saving a **CSV** of behavioural data and a
 **video**.
 
@@ -65,7 +74,7 @@ Each recording gets its own folder, built from the settings above:
 
 The date is the UTC time at which the workflow started, so a late-evening session in British
 Summer Time files under the following day. The folder holds `LogData.csv` and
-`VideoData_Camera.avi`.
+`VideoData_Camera.avi`, the video written as MPEG-4 Part 2 in an AVI container.
 
 The CSV has one row per camera frame, with a header:
 
@@ -83,6 +92,13 @@ The centroid is a `Point2f`, which Bonsai's CsvWriter splits into the two dotted
 rather than one combined field, so the file has seven columns. The origin is the top-left pixel and
 Y increases downwards, following OpenCV.
 
+`Seconds` is the Harp board's own record of when it fired the trigger, matched to the frame by
+arrival order rather than by any shared identifier. That holds as long as every trigger produces a
+frame. If one ever does not, each frame after it takes the timestamp of the frame before, and
+nothing in the file announces it. To check a session, compare the camera's own `Timestamp` against
+`Seconds`: the offset between the two clocks should be flat, and a step of one frame period means
+the pairing has slipped.
+
 Acquisition constants, all set in the workflow:
 
 | | Value |
@@ -99,6 +115,11 @@ Acquisition constants, all set in the workflow:
 corrected, so it increases monotonically while the animal runs forwards and is not reset within a
 session. Change `CountsPerRev` or `WheelDiameterMm` in the workflow if you use a different encoder
 or wheel, or the distances will be silently wrong.
+
+The board is put in **Position** mode, so the encoder register reports an absolute count that the
+workflow differences, unwraps and re-accumulates. UclOpen's own `RunningWheel` uses **Displacement**
+mode instead, and that is deliberately not copied here: it reports differences already, so the same
+chain would difference them twice and the distances would be meaningless.
 
 ---
 
@@ -145,6 +166,12 @@ Check the exposure still fits inside the new frame period.
 Position is estimated by **centroid tracking**. Compared with pose estimation or segmentation it is
 computationally light, robust, and accurate enough for locomotion, which suits a standardised
 screening platform.
+
+The centroid is in pixels, and nothing in the recording converts it to distance. The arena floor is
+a 200 mm square, which gets you an approximate scale, but for anything quantitative calibrate your
+own box: put a ruler or a printed grid on the floor, record a frame, and measure the millimetres per
+pixel. The lens is a varifocal focused by hand, so the scale belongs to your box and changes the
+moment anyone touches the zoom ring.
 
 Each frame's centroid is written to the CSV as `MouseLocation`, in pixels. Nothing is classified
 online: if you need to know whether the animal was on the wheel or in the arena, test the logged

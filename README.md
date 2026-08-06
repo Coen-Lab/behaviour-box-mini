@@ -149,14 +149,14 @@ Configure the camera and experiment settings first — see [Software/](Software/
 2. In the editor window, right-click the **LogVideo** node and select **Show Default Editor...**
 3. Right-click the **VideoWriter** node and select:
    - **Show Visualizer**
-   - **Bonsai.*ImageVisualizer**
+   - **Bonsai.Vision.Design.IplImageVisualizer**
 
 ### Reopening the CSV output
 
-1. Right-click the **CSVWriter** node.
+1. Right-click the **CsvWriter** node.
 2. Select:
    - **Show Visualizer**
-   - **Bonsai.*TextVisualizer**
+   - **Bonsai.Design.ObjectTextVisualizer**
 
 > **Tip**
 >
