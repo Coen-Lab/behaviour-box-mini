@@ -65,8 +65,8 @@ The CSV is written as `LogData.csv` in the save directory, one row per camera fr
 | `Timestamp` | Camera chunk timestamp |
 | `FrameID` | Camera frame counter |
 | `ExposureTime` | Exposure of that frame, from the camera chunk |
-| `MouseLocation` | `Wheel` or `Arena` (see [Mouse Centroid Tracking](#mouse-centroid-tracking)) |
-| `Area` | Size of the thresholded mouse, in pixels |
+| `MouseLocation` | Mouse centroid position, X and Y in pixels |
+| `Area` | Which region the mouse is in: `Wheel` or `Arena` |
 | `WheelDistance` | Cumulative distance run since the recording started, in cm |
 
 Acquisition constants, all set in the workflow:
@@ -112,10 +112,10 @@ Position is estimated by **centroid tracking**. Compared with pose estimation or
 computationally light, robust, and accurate enough for locomotion and area classification, which
 suits a standardised screening platform.
 
-To tell whether the mouse is on the **running wheel** or in the **arena**, the workflow tests whether
-the centroid falls inside a user-defined polygon covering the wheel: inside is **Wheel**, outside is
-**Arena**. That classification is what reaches the CSV, in the `MouseLocation` column. The centroid
-coordinates themselves are computed but not currently logged.
+Each frame's centroid is written to the CSV as `MouseLocation`. To tell whether the mouse is on the
+**running wheel** or in the **arena**, the workflow also tests whether the centroid falls inside a
+user-defined polygon covering the wheel: inside is **Wheel**, outside is **Arena**. That
+classification is the `Area` column, meaning the region occupied rather than a pixel count.
 
 ## Wheel Region Calibration
 
