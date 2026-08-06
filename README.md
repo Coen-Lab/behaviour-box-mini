@@ -40,11 +40,11 @@ efficiency and reducing the number of animals needed later.
 | 5 | [Locking USB 3.0 Micro-B cable](https://www.amazon.co.uk/dp/B0BYDYKB75) | 1 | Amazon | 18 | 5 m, straight connector |
 | 6 | [GPIO cable](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/ACC-01-3010/16528421) | 1 | DigiKey | 33 | Camera trigger. FLIR ACC-01-3010, Hirose HR10 6-pin |
 | 7 | [Varifocal lens, 2.8-12 mm, CS mount](https://www.aliexpress.com/item/1005006136279769.html) | 1 | AliExpress | 12.49 | Manual zoom and focus, no IR filter |
-| 8 | [IR LED strip, 850 nm, 12 V](https://www.aliexpress.com/item/1005009046927133.html) | 0.5 m | AliExpress | 8.29 | Also stocked in 2 m |
+| 8 | [IR LED strip, 850 nm, 12 V](https://www.aliexpress.com/item/1005009046927133.html) | 2 m | AliExpress | 26 | Cut to length. Three walls need about 0.6 m |
 | 9 | [Mini PC, e.g. GEEKOM Air12](https://www.amazon.co.uk/dp/B0CPLNDHZ5) | 1 | Amazon | 240 | Meets the minimum specification below |
 | 10 | [M3 hex screw set, 6-14 mm](https://www.aliexpress.com/item/1005008068815080.html) | 1 | AliExpress | 9 | May be optional, see notes |
 
-Approximate total: £1070
+Approximate total: £1085
 
 **Notes**
 
@@ -81,7 +81,7 @@ Four steps, roughly a day of printing and half an hour of assembly.
 | Step | What it involves | Guide |
 |---|---|---|
 | 1. Print | Six parts in one STL: box body, lid, camera holder, running wheel and two screws. 15% infill, no supports, straight off a standard Bambu Lab printer or equivalent. | [assembly/](assembly/) |
-| 2. Assemble | Mount the encoder, fit the wheel to its D-shaft, clamp the camera in its holder with the lens. 20-30 minutes. | [assembly/](assembly/) |
+| 2. Assemble | Mount the encoder, fit the wheel to its D-shaft, clamp the camera in its holder with the lens, and line three walls with the IR strip. 20-30 minutes. | [assembly/](assembly/) |
 | 3. Wire | Camera to computer over locking USB, GPIO trigger and encoder to the Harp board. | [wiring](assembly/wiring.md) |
 | 4. Software | Install the Spinnaker SDK, run `Setup.cmd`, open the workflow. | [Software/](Software/) |
 
