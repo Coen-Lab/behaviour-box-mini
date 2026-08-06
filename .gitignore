@@ -2,3 +2,10 @@
 # local_packages/ is NOT ignored: those UclOpen packages are not on nuget.org
 # and nothing restores without them.
 **/.bonsai/Packages/
+
+# Setup.cmd downloads Bonsai itself, pinned to the version in Bonsai.config.
+# Committing the binary makes that download dead code and freezes the version.
+**/.bonsai/Bonsai.exe
+
+# Rewritten by Bonsai on every exit: window geometry and recently-used paths.
+**/.bonsai/Bonsai.exe.settings
