@@ -1,7 +1,7 @@
 # Assembly
 
 Printing, assembling and wiring the box. For the parts list and prices see the
-[Bill of Materials](../README.md#bill-of-materials); for wiring see [wiring.md](wiring.md).
+[bill of materials](../README.md#bill-of-materials); for wiring see [wiring.md](wiring.md).
 
 The STL contains six printed parts:
 
@@ -11,7 +11,7 @@ The STL contains six printed parts:
 - Running wheel
 - Two screws
 
-Everything else is bought off the shelf, as listed in the [Bill of Materials](../README.md#bill-of-materials).
+Everything else is bought off the shelf, as listed in the [bill of materials](../README.md#bill-of-materials).
 Assembly takes 20-30 minutes.
 
 <p align="center">

@@ -57,16 +57,31 @@ Recording stops automatically at the trial length, saving a **CSV** of behaviour
 
 ### Data output
 
-The CSV is written as `LogData.csv` in the save directory, one row per camera frame, with a header.
+Each recording gets its own folder, built from the settings above:
+
+```
+<save directory>\sub-<SubjectId>\ses-<SessionId>_date-<yyyy-MM-ddTHH-mm-ss>
+```
+
+The date is the UTC time at which the workflow started, so a late-evening session in British
+Summer Time files under the following day. The folder holds `LogData.csv` and
+`VideoData_Camera.avi`.
+
+The CSV has one row per camera frame, with a header:
 
 | Column | Meaning |
 |---|---|
-| `Seconds` | Harp clock time of the frame |
+| `Seconds` | Harp clock time of the frame trigger, in seconds |
 | `Timestamp` | Camera chunk timestamp |
 | `FrameID` | Camera frame counter |
 | `ExposureTime` | Exposure of that frame, from the camera chunk |
-| `MouseLocation` | Mouse centroid position, X and Y in pixels |
+| `MouseLocation.X` | Mouse centroid, pixels from the left edge of the image |
+| `MouseLocation.Y` | Mouse centroid, pixels from the top edge of the image |
 | `WheelDistance` | Cumulative distance run since the recording started, in cm |
+
+The centroid is a `Point2f`, which Bonsai's CsvWriter splits into the two dotted columns above
+rather than one combined field, so the file has seven columns. The origin is the top-left pixel and
+Y increases downwards, following OpenCV.
 
 Acquisition constants, all set in the workflow:
 
