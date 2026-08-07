@@ -52,8 +52,8 @@ Approximate total: £1095
 
 **Notes**
 
-- **Encoder resolution** — row 3 is sold in several resolutions off the same listing, and 600 and
-  1000 ppr look identical in the photographs. Choose **1024 ppr**: the workflow ships with
+- **Encoder resolution** — row 3 is sold in several resolutions off the same listing, and they are
+  indistinguishable in the product photographs. Choose **1024 ppr**: the workflow ships with
   `CountsPerRev` set to 4096, which is 1024 quadrature-decoded x4. Fit a different resolution
   without changing that value and `WheelDistance` is wrong in every recording, with nothing in the
   data to say so. See [Software/](Software/).
