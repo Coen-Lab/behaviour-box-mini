@@ -35,7 +35,7 @@ Camera configuration is covered in [Software](../Software/).
 
 The encoder connects to the Harp Behaviour Board over RJ45, on **Port 2**. This is not a preference:
 Port 2 is the only one of the three ports wired to the board's quadrature counter, and the workflow
-enables it by name. To simplify assembly and replacement, terminate the encoder wires in a **5-way
+enables it by name. To simplify assembly and replacement, terminate the encoder wires in an **8-way
 screw terminal block** first.
 
 The encoder has five wires, four of which are used:
