@@ -68,7 +68,7 @@ Write-Host "Restoring Bonsai packages..."
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host ""
-    Write-Host "Setup complete. Open Bonsai, then File -> Open -> ucl_open_behaviour_box.bonsai"
+    Write-Host "Setup complete. Open Bonsai, then File -> Open -> Behaviour_Box_Mini.bonsai"
     Write-Host "Do not launch the workflow file directly: this project relies on compatibility patches."
 }
 else {

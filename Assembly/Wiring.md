@@ -51,7 +51,7 @@ The encoder has five wires, four of which are used:
 The bare braid is the cable shield, not one of the five wires.
 
 <p align="center">
-  <img src="Pictures/Rotary%20encoder.jpg" width="48%" alt="Rotary encoder wiring">
+  <img src="Pictures/Rotary_Encoder.jpg" width="48%" alt="Rotary encoder wiring">
 </p>
 
 ---

@@ -4,7 +4,7 @@ towards scalable behavioural phenotyping. About **£1095** a box, six printed pa
 assemble.
 
 <p align="center">
-<img src="assembly/Pictures/Box%20render.png" width="330" alt="Render of the six printed parts: box body with the lid fitted, running wheel, camera holder and two screws">
+<img src="Assembly/Pictures/Box_Render.png" width="330" alt="Render of the six printed parts: box body with the lid fitted, running wheel, camera holder and two screws">
 </p>
 
 ## Overview
@@ -18,7 +18,7 @@ timestamping and Bonsai for control and acquisition. The aim is to pre-screen an
 downstream experiments, so behavioural differences show up early — improving experimental
 efficiency and reducing the number of animals needed later.
 
-![Four frames from one recording: a black mouse in the arena and on the running wheel, lit by the infrared strip](assembly/Pictures/Example%20frames.jpg)
+![Four frames from one recording: a black mouse in the arena and on the running wheel, lit by the infrared strip](Assembly/Pictures/Example_Frames.jpg)
 
 *Four frames from a single session. The wheel is against the far wall; the mouse is tracked by
 centroid in both the arena and the wheel, under 850 nm light it cannot see.*
@@ -90,9 +90,9 @@ Four steps, a couple of days of printing and half an hour of assembly.
 
 | Step | What it involves | Guide |
 |---|---|---|
-| 1. Print | Six parts in one STL: box body, lid, camera holder, running wheel and two screws. 15% infill, no supports, three plates on a standard Bambu Lab printer or equivalent. | [Assembly](assembly/) |
-| 2. Assemble | Mount the encoder, fit the wheel to its D-shaft, clamp the camera in its holder with the lens, and line three walls with the IR strip. 20-30 minutes. | [Assembly](assembly/) |
-| 3. Wire | Camera to computer over locking USB, GPIO trigger and encoder to the Harp board. | [Wiring](assembly/wiring.md) |
+| 1. Print | Six parts in one STL: box body, lid, camera holder, running wheel and two screws. 15% infill, no supports, three plates on a standard Bambu Lab printer or equivalent. | [Assembly](Assembly/) |
+| 2. Assemble | Mount the encoder, fit the wheel to its D-shaft, clamp the camera in its holder with the lens, and line three walls with the IR strip. 20-30 minutes. | [Assembly](Assembly/) |
+| 3. Wire | Camera to computer over locking USB, GPIO trigger and encoder to the Harp board. | [Wiring](Assembly/Wiring.md) |
 | 4. Software | Install the Spinnaker SDK, run `Setup.cmd`, open the workflow. | [Software](Software/) |
 
 ### Installing the software
@@ -107,7 +107,7 @@ Order matters: Bonsai cannot see the camera without the Spinnaker driver already
    restores every package from `Bonsai.config`, and warns if Spinnaker is missing or the wrong
    version. Nothing else needs installing by hand.
 3. **Open the workflow** — start Bonsai, then **File → Open** →
-   `ucl_open_behaviour_box.bonsai`. Do not launch the workflow file directly: this project relies on
+   `Behaviour_Box_Mini.bonsai`. Do not launch the workflow file directly: this project relies on
    compatibility patches.
 
 Full detail, including camera settings, is in [Software](Software/).

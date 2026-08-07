@@ -1,9 +1,5 @@
 # Software
 
-The project answers to three names, all of them the same thing: the repository is
-`behaviour-box-mini`, the workflow folder is `Behaviour_box_ucl_open`, and the workflow file is
-`ucl_open_behaviour_box.bonsai`.
-
 Two components:
 
 - **Spinnaker SDK (SpinView)** — camera driver and configuration
@@ -45,7 +41,7 @@ launching it directly:
 
 1. Open **Bonsai**.
 2. Select **File → Open**.
-3. Open **`ucl_open_behaviour_box.bonsai`**.
+3. Open **`Behaviour_Box_Mini.bonsai`**.
 
 With the workflow loaded, click the blank workspace to bring up the experiment settings in the
 **Properties** panel on the right. Set before each recording:
