@@ -174,8 +174,8 @@ pixel. The lens is a varifocal focused by hand, so the scale belongs to your box
 moment anyone touches the zoom ring.
 
 Nothing is classified online: if you need to know whether the animal was on the wheel or in the
-arena, test the logged coordinates against a wheel region offline. Doing it after the fact means one region definition
-applied identically to every session, rather than one drawn by hand per rig.
+arena, test the logged coordinates against a wheel region offline. Doing it after the fact means one
+region definition applied identically to every session, rather than one drawn by hand per rig.
 
 > **Note**
 >

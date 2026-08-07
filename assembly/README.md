@@ -36,7 +36,7 @@ Print all six parts from [`Behaviour_box_Mini.stl`](Behaviour_box_Mini.stl).
 | Printer | Standard Bambu Lab or equivalent |
 
 The two largest parts set the build volume: the box body is 207 mm square and 220 mm tall, and the
-shroud is 199 mm square and 240 mm tall. Both fit an X1 or P1 series printer, but not an A1 mini.
+lid is 199 mm square and 240 mm tall. Both fit an X1 or P1 series printer, but not an A1 mini.
 
 The STL holds all six parts in their assembled positions, so they arrive spread out and at
 different heights. **Split to objects** in the slicer, drop everything to the plate and arrange it

@@ -15,7 +15,7 @@ The camera needs two connections:
 - **Locking USB 3.0 Micro-B cable** — straight to the computer, for image acquisition.
 - **GPIO trigger cable** — to the **Output** port of the Harp Behaviour Board, for hardware triggering.
 
-For the **FLIR Blackfly S (BFS-U3-16S2M-CS)** in the Bill of Materials:
+For the **FLIR Blackfly S (BFS-U3-16S2M-CS)** in the bill of materials:
 
 | Camera wire | Connect to |
 |-------------|------------|

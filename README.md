@@ -54,8 +54,8 @@ Approximate total: £1095
 - **Rotary encoder alternative** — [Omron E6B2-CWZ6C 360P/R 0.5M](https://uk.rs-online.com/web/p/motion-control-sensors/2158863),
   RS stock 215-8863, £216.14 exc VAT. Same NPN open-collector output and 6 mm shaft, but 360 ppr
   rather than 1024, and about twelve times the price. Worth it only if you need a warranted part.
-- **Screws** — Omron encoders ship with an E69-2 bracket and three M3 × 10 Phillips screws, which may
-  cover the encoder mount on their own. The assembly guide calls for three M3 × 8 mm hex screws and a
+- **Screws** — Omron encoders ship with an E69-2 bracket and three M3 x 10 Phillips screws, which may
+  cover the encoder mount on their own. The assembly guide calls for three M3 x 8 mm hex screws and a
   2 mm Allen key, so check what arrives before ordering row 10.
 
 ### Computer minimum specification
@@ -140,7 +140,6 @@ Configure the camera and experiment settings first — see [Software/](Software/
   SDK version is installed, and the camera serial number matches the connected device.
 - **Rotary encoder not responding** — check the RJ45 connection to the Harp Behaviour Board and that
   the encoder is on the correct input pins.
-
 - **Preview or CSV window missing** — reopen them manually, as below.
 
 ### Reopening the camera preview
@@ -168,6 +167,6 @@ Configure the camera and experiment settings first — see [Software/](Software/
 Released under the [MIT License](LICENSE), which covers the printed design as well as the workflow
 and the documentation.
 
-The five UclOpen packages in `local_packages/` are redistributed under the BSD 3-Clause Licence, and
+The five UclOpen packages in `local_packages/` are redistributed under the BSD 3-Clause License, and
 everything `Setup.cmd` downloads stays under its own terms. See
 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
