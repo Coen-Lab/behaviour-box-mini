@@ -6,7 +6,8 @@ Printing, assembling and wiring the box. For the parts list and prices see the
 The STL contains six printed parts:
 
 - Behaviour box body
-- Lid
+- Lid — the tapered tower that carries the camera above the arena. It is 240 mm tall, so it doubles
+  the assembled height to 460 mm; allow for that on the bench and in the printer
 - Camera holder
 - Running wheel
 - Two screws
@@ -55,9 +56,8 @@ inwards. See [wiring](wiring.md) for the encoder connections.
 
 ## Step 3 - Install the running wheel
 
-Slide the wheel onto the encoder shaft. The hub is designed to mate with the D-shaped shaft, so
-align the flat of the shaft with the matching flat inside the hub before pushing the wheel home. It
-should slide on smoothly, without excessive force.
+1. Turn the shaft until the flat of the D faces the matching flat inside the wheel hub.
+2. Push the wheel home. It should slide on smoothly; if it needs force, the flats are not aligned.
 
 ## Step 4 - Install the camera
 
@@ -72,13 +72,12 @@ See [wiring](wiring.md) for the camera power and trigger connections.
 
 ## Step 5 - Fit the infrared illumination
 
-The 850 nm strip lights the arena for the camera without being visible to the mouse. Run it along
-**three of the four walls, leaving the wheel wall dark**. Three sides give even light across the
-floor, and keeping the strip off the wheel wall avoids both the encoder mount and the shadow the
-wheel would throw across the arena.
+The 850 nm strip lights the arena for the camera without being visible to the mouse.
 
-The interior is 200 mm square, so three runs need about 600 mm. Buy the 2 m reel and cut it to
-length: the strip is adhesive-backed and cuts with scissors, but **only on the marked cut points**,
-which on a 12 V strip fall every few LEDs. Cut anywhere else and the segment will not light.
-
-The strip runs from its own 12 V supply, not from the Harp board.
+1. Cut about 600 mm from the 2 m reel — the interior is 200 mm square and three walls are lined.
+   Cut **only on the marked cut points**, which on a 12 V strip fall every few LEDs. Cut anywhere
+   else and the segment will not light.
+2. Peel the backing and run the strip along **three of the four walls, leaving the wheel wall
+   dark**. Three sides give even light across the floor, and keeping the strip off the wheel wall
+   avoids both the encoder mount and the shadow the wheel would throw across the arena.
+3. Connect the strip to its own 12 V supply, not to the Harp board.
