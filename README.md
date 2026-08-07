@@ -1,9 +1,10 @@
 # Behaviour Box Mini
 A deliberately simple, open-source box for recording mouse locomotion, built as a first step
-towards scalable behavioural phenotyping.
+towards scalable behavioural phenotyping. About **£1095** a box, six printed parts, half an hour to
+assemble.
 
 <p align="center">
-<img src="assembly/Pictures/Box%20render.png" width="440" alt="Render of the six printed parts: box body with the lid fitted, running wheel, camera holder and two screws">
+<img src="assembly/Pictures/Box%20render.png" width="330" alt="Render of the six printed parts: box body with the lid fitted, running wheel, camera holder and two screws">
 </p>
 
 ## Overview
@@ -17,17 +18,17 @@ timestamping and Bonsai for control and acquisition. The aim is to pre-screen an
 downstream experiments, so behavioural differences show up early — improving experimental
 efficiency and reducing the number of animals needed later.
 
-![Example frames captured inside the box](assembly/Pictures/Example%20frames.jpg)
+![Four frames from one recording: a black mouse in the arena and on the running wheel, lit by the infrared strip](assembly/Pictures/Example%20frames.jpg)
 
-## Features
+*Four frames from a single session. The wheel is against the far wall; the mouse is tracked by
+centroid in both the arena and the wheel, under 850 nm light it cannot see.*
 
-- **Simple to build** — printed parts, off-the-shelf components, no machining
-- **Standardised acquisition** — reproducible recording of spontaneous behaviour across experiments
-- **Video tracking** — continuous capture for observation and offline analysis
-- **Wheel locomotion** — high-temporal-resolution measurement of voluntary movement
-- **Harp integration** — reliable hardware communication and synchronised timestamping
-- **Bonsai workflows** — open, modular, easily customisable pipelines
-- **Extensible** — built for community development and further behavioural measures
+## What you get
+
+- **Video** — continuous capture at 50 Hz for observation and offline analysis
+- **Wheel locomotion** — cumulative running distance from a 1024 ppr encoder, sampled per frame
+- **One clock** — the Harp board triggers the camera and timestamps the encoder, so the two streams
+  share a time base rather than being aligned afterwards
 
 ## Bill of materials
 
@@ -111,22 +112,23 @@ Configure the camera and experiment settings first — see [Software/](Software/
 
 1. Clean the box with **70% ethanol** or another disinfectant, and wipe it completely dry.
 
-2. Place the mouse in the box.
-
-3. Fit the lid with the camera attached.
-
-4. Connect the hardware:
+2. Connect the hardware, with the box still empty:
    - 12 V power supply to the Harp Behaviour Board
    - Rotary encoder to the Harp Behaviour Board (**Port 2**)
    - IR LED strip power supply
    - Camera USB cable to the computer
    - Camera GPIO trigger cable to the Harp Behaviour Board
 
-5. Minimise external light — turn the room lights off, or cover the box with black fabric (**recommended**).
+3. Open the Bonsai workflow and check the **live camera preview** is updating.
 
-6. Open the Bonsai workflow and check the **live camera preview** is updating.
+4. Place the mouse in the box.
 
-7. Set the save directory, subject ID, session ID and trial length, then click **Start**.
+5. Fit the lid with the camera attached.
+
+6. Minimise external light — turn the room lights off, or cover the box with black fabric (**recommended**).
+
+7. Set the save directory, camera serial number, subject ID, session ID and trial length, then click
+   **Start**.
 
 8. Recording stops automatically at the trial length, saving a video and a CSV of the behavioural data.
 
