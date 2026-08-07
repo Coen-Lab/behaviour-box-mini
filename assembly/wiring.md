@@ -3,7 +3,7 @@
 Three things connect to the system: the camera, the rotary encoder and the Harp Behaviour Board.
 
 <p align="center">
-  <img src="Pictures/Computer.jpg" width="48%" alt="Computer and Harp Behaviour Board">
+  <img src="Pictures/Computer.jpg" width="48%" alt="The mini PC, with the camera USB cable and the monitor and power leads plugged in">
 </p>
 
 ---

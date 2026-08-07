@@ -3,7 +3,7 @@ A deliberately simple, open-source box for recording mouse locomotion, built as 
 towards scalable behavioural phenotyping.
 
 <p align="center">
-<img src="assembly/Pictures/Box%20render.png" width="440" alt="Exploded render of the printed parts">
+<img src="assembly/Pictures/Box%20render.png" width="440" alt="Render of the six printed parts: box body with the lid fitted, running wheel, camera holder and two screws">
 </p>
 
 ## Overview
