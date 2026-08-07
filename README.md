@@ -36,7 +36,7 @@ centroid in both the arena and the wheel, under 850 nm light it cannot see.*
 |---|------|-----|----------|------|-------|
 | 1 | [PLA filament](https://uk.store.bambulab.com/products/pla-basic-filament) | 2 | Bambu Lab | 36 | 18 each |
 | 2 | [FLIR Blackfly S camera](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/BFS-U3-16S2M-CS/16528335) | 1 | DigiKey | 277 | BFS-U3-16S2M-CS |
-| 3 | [Rotary encoder](https://www.aliexpress.com/item/1005005665235932.html) | 1 | AliExpress | 18 | 1024 ppr version |
+| 3 | [Rotary encoder](https://www.aliexpress.com/item/1005005665235932.html) | 1 | AliExpress | 18 | **1024 ppr** version, see notes |
 | 4 | [Harp Behaviour Board](https://open-ephys.org/harp/oeps-1216) | 1 | Open Ephys | 415 | Listed at €510 |
 | 5 | [Locking USB 3.0 Micro-B cable](https://www.amazon.co.uk/dp/B0BYDYKB75) | 1 | Amazon | 18 | 5 m, straight connector |
 | 6 | [GPIO cable](https://www.digikey.co.uk/en/products/detail/flir-integrated-imaging-solutions-inc/ACC-01-3010/16528421) | 1 | DigiKey | 33 | Camera trigger. FLIR ACC-01-3010, Hirose HR10 6-pin, 4.5 m |
@@ -52,9 +52,15 @@ Approximate total: £1095
 
 **Notes**
 
+- **Encoder resolution** — row 3 is sold in several resolutions off the same listing, and 600 and
+  1000 ppr look identical in the photographs. Choose **1024 ppr**: the workflow ships with
+  `CountsPerRev` set to 4096, which is 1024 quadrature-decoded x4. Fit a different resolution
+  without changing that value and `WheelDistance` is wrong in every recording, with nothing in the
+  data to say so. See [Software/](Software/).
 - **Rotary encoder alternative** — [Omron E6B2-CWZ6C 360P/R 0.5M](https://uk.rs-online.com/web/p/motion-control-sensors/2158863),
   RS stock 215-8863, £216.14 exc VAT. Same NPN open-collector output and 6 mm shaft, but 360 ppr
   rather than 1024, and about twelve times the price. Worth it only if you need a warranted part.
+  It needs `CountsPerRev` changed to 1440.
 - **Screws** — Omron encoders ship with an E69-2 bracket and three M3 x 10 Phillips screws, which may
   cover the encoder mount on their own. The assembly guide calls for three M3 x 8 mm hex screws and a
   2 mm Allen key, so check what arrives before ordering row 10.
