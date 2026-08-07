@@ -1,7 +1,7 @@
 # Assembly
 
 Printing, assembling and wiring the box. For the parts list and prices see the
-[bill of materials](../README.md#bill-of-materials); for wiring see [wiring.md](wiring.md).
+[Bill of materials](../README.md#bill-of-materials); for wiring see [Wiring](wiring.md).
 
 The STL contains six printed parts:
 
@@ -12,7 +12,7 @@ The STL contains six printed parts:
 - Running wheel
 - Two screws
 
-Everything else is bought off the shelf, as listed in the [bill of materials](../README.md#bill-of-materials).
+Everything else is bought off the shelf, as listed in the [Bill of materials](../README.md#bill-of-materials).
 Assembly takes 20-30 minutes.
 
 <p align="center">
@@ -20,7 +20,7 @@ Assembly takes 20-30 minutes.
 </p>
 
 <p align="center"><em>How the parts go together. The Harp Behaviour Board sits outside the box; see
-<a href="wiring.md">wiring</a>.</em></p>
+<a href="wiring.md">Wiring</a>.</em></p>
 
 ## Tools required
 
@@ -52,7 +52,7 @@ Print the box in a darker colour if you plan to record white or light-coloured m
 ## Step 2 - Install the rotary encoder
 
 Secure the encoder to the side wall of the box with three M3 x 8 mm screws, with the shaft facing
-inwards. See [wiring](wiring.md) for the encoder connections.
+inwards. See [Wiring](wiring.md) for the encoder connections.
 
 ## Step 3 - Install the running wheel
 
@@ -68,7 +68,7 @@ inwards. See [wiring](wiring.md) for the encoder connections.
 4. Slide the holder into the square opening at the top of the lid and lock it with the two printed
    screws. Either screw goes in either hole.
 
-See [wiring](wiring.md) for the camera power and trigger connections.
+See [Wiring](wiring.md) for the camera power and trigger connections.
 
 ## Step 5 - Fit the infrared illumination
 

@@ -56,7 +56,7 @@ Approximate total: £1095
   indistinguishable in the product photographs. Choose **1024 ppr**: the workflow ships with
   `CountsPerRev` set to 4096, which is 1024 quadrature-decoded x4. Fit a different resolution
   without changing that value and `WheelDistance` is wrong in every recording, with nothing in the
-  data to say so. See [Software/](Software/).
+  data to say so. See [Software](Software/).
 - **Rotary encoder alternative** — [Omron E6B2-CWZ6C 360P/R 0.5M](https://uk.rs-online.com/web/p/motion-control-sensors/2158863),
   RS stock 215-8863, £216.14 exc VAT. Same NPN open-collector output and 6 mm shaft, but 360 ppr
   rather than 1024, and about twelve times the price. Worth it only if you need a warranted part.
@@ -90,10 +90,10 @@ Four steps, a couple of days of printing and half an hour of assembly.
 
 | Step | What it involves | Guide |
 |---|---|---|
-| 1. Print | Six parts in one STL: box body, lid, camera holder, running wheel and two screws. 15% infill, no supports, three plates on a standard Bambu Lab printer or equivalent. | [assembly/](assembly/) |
-| 2. Assemble | Mount the encoder, fit the wheel to its D-shaft, clamp the camera in its holder with the lens, and line three walls with the IR strip. 20-30 minutes. | [assembly/](assembly/) |
-| 3. Wire | Camera to computer over locking USB, GPIO trigger and encoder to the Harp board. | [wiring](assembly/wiring.md) |
-| 4. Software | Install the Spinnaker SDK, run `Setup.cmd`, open the workflow. | [Software/](Software/) |
+| 1. Print | Six parts in one STL: box body, lid, camera holder, running wheel and two screws. 15% infill, no supports, three plates on a standard Bambu Lab printer or equivalent. | [Assembly](assembly/) |
+| 2. Assemble | Mount the encoder, fit the wheel to its D-shaft, clamp the camera in its holder with the lens, and line three walls with the IR strip. 20-30 minutes. | [Assembly](assembly/) |
+| 3. Wire | Camera to computer over locking USB, GPIO trigger and encoder to the Harp board. | [Wiring](assembly/wiring.md) |
+| 4. Software | Install the Spinnaker SDK, run `Setup.cmd`, open the workflow. | [Software](Software/) |
 
 ### Installing the software
 
@@ -110,11 +110,11 @@ Order matters: Bonsai cannot see the camera without the Spinnaker driver already
    `ucl_open_behaviour_box.bonsai`. Do not launch the workflow file directly: this project relies on
    compatibility patches.
 
-Full detail, including camera settings, is in [Software/](Software/).
+Full detail, including camera settings, is in [Software](Software/).
 
 ## How to run the workflow
 
-Configure the camera and experiment settings first — see [Software/](Software/). Then:
+Configure the camera and experiment settings first — see [Software](Software/). Then:
 
 1. Clean the box with **70% ethanol** or another disinfectant, and wipe it completely dry.
 
