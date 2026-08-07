@@ -52,6 +52,10 @@ With the workflow loaded, click the blank workspace to bring up the experiment s
 - Subject ID
 - Trial length (minutes)
 
+The same panel also carries the settings you change rarely rather than per recording: `PortName`,
+`ExposureTime`, `Gain`, `Binning`, `TrackingThreshold`, `CountsPerRev` and `WheelDiameterMm`. None
+of them require opening a group.
+
 Recording stops automatically at the trial length, saving a **CSV** of behavioural data and a
 **video**.
 
@@ -92,6 +96,12 @@ The centroid is a `Point2f`, which Bonsai's CsvWriter splits into the two dotted
 rather than one combined field, so the file has seven columns. The origin is the top-left pixel and
 Y increases downwards, following OpenCV.
 
+`MouseLocation.X` and `MouseLocation.Y` are `NaN` on any frame where tracking found nothing. The
+threshold segments pixels darker than 35, so an empty box gives `NaN` on every row, which is the
+correct answer rather than a fault. Occasional `NaN` mid-session means the animal was momentarily
+lost; a session that is entirely `NaN` with an animal present means the threshold needs raising for
+the current lighting.
+
 `Seconds` is the Harp board's own record of when it fired the trigger, matched to the frame by
 arrival order rather than by any shared identifier. That holds as long as every trigger produces a
 frame. If one ever does not, each frame after it takes the timestamp of the frame before, and
@@ -99,22 +109,27 @@ nothing in the file announces it. To check a session, compare the camera's own `
 `Seconds`: the offset between the two clocks should be flat, and a step of one frame period means
 the pairing has slipped.
 
+Expect the **first row to be wrong** and discard it. Logging starts against a camera that is already
+being triggered, so the first frame is paired with a trigger event that arrived before it, and its
+`Seconds` can be most of a second early. `FrameID` stays contiguous across it, confirming no frame
+was lost. From the second row on, the offset locks and stays flat.
+
 Acquisition constants, all set in the workflow:
 
 | | Value |
 |---|---|
 | Frame rate | 50 Hz, camera hardware-triggered by the Harp board |
-| Exposure | 19 ms |
+| Exposure | 10 ms |
 | Gain | 5 dB |
-| Binning | 2, so the 1440 x 1080 sensor gives 720 x 540 images |
+| Binning | 1, so the full 1440 x 1080 sensor is recorded |
 | Encoder counts per revolution | 4096 (1024 ppr, quadrature decoded x4) |
 | Wheel diameter | 150 mm, so a circumference of 47.12 cm |
 | Distance per encoder count | 0.0115 cm |
 
 `WheelDistance` accumulates the per-sample encoder difference, with 16-bit counter wraparound
 corrected, so it increases monotonically while the animal runs forwards and is not reset within a
-session. Change `CountsPerRev` or `WheelDiameterMm` in the workflow if you use a different encoder
-or wheel, or the distances will be silently wrong.
+session. Change `CountsPerRev` or `WheelDiameterMm` in the top-level **Properties** panel if you use
+a different encoder or wheel, or the distances will be silently wrong.
 
 The board is put in **Position** mode, so the encoder register reports an absolute count that the
 workflow differences, unwraps and re-accumulates. UclOpen's own `RunningWheel` uses **Displacement**
@@ -129,22 +144,40 @@ The workflow ships with recommended settings and should not need changing. If it
 
 ### Exposure time, gain and binning
 
-1. Double-click the **metadata** node.
-2. Click on an empty area within the editor.
-3. Modify the desired parameters in the **Properties** panel.
+Click the blank workspace at the top level. `ExposureTime`, `Gain` and `Binning` sit in the same
+**Properties** panel as the per-recording settings, so there is no need to open the `metadata` group.
 
 The order to tune them in is exposure first, then gain, then binning:
 
 - **Exposure** buys image quality for free, so make it as long as the frame period allows. At 50 Hz
-  a frame lasts 20 ms, and the shipped 19 ms leaves a millisecond of margin. Going over the frame
-  period does not slow the camera down gracefully: it drops triggers, and because frames are paired
-  with trigger events in order, a dropped one shifts every timestamp after it.
+  a frame lasts 20 ms, and the shipped 10 ms leaves half the period spare, so this is the first
+  thing to raise if the image is too dark. Going over the frame period does not slow the camera down
+  gracefully: it drops triggers, and because frames are paired with trigger events in order, a
+  dropped one shifts every timestamp after it.
 - **Gain** amplifies noise along with signal, so keep it as low as the image allows. Reach for it
   only once exposure is maxed out and the picture is still too dark, and prefer adding IR
   illumination instead.
-- **Binning** is the file-size control. It sums neighbouring pixels, so it also brightens the image
-  and cuts noise, at the cost of resolution: binning 2 turns the 1440 x 1080 sensor into 720 x 540
-  and quarters the data rate.
+- **Binning** is the file-size control. It sums neighbouring pixels, so it brightens the image and
+  cuts noise, at the cost of resolution. The box ships at binning 1, recording the full 1440 x 1080
+  sensor. Binning 2 gives 720 x 540, quarters the data rate and brightens the image about fourfold,
+  which is worth having if storage or the encoder become the limit.
+
+### A cropped image
+
+The workflow sets binning but not the region of interest, because `TriggeredSpinnaker` does not
+expose one. `OffsetX`, `OffsetY`, `Width` and `Height` are therefore whatever is stored on the
+camera, and Bonsai accepts them. A camera left with a small region records a cropped frame, and the
+CSV looks identical either way.
+
+The trap is that changing binning in SpinView does not re-expand the region. It stays at its old
+pixel values, so the image crops rather than rescaling. To reset it, with Bonsai closed:
+
+1. Set `OffsetX` and `OffsetY` to 0. The offsets must come down before the size can go up.
+2. Set `Width` and `Height` to their maxima. At binning 1 that is 1440 x 1080.
+
+To make it survive a power cycle, save it to the camera: set `UserSetSelector` to UserSet1, execute
+`UserSetSave`, then set `UserSetDefault` to UserSet1. Otherwise the camera reverts to its stored
+default whenever it loses power.
 
 ### Frame rate
 
@@ -183,4 +216,6 @@ region definition applied identically to every session, rather than one drawn by
 > mice**, either:
 >
 > - Print the box in a darker colour to increase contrast, or
-> - Adjust the tracking threshold for reliable centroid detection.
+> - Adjust `TrackingThreshold` in the top-level **Properties** panel. It ships at 35 and segments
+>   pixels *darker* than that value, so a light animal on a light floor needs the box inverted in
+>   colour rather than the threshold nudged.

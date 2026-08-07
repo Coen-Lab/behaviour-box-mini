@@ -15,6 +15,11 @@
       <Expression xsi:type="ExternalizedMapping">
         <Property Name="SerialNumber" />
         <Property Name="PortName" />
+        <Property Name="ExposureTime" />
+        <Property Name="Gain" />
+        <Property Name="Binning" />
+        <Property Name="CountsPerRev" />
+        <Property Name="WheelDiameterMm" />
       </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>metadata</Name>
@@ -206,11 +211,16 @@
                   <Expression xsi:type="ExternalizedMapping">
                     <Property Name="PortName" Description="The serial port the Harp Behaviour Board is connected to" />
                   </Expression>
+                  <Expression xsi:type="ExternalizedMapping">
+                    <Property Name="CountsPerRev" />
+                    <Property Name="WheelDiameterMm" />
+                  </Expression>
                 </Nodes>
                 <Edges>
                   <Edge From="3" To="4" Label="Source1" />
                   <Edge From="4" To="5" Label="Source1" />
                   <Edge From="6" To="0" Label="Source1" />
+                  <Edge From="7" To="1" Label="Source1" />
                 </Edges>
               </Workflow>
             </Expression>
@@ -221,9 +231,9 @@
               <Property Name="Binning" />
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="UclOpen.Devices:TriggeredSpinnaker.bonsai">
-              <ExposureTime>19000</ExposureTime>
+              <ExposureTime>10000</ExposureTime>
               <Gain>5</Gain>
-              <Binning>2</Binning>
+              <Binning>1</Binning>
               <SerialNumber />
               <ColorProcessing>Default</ColorProcessing>
               <CameraTriggerEventsSubjectName>Camera0TriggerEvents</CameraTriggerEventsSubjectName>
@@ -241,12 +251,17 @@
             <Expression xsi:type="ExternalizedMapping">
               <Property Name="PortName" />
             </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="CountsPerRev" />
+              <Property Name="WheelDiameterMm" />
+            </Expression>
           </Nodes>
           <Edges>
             <Edge From="1" To="2" Label="Source1" />
             <Edge From="3" To="4" Label="Source1" />
             <Edge From="3" To="5" Label="Source1" />
             <Edge From="6" To="0" Label="Source1" />
+            <Edge From="7" To="0" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -255,6 +270,7 @@
         <Property Name="SessionId" />
         <Property Name="Path" />
         <Property Name="TrialLengthMins" />
+        <Property Name="TrackingThreshold" />
       </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>logging</Name>
@@ -506,8 +522,12 @@ Item2 as WheelDistance)</scr:Expression>
                   <Expression xsi:type="rx:BehaviorSubject">
                     <Name>Mouse_centroid</Name>
                   </Expression>
+                  <Expression xsi:type="ExternalizedMapping">
+                    <Property Name="ThresholdValue" DisplayName="TrackingThreshold" Description="Pixels darker than this are treated as the mouse. Raise it for a lighter image or a lighter animal, lower it for a darker one." Category="Tracking" />
+                  </Expression>
                   </Nodes>
                 <Edges>
+                  <Edge From="30" To="24" Label="Source1" />
                   <Edge From="0" To="3" Label="Source1" />
                   <Edge From="1" To="2" Label="Source1" />
                   <Edge From="2" To="3" Label="Source2" />
@@ -565,6 +585,9 @@ Item2 as WheelDistance)</scr:Expression>
             <Expression xsi:type="rx:BehaviorSubject">
               <Name>TotalFrame</Name>
             </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="TrackingThreshold" />
+            </Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
@@ -574,6 +597,7 @@ Item2 as WheelDistance)</scr:Expression>
             <Edge From="6" To="7" Label="Source1" />
             <Edge From="7" To="8" Label="Source1" />
             <Edge From="8" To="9" Label="Source1" />
+            <Edge From="10" To="4" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>

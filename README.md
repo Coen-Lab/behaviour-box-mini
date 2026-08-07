@@ -81,8 +81,9 @@ unit we have found that clears the bar, so its specification is the floor:
 Two things to watch:
 
 - **No PCIe slot** on a mini PC, so the camera runs from a built-in port rather than an expansion card.
-- **Storage** — compressed video runs at roughly 1-4 GB per hour, so 512 GB holds weeks. Uncompressed
-  it would fill in about seven hours, at the shipped 720 x 540 and 50 Hz.
+- **Storage** — compressed video runs at roughly 4-16 GB per hour, so 512 GB holds days rather than
+  weeks. Uncompressed it would fill in under two hours, at the shipped 1440 x 1080 and 50 Hz. Binning
+  2 quarters all of these figures, at half the resolution in each direction.
 
 ## Build guide
 
