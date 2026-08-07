@@ -44,9 +44,11 @@ The encoder has five wires, four of which are used:
 |--------------|----------|
 | Black (Channel A) | DI (Input A) |
 | White (Channel B) | DIO (Input B) |
-| *(not used)* | Pin 3 |
-| +5 V | Pin 4 |
-| GND | Pin 5 |
+| Orange — *not used* | Pin 3 |
+| Brown (+5 V) | Pin 4 |
+| Blue (GND) | Pin 5 |
+
+The bare braid is the cable shield, not one of the five wires.
 
 <p align="center">
   <img src="Pictures/Rotary%20encoder.jpg" width="48%" alt="Rotary encoder wiring">

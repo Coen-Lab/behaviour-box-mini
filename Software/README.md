@@ -1,5 +1,9 @@
 # Software
 
+The project answers to three names, all of them the same thing: the repository is
+`behaviour-box-mini`, the workflow folder is `Behaviour_box_ucl_open`, and the workflow file is
+`ucl_open_behaviour_box.bonsai`.
+
 Two components:
 
 - **Spinnaker SDK (SpinView)** — camera driver and configuration
