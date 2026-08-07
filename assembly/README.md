@@ -15,8 +15,11 @@ Everything else is bought off the shelf, as listed in the [bill of materials](..
 Assembly takes 20-30 minutes.
 
 <p align="center">
-  <img src="Pictures/Setup.png" width="68%" alt="The components laid out: camera, camera holder, lid, rotary encoder, running wheel, box body and Harp Behaviour Board, beside a box running the Bonsai workflow">
+  <img src="Pictures/Setup.jpg" width="52%" alt="Assembly overview: the camera slides into the camera holder, the holder into the top of the lid, the lid onto the box body; the encoder mounts through the side wall and the wheel onto its shaft; the Harp Behaviour Board sits outside">
 </p>
+
+<p align="center"><em>How the parts go together. The Harp Behaviour Board sits outside the box; see
+<a href="wiring.md">wiring</a>.</em></p>
 
 ## Tools required
 
