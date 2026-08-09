@@ -5,7 +5,7 @@ below, which are redistributed under their own terms.
 
 ## UclOpen packages
 
-`Software/Behaviour_Box_Mini/local_packages/` contains five NuGet packages, redistributed as
+`Software/Behaviour_Box/local_packages/` contains five NuGet packages, redistributed as
 binaries because they are not published on nuget.org and the workflow will not restore without them:
 
 - `UclOpen.Core.0.0.0-sandbox`

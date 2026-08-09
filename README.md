@@ -108,7 +108,7 @@ Order matters: Bonsai cannot see the camera without the Spinnaker driver already
    restores every package from `Bonsai.config`, and warns if Spinnaker is missing or the wrong
    version. Nothing else needs installing by hand.
 3. **Open the workflow** — start Bonsai, then **File → Open** →
-   `Behaviour_Box_Mini.bonsai`. Do not launch the workflow file directly: this project relies on
+   `Behaviour_Box.bonsai`. Do not launch the workflow file directly: this project relies on
    compatibility patches.
 
 Full detail, including camera settings, is in [Software](Software/).

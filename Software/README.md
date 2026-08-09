@@ -41,7 +41,7 @@ launching it directly:
 
 1. Open **Bonsai**.
 2. Select **File → Open**.
-3. Open **`Behaviour_Box_Mini.bonsai`**.
+3. Open **`Behaviour_Box.bonsai`**.
 
 With the workflow loaded, click the blank workspace to bring up the experiment settings in the
 **Properties** panel on the right. Set before each recording:
