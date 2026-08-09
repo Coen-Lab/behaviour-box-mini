@@ -1,4 +1,4 @@
-# Behaviour Box Mini
+# Behaviour Box
 A deliberately simple, open-source box for recording mouse locomotion, built as a first step
 towards scalable behavioural phenotyping. About **£1095** a box, six printed parts, half an hour to
 assemble.
@@ -91,7 +91,7 @@ Four steps, a couple of days of printing and half an hour of assembly.
 
 | Step | What it involves | Guide |
 |---|---|---|
-| 1. Print | Six parts in one STL: box body, lid, camera holder, running wheel and two screws. 15% infill, no supports, three plates on a standard Bambu Lab printer or equivalent. | [Assembly](Assembly/) |
+| 1. Print | Six parts from five STLs in [`Assembly/Parts`](Assembly/Parts/): arena, lid, camera holder, wheel, and the thumb screw twice. 15% infill, no supports, three plates on a standard Bambu Lab printer or equivalent. | [Assembly](Assembly/) |
 | 2. Assemble | Mount the encoder, fit the wheel to its D-shaft, clamp the camera in its holder with the lens, and line three walls with the IR strip. 20-30 minutes. | [Assembly](Assembly/) |
 | 3. Wire | Camera to computer over locking USB, GPIO trigger and encoder to the Harp board. | [Wiring](Assembly/Wiring.md) |
 | 4. Software | Install the Spinnaker SDK, run `Setup.cmd`, open the workflow. | [Software](Software/) |

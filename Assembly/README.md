@@ -3,14 +3,15 @@
 Printing, assembling and wiring the box. For the parts list and prices see the
 [Bill of materials](../README.md#bill-of-materials); for wiring see [Wiring](Wiring.md).
 
-The STL contains six printed parts:
+Six printed parts, from five files in [`Parts/`](Parts/):
 
-- Behaviour box body
-- Lid — the tapered tower that carries the camera above the arena. It is 240 mm tall, so it doubles
-  the assembled height to 460 mm; allow for that on the bench and in the printer
-- Camera holder
-- Running wheel
-- Two screws
+- `Arena.stl` — the box body
+- `LidAndSpacer.stl` — the tapered tower that closes the box and sets the camera height above the
+  arena. It is 240 mm tall, so it doubles the assembled height to 460 mm; allow for that on the
+  bench and in the printer
+- `CamHolder.stl` — camera holder
+- `Wheel.stl` — running wheel
+- `ThumbScrew.stl` — printed twice; both screws are the same part
 
 Everything else is bought off the shelf, as listed in the [Bill of materials](../README.md#bill-of-materials).
 Assembly takes 20-30 minutes.
@@ -29,7 +30,7 @@ Assembly takes 20-30 minutes.
 
 ## Step 1 - Print the components
 
-Print all six parts from [`Behaviour_Box_Mini.stl`](Behaviour_Box_Mini.stl).
+Print the five files in [`Parts/`](Parts/), taking two copies of `ThumbScrew.stl`.
 
 | Setting | Value |
 |---|---|
@@ -42,10 +43,13 @@ Print all six parts from [`Behaviour_Box_Mini.stl`](Behaviour_Box_Mini.stl).
 The two largest parts set the build volume: the box body is 207 mm square and 220 mm tall, and the
 lid is 199 mm square and 240 mm tall. Both fit an X1 or P1 series printer, but not an A1 mini.
 
-The STL holds all six parts in their assembled positions, so they arrive spread out and at
-different heights. **Split to objects** in the slicer, drop everything to the plate and arrange it
-yourself. They will not fit on one plate: budget three, and closer to two or three days of printing
-than one.
+Each file holds one part, but the meshes keep their assembled coordinates, so they arrive spread out
+and at different heights. Drop everything to the plate and arrange it yourself. They will not fit on
+one plate: budget three, and closer to two or three days of printing than one.
+
+[`Behaviour_Box_Complete.stl`](Behaviour_Box_Complete.stl) is the whole box as a single body, for
+reference only — it cannot be printed. [`Behaviour_Box_Complete.step`](Behaviour_Box_Complete.step)
+is the editable solid model, with each part as a separate component.
 
 Print the box in a darker colour if you plan to record white or light-coloured mice, for contrast.
 
